@@ -17,6 +17,11 @@ const { title, description } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Favicon del sitio con el logo de ZenZone */}
+        <link rel="icon" type="image/png" href="/images/logozenzone-removebg-preview.png" />
+        <link rel="apple-touch-icon" href="/images/logozenzone-removebg-preview.png" />
+
         <title>{title} | ZenZone</title>
 
         {/* Umami Analytics - Rastreo en tiempo real */}
