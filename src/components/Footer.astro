@@ -1,0 +1,41 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800/80 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+    
+    <div class="text-center md:text-left max-w-2xl">
+      <div class="flex items-center justify-center md:justify-start gap-2 mb-3">
+        <img class="h-8 w-auto object-contain" src="/images/logozenzone-removebg-preview.png" alt="ZenZone Logo" />
+        <span class="text-lg font-black text-white">ZenZone</span>
+      </div>
+      <p class="text-xs leading-relaxed mb-3 text-slate-400">
+        <strong>Aviso de Afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Amazon y el logotipo de Amazon son marcas comerciales de Amazon.com, Inc. o de sociedades de su grupo.
+      </p>
+      <p class="text-xs text-slate-500">
+        Los precios y la disponibilidad de los productos son precisos en la fecha/hora de consulta y están sujetos a cambios por parte del vendedor.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-6 text-sm text-center md:text-right">
+      <div class="flex flex-col gap-2">
+        <span class="font-extrabold text-slate-200 uppercase tracking-wider text-xs mb-1">Navegación</span>
+        <a href="/" class="hover:text-amber-400 transition-colors">Inicio</a>
+        <a href="/perifericos" class="hover:text-amber-400 transition-colors">Periféricos</a>
+        <a href="/sillas-oficina" class="hover:text-amber-400 transition-colors">Sillas</a>
+        <a href="/mesas-escritorio" class="hover:text-amber-400 transition-colors">Mesas</a>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <span class="font-extrabold text-slate-200 uppercase tracking-wider text-xs mb-1">Legal</span>
+        <a href="/aviso-legal" class="hover:text-amber-400 transition-colors">Aviso Legal</a>
+        <a href="/cookies" class="hover:text-amber-400 transition-colors">Política de Cookies</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10 pt-8 border-t border-slate-900 text-center text-xs text-slate-500">
+    &copy; {currentYear} ZenZone. Guías de Ergonomía & Setup Personal. Todos los derechos reservados.
+  </div>
+</footer>

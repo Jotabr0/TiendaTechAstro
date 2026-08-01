@@ -1,0 +1,200 @@
+---
+// src/pages/perifericos/ratones.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "Los Mejores Ratones Ergonómicos e Inalámbricos para PC (2026)";
+const descripcion = "Comparativa y análisis de los mejores ratones para oficina y setup: ergonómicos verticales, Logitech MX Master, inalámbricos silenciosos y opciones económicas.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      Los Mejores <span class="text-amber-500">Ratones</span> para tu Setup y Oficina
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Un ratón adecuado evita la fatiga muscular, la tendinitis y el síndrome del túnel carpiano. 
+      <strong>Analizamos los modelos líderes del mercado en ergonomía, conectividad y relación calidad-precio.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Logitech MX Master",
+          imageUrl: "https://m.media-amazon.com/images/I/618Xy2oRcUL.jpg",
+          feature1: "Rueda MagSpeed y respuesta háptica",
+          feature2: "Sensor 8.000 DPI funcional en cristal",
+          amazonUrl: "https://www.amazon.es/dp/B0FHHSZ8WM?tag=jotabro00-21",
+          badge: "Nuestra Elección (Productividad)"
+        },
+        {
+          name: "Logitech Lift Vertical",
+          imageUrl: "https://m.media-amazon.com/images/I/61IuKPhnVJL.jpg",
+          feature1: "Ángulo natural de 57° postural",
+          feature2: "Clics silenciosos SmartWheel",
+          amazonUrl: "https://www.amazon.es/dp/B07W4DGC27?tag=jotabro00-21",
+          badge: "El Mejor Vertical"
+        },
+        {
+          name: "Logitech Signature M850 L",
+          imageUrl: "https://m.media-amazon.com/images/I/61BgRbEWBOL.jpg",
+          feature1: "Almohadilla suave para la palma",
+          feature2: "Hasta 24 meses de autonomía",
+          amazonUrl: "https://www.amazon.es/dp/B0GVF643TR?tag=jotabro00-21",
+          badge: "Calidad Precio"
+        },
+        {
+          name: "CSL Vertical TM137U",
+          imageUrl: "https://m.media-amazon.com/images/I/81EhGSDIlEL.jpg",
+          feature1: "Diseño ergonómico anti-fatiga",
+          feature2: "Sensor óptico 1600 DPI con cable",
+          amazonUrl: "https://www.amazon.es/dp/B00JOD56A8?tag=jotabro00-21",
+          badge: "Opción Económica"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis detallado de los mejores modelos
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Logitech MX Master - El rey indiscutible de la productividad" 
+          imageUrl="https://m.media-amazon.com/images/I/618Xy2oRcUL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0FHHSZ8WM?tag=jotabro00-21"
+          badge="Productividad Pro"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El Logitech MX Master es el referente del sector profesional para creadores de contenido, programadores y usuarios avanzados. Su icónico descanso para el pulgar alberga un botón de gestos, y su rueda metálica MagSpeed permite desplazarse por miles de líneas de código o tablas de Excel en segundos con precisión milimétrica.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Rueda MagSpeed electromagnética ultra rápida e interactiva.",
+            "Sensor óptico de 8.000 DPI que funciona incluso sobre superficies de cristal.",
+            "Emparejamiento multidispositivo rápido con tecnología Logitech Flow."
+          ]}
+          contras={[
+            "Diseño adaptado exclusivamente para usuarios diestros.",
+            "Precio de gama alta enfocado a uso profesional."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Logitech Lift Vertical - Ergonomía natural para cuidar tu muñeca" 
+          imageUrl="https://m.media-amazon.com/images/I/61IuKPhnVJL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07W4DGC27?tag=jotabro00-21"
+          badge="Salud Postural"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Si notas sobrecarga en la muñeca al final de la jornada, el Logitech Lift coloca la mano en una postura vertical de 57º que imita la posición natural de apretón de manos. Esta alineación reduce la presión sobre el nervio mediano y previene lesiones como el síndrome del túnel carpiano.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Ángulo ergonómico de 57° que reduce la tensión muscular en el antebrazo.",
+            "Botones con clics ultra silenciosos ideales para oficinas y espacios compartidos.",
+            "Batería de larga duración (hasta 2 años con una sola pila AA)."
+          ]}
+          contras={[
+            "Requiere un periodo de adaptación de 2 a 3 días si vienes de ratones tradicionales.",
+            "Formato optimizado para manos pequeñas y medianas."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. Logitech Signature Comfort Plus M850 L - Máximo confort al mejor precio" 
+          imageUrl="https://m.media-amazon.com/images/I/61BgRbEWBOL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0GVF643TR?tag=jotabro00-21"
+          badge="Calidad Precio"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Este modelo equilibra perfectamente un soporte acolchado para la palma con la conectividad versátil de Logitech. Es ideal para quienes pasan largas horas frente a la pantalla pero prefieren la forma de un ratón clásico con ergonomía mejorada.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Reposapalmas de tacto suave integrado que alivia la fatiga.",
+            "Botones de acceso rápido laterales altamente configurables.",
+            "Doble conectividad mediante Bluetooth y receptor Logi Bolt."
+          ]}
+          contras={[
+            "Funciona con pila AA reemplazable en lugar de batería de litio USB-C.",
+            "Tamaño L diseñado principalmente para manos medianas a grandes."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 */}
+      <article>
+        <AmazonBox 
+          title="4. CSL TM137U Vertical - La alternativa económica de diseño vertical" 
+          imageUrl="https://m.media-amazon.com/images/I/81EhGSDIlEL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B00JOD56A8?tag=jotabro00-21"
+          badge="Super Económico"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Si quieres iniciarte en el mundo de los ratones verticales ergonómicos sin realizar una gran inversión, el modelo CSL TM137U ofrece la misma postura vertical saludable con la fiabilidad de una conexión por cable continua sin interrupciones.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Precio imbatible para probar la postura vertical ergonómica.",
+            "Conexión USB por cable Plug & Play que no requiere pilas ni recargas.",
+            "Prevención efectiva de molestias en antebrazo y muñeca."
+          ]}
+          contras={[
+            "Plásticos de construcción más sencillos que la gama premium.",
+            "El cable fijos de 1.5 metros puede limitar escritorios muy amplios."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA DE COMPRA */}
+  <section class="prose prose-slate max-w-none bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+    <h2>Guía de compra: ¿Cómo elegir el ratón perfecto para tu setup?</h2>
+    <p>A la hora de seleccionar un ratón para tu escritorio, considera los siguientes factores ergonómicos y técnicos:</p>
+    <ul>
+      <li><strong>Ratones Tradicionales vs. Verticals:</strong> Los ratones tradicionales permiten mayor agilidad en juegos competitivos. Por contra, los ratones verticales (como el <em>Logitech Lift</em> o el <em>CSL</em>) alinean el antebrazo y previenen la fatiga en jornadas de trabajo intensivas.</li>
+      <li><strong>Conectividad (Bluetooth / Logi Bolt / Cable):</strong> Los modelos inalámbricos actuales ofrecen cero latencia y ayudan a mantener un escritorio minimalista y sin cables.</li>
+      <li><strong>Resolución y Sensibilidad (DPI):</strong> Para oficina y edición, contar con sensores de más de 4.000 DPI ajustables permite mover el cursor por pantallas 4K o configuraciones multimonitor con el mínimo esfuerzo físico.</li>
+      <li><strong>Silencio en la Pulsación:</strong> Si trabajas en un entorno de oficina o por las noches, opta por modelos con tecnología de clics silenciosos.</li>
+    </ul>
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/perifericos/ratones"
+    title="Equipa tu Escritorio con los Mejores Periféricos 🖱️"
+    subtitle="Tu ratón ergonómico rendirá al máximo si lo acompañas con un buen teclado slim, alfombrilla XXL o un monitor panorámico:"
+  />
+
+</Layout>

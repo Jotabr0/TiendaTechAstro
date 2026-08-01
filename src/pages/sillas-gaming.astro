@@ -1,0 +1,224 @@
+---
+// src/pages/sillas-gaming.astro
+import Layout from '../layouts/Layout.astro';
+import TablaComparativa from '../components/TablaComparativa.astro';
+import AmazonBox from '../components/AmazonBox.astro';
+import ProsContras from '../components/ProsContras.astro';
+import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+
+const titulo = "Las Mejores Sillas Gaming Ergonómicas (2026)";
+const descripcion = "Comparativa definitiva de las mejores sillas gaming del mercado: reposapiés extensible, reclinación 150°, cojines cervical/lumbar y bases de acero reforzadas.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🎮 Gaming & Setup Streaming 2026
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      Las Mejores <span class="text-rose-500">Sillas Gaming</span> del Mercado
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Tanto si pasas horas en Twitch como si buscas la máxima inmersión en tus partidas competitivas, la silla es tu periférico más importante. 
+      <strong>Descubre nuestra selección de las sillas gaming más ergonómicas, cómodas y resistentes.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA PRINCIPAL */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Comparativa de sillas gaming destacadas</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "SONGMICS Racing",
+          imageUrl: "https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg",
+          feature1: "Reposapiés plegable desplegable",
+          feature2: "Inclinación 135° con bloqueo",
+          amazonUrl: "https://www.amazon.es/dp/B0F6MYX8D4?tag=jotabro00-21",
+          badge: "Nuestra Elección (Confort)"
+        },
+        {
+          name: "Silla Gaming Pro Reclinable",
+          imageUrl: "https://m.media-amazon.com/images/I/51EoAACcLYL.jpg",
+          feature1: "Cojín Lumbar y Cervical ajustables",
+          feature2: "Diseño deportivo acolchado",
+          amazonUrl: "https://www.amazon.es/dp/B0B34N7BLF?tag=jotabro00-21",
+          badge: "Top Ventas Amazon"
+        },
+        {
+          name: "WOLTU Ergonómica Metal",
+          imageUrl: "https://m.media-amazon.com/images/I/61oQgTJpMML.jpg",
+          feature1: "Estructura interna de acero de alta densidad",
+          feature2: "Apta para usuarios corpulentos",
+          amazonUrl: "https://www.amazon.es/dp/B0D9HDJBMT?tag=jotabro00-21",
+          badge: "Estructura Reforzada"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES EN DETALLE */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis al detalle de los mejores modelos gaming
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. SONGMICS Racing - Comodidad extrema con reposapiés oculto" 
+          imageUrl="https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0F6MYX8D4?tag=jotabro00-21"
+          badge="Confort & Reposapiés"
+          rating="4.7"
+          features={[
+            "Reposapiés plegable integrado bajo el asiento",
+            "Respaldo alto reclinable hasta 135° con bloqueo",
+            "Acolchado de esponja de alta densidad moldeada",
+            "Revestimiento sintético resistente y fácil de limpiar"
+          ]}
+          description="La marca SONGMICS ha creado un sillón de descanso camuflado en un diseño deportivo gaming. Destaca por su acolchado denso y su reposapiés extensible oculto, ideal para reclinar la silla y disfrutar de partidas con mando o contenido multimedia."
+        />
+        <ProsContras 
+          pros={[
+            "Reposapiés plegable integrado muy resistente para estirar las piernas.",
+            "Acolchado de alta densidad que no pierde forma tras meses de uso continuo.",
+            "Material sintético fácil de limpiar tras salpicaduras accidentales."
+          ]}
+          contras={[
+            "El tejido sintético puede acumular calor en verano sin aire acondicionado.",
+            "Ruedas estándar para moqueta (para suelos delicados se sugiere instalar ruedas de silicona)."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Silla Gaming Pro Reclinable - La reina en ventas para streaming" 
+          imageUrl="https://m.media-amazon.com/images/I/51EoAACcLYL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0B34N7BLF?tag=jotabro00-21"
+          badge="Top Ventas"
+          rating="4.6"
+          features={[
+            "Cojines ajustables cervical y lumbar incluidos",
+            "Mecanismo de inclinación balanceada",
+            "Diseño de asiento de carreras ergonómico",
+            "Pistón de gas hidráulico clase 4"
+          ]}
+          description="Este modelo arrasa en ventas por ofrecer exactamente lo que el usuario gamer busca: un diseño Racing agresivo, capacidad de reclinarse por completo y cojines ergonómicos cervicales y lumbares ajustables mediante correas."
+        />
+        <ProsContras 
+          pros={[
+            "Relación calidad-precio insuperable en el segmento gaming.",
+            "Cojines regulables en altura para adaptarse a la curvatura del usuario.",
+            "Reclinación amplia perfecta para descansar entre partidas."
+          ]}
+          contras={[
+            "Los reposabrazos no son regulables en 4 dimensiones.",
+            "Requiere revisar el apriete de tornillos pasados un par de meses de uso intensivo."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. WOLTU Ergonómica Metal - Resistencia extrema y chasis reforzado" 
+          imageUrl="https://m.media-amazon.com/images/I/61oQgTJpMML.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0D9HDJBMT?tag=jotabro00-21"
+          badge="Estructura de Acero"
+          rating="4.5"
+          features={[
+            "Estructura interna de tubos de acero macizo",
+            "Pistón hidráulico reforzado soporta hasta 150 kg",
+            "Malla transpirable en zonas de contacto",
+            "Base de 5 radios en aleación metálica"
+          ]}
+          description="Diseñada para resistir sesiones largas de uso exigente. Su chasis interno de acero macizo y su base de 5 radios metálica garantizan estabilidad absoluta incluso en movimientos bruscos."
+        />
+        <ProsContras 
+          pros={[
+            "Estructura interna de acero de alta resistencia que evita crujidos.",
+            "Apta para usuarios corpulentos hasta 150 kg.",
+            "Respaldo con zonas de tejido respirable para mejorar la ventilación."
+          ]}
+          contras={[
+            "Peso de la silla algo más elevado al moverla sin rodar.",
+            "Estética deportiva sobria."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA SEO EXTENSA Y PALABRAS CLAVE LONG-TAIL */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        Guía de Compra: ¿Qué debes buscar al elegir una Silla Gaming?
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        La estética *racing* (inspirada en los asientos envolventes de coches de carreras) domina el sector gamer. Sin embargo, para proteger tu salud durante largas maratones de juego debes priorizar las características ergonómicas sobre el diseño puramente visual.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. Cojines Cervical y Lumbar Regulables
+      </h3>
+      <p>
+        A diferencia de las sillas de oficina convencionales, las sillas gaming integran un respaldo alto que cubre toda la espalda hasta la cabeza. Los cojines ajustables incluidos desempeñan dos funciones vitales:
+      </p>
+      <ul>
+        <li><strong>Cojín Cervical:</strong> Rellena el espacio hueco en la nuca evitando la hiperextensión del cuello al mirar la pantalla.</li>
+        <li><strong>Cojín Lumbar:</strong> Mantiene apoyada la zona sacra para evitar que la pelvis bascule hacia atrás provocando mala postura.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Mecanismos de Reclinación y Reposapiés Extensible
+      </h3>
+      <p>
+        Poder variar el ángulo de reclinación entre 90° (modo concentración) y 135°-160° (modo relax) permite descansar la columna en pausas entre partidas. Los modelos con <strong>reposapiés extensible</strong> son ideales para jugar con mando o consumir contenido multimedia.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        3. Chasis Interno de Acero vs. Estructuras de Madera o Plástico
+      </h3>
+      <p>
+        Para garantizar la durabilidad a largo plazo, huye de sillas con marcos internos de contrachapado de madera barata. Busca siempre estructuras de **acero tubulares** con pistones de gas de Clase 4 certificados por TÜV.
+      </p>
+    </div>
+
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/sillas-gaming"
+    title="Equipa tu Setup Gaming al Completo 🎮"
+    subtitle="Combina tu silla gaming con alfombrillas RGB, iluminación LED y el mejor sonido:"
+  />
+
+</Layout>

@@ -1,0 +1,388 @@
+---
+// src/pages/iluminacion.astro
+import Layout from '../layouts/Layout.astro';
+import TablaComparativa from '../components/TablaComparativa.astro';
+import AmazonBox from '../components/AmazonBox.astro';
+import ProsContras from '../components/ProsContras.astro';
+import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+
+const titulo = "La Mejor Iluminación para Setup y Escritorio (2026) | Barras LED, Screenbars y RGB";
+const descripcion = "Guía completa de iluminación para setup y trabajo: barras de luz para monitor (screenbar) anti-reflejos, tiras LED RGBIC, paneles hexagonales de pared, focos para streaming y bajo consumo.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 me-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      💡 Guía Especializada de Iluminación 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      La Mejor <span class="text-amber-500">Iluminación</span> para tu Setup y Escritorio
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Una buena iluminación no solo transforma la estética de tu espacio de trabajo o juego, sino que es vital para proteger tu salud visual y evitar la vista cansada. 
+      <strong>Analizamos las mejores barras para monitor (screenbars), paneles LED RGBIC, focos para streaming y soluciones de bajo consumo.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA PRINCIPAL MULTICATEGORÍA */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Comparativa de los mejores sistemas de iluminación</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "Quntis Screenbar 51cm",
+          imageUrl: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg",
+          feature1: "Luz asimétrica anti-reflejos Ra>95",
+          feature2: "Mando inalámbrico táctil 3000K-6500K",
+          amazonUrl: "https://www.amazon.es/dp/B0CR1H394H?tag=jotabro00-21",
+          badge: "Nuestra Elección (Salud Visual)"
+        },
+        {
+          name: "AURORIONCG Barras RGBIC",
+          imageUrl: "https://m.media-amazon.com/images/I/71D3Q1GOwHL.jpg",
+          feature1: "Iluminación 300° con sensor de música",
+          feature2: "Pack de 2 barras para trasera de TV/PC",
+          amazonUrl: "https://www.amazon.es/dp/B0G23WQRC1?tag=jotabro00-21",
+          badge: "Ambiente Gaming"
+        },
+        {
+          name: "Kangtaixin Paneles Hexágono",
+          imageUrl: "https://m.media-amazon.com/images/I/61-be2rpZ1L.jpg",
+          feature1: "Paneles modulares de pared RGB",
+          feature2: "Sincronización con sonido y App",
+          amazonUrl: "https://www.amazon.es/dp/B0BDKJ88FZ?tag=jotabro00-21",
+          badge: "Decoración Pared"
+        },
+        {
+          name: "Macchiatto Neón LED 5m",
+          imageUrl: "https://m.media-amazon.com/images/I/71eo-htl7BL.jpg",
+          feature1: "Tira de silicona flexible moldeadable",
+          feature2: "Control por App, mando y música",
+          amazonUrl: "https://www.amazon.es/dp/B0DQCQJ5K5?tag=jotabro00-21",
+          badge: "Creatividad DIY"
+        },
+        {
+          name: "NEEWER Panel Foco 2-Pack",
+          imageUrl: "https://m.media-amazon.com/images/I/61Gj-qwZzvL.jpg",
+          feature1: "Luz de estudio continua bicolor",
+          feature2: "Ideal para streaming y videollamadas",
+          amazonUrl: "https://www.amazon.es/dp/B0D635B2WB?tag=jotabro00-21",
+          badge: "Streaming & Creadores"
+        },
+        {
+          name: "YICAIZI Lámpara Pie 42W",
+          imageUrl: "https://m.media-amazon.com/images/I/615sNQa3ryL.jpg",
+          feature1: "Potencia 4000LM bajo consumo LED",
+          feature2: "Mando magnético y brazo de lectura",
+          amazonUrl: "https://www.amazon.es/dp/B0DY8FGYQT?tag=jotabro00-21",
+          badge: "Luz de Estancia"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS EN DETALLE POR CATEGORÍAS */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis exhaustivo de los mejores modelos
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* 1. SCREENBARS */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+          Categoría 1: Barras de Monitor (Screenbars)
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          1. Quntis 51cm con Mando Inalámbrico - La barra definitiva para cuidar tu vista
+        </h3>
+        
+        <AmazonBox 
+          title="Quntis Lámpara de Monitor 51cm con Retroiluminación y Mando Táctil" 
+          imageUrl="https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0CR1H394H?tag=jotabro00-21"
+          badge="Imprescindible Salud Visual"
+        />
+        
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Las barras de monitor como la <strong>Quntis de 51 cm</strong> han revolucionado la iluminación de escritorio. A diferencia de las lámparas tradicionales, proyectan la luz en un ángulo óptico asimétrico de 45° que ilumina exclusivamente el teclado y la mesa de trabajo sin incidir ni reflejarse en el cristal del monitor.
+          </p>
+          <p>
+            Su mando de control inalámbrico sobre la mesa permite ajustar de forma continua tanto el brillo como la temperatura de color desde cálido (3000K para descanso nocturno) hasta frío (6500K para máxima concentración).
+          </p>
+        </div>
+
+        <ProsContras 
+          pros={[
+            "Diseño óptico asimétrico que elimina el 100% de los reflejos en la pantalla.",
+            "Mando a distancia táctil inalámbrico circular sin cables molestos por la mesa.",
+            "Excelente índice de reproducción cromática Ra>95 para colores reales.",
+            "Sensor de luz ambiental integrado para ajuste automático del brillo."
+          ]}
+          contras={[
+            "Requiere un puerto USB libre de 5V/2A para alimentarse correctamente.",
+            "En monitores extremadamente curvos (R1000) requiere ajustar el clip de agarre."
+          ]}
+        />
+      </article>
+
+      {/* 2. BARRAS RGBIC AMBIENTALES */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+          Categoría 2: Barras de Ambiente RGBIC
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          2. AURORIONCG Barras LED RGBIC 32cm (Pack de 2) - Inmersión gaming y música
+        </h3>
+        
+        <AmazonBox 
+          title="AURORIONCG Barra LED Gaming RGBIC 32cm (Pack de 2) con Sincronización Musical" 
+          imageUrl="https://m.media-amazon.com/images/I/71D3Q1GOwHL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0G23WQRC1?tag=jotabro00-21"
+          badge="Inmersión Gaming"
+        />
+        
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Estas torres de luz RGBIC están pensadas para colocar detrás del monitor o la televisión. Gracias a los chips independientes IC (Independent Control), pueden mostrar múltiples colores al mismo tiempo en cada barra creando transiciones fluidas de tipo arcoíris o aurora.
+          </p>
+          <p>
+            Cuentan con un micrófono de alta sensibilidad integrado que capta el ritmo de la música o los efectos de sonido de tus videojuegos, haciendo reaccionar las luces en tiempo real.
+          </p>
+        </div>
+
+        <ProsContras 
+          pros={[
+            "Tecnología RGBIC avanzada que permite múltiples colores simultáneos por barra.",
+            "Sensor de micrófono con modos de sincronización musical dinámicos.",
+            "Control dual mediante App para smartphone y mando a distancia de infrarrojos.",
+            "Diseño versátil que permite posicionarlas en vertical u horizontal."
+          ]}
+          contras={[
+            "La app requiere activar Bluetooth durante la configuración inicial.",
+            "Efectos muy intensos si se colocan demasiado cerca de la vista directa."
+          ]}
+        />
+      </article>
+
+      {/* 3. PANELES HEXAGONALES Y NEÓN DIY */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+          Categoría 3: Decoración Modular de Pared
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          3. Kangtaixin Paneles Hexagonales RGB (8 Piezas) - Arte luminoso en tu pared
+        </h3>
+        
+        <AmazonBox 
+          title="Kangtaixin Hexagonal LED Pared Luces 8pcs RGB Gaming Panel" 
+          imageUrl="https://m.media-amazon.com/images/I/61-be2rpZ1L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0BDKJ88FZ?tag=jotabro00-21"
+          badge="Diseño de Pared"
+        />
+        
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Si quieres darle un toque futurista a la pared principal de tu setup de streaming o habitación, los paneles hexagonales interconectables permiten crear infinitas formas geométricas (flechas, panales, diamantes).
+          </p>
+          <p>
+            Cada bloque se comunica con el resto mediante conectores laterales y se adhiere fácilmente a la pared mediante adhesivos de doble cara sin necesidad de taladrar.
+          </p>
+        </div>
+
+        <ProsContras 
+          pros={[
+            "Montaje modular DIY totalmente personalizable en forma y patrón.",
+            "Efectos de color dinámicos controlables por zona o de forma unificada.",
+            "Incluye almohadillas adhesivas potentes que no dañan la pintura."
+          ]}
+          contras={[
+            "Se requiere planificar bien la forma antes de pegar los conectores.",
+            "Kits de amplificación adicionales se compran por separado."
+          ]}
+        />
+      </article>
+
+      {/* 4. FOCOS DE ESTUDIO Y STREAMING */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-100 px-3 py-1 rounded-full">
+          Categoría 4: Focos para Creadores de Contenido y Streaming
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          4. NEEWER Kit Focos LED de Estudio (2 Pack) - Iluminación facial profesional
+        </h3>
+        
+        <AmazonBox 
+          title="NEEWER Básico Panel Luz Vídeo LED Kit (2 Pack) con Trípodes Regulables" 
+          imageUrl="https://m.media-amazon.com/images/I/61Gj-qwZzvL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0D635B2WB?tag=jotabro00-21"
+          badge="Streaming & Webcam"
+        />
+        
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Una mala iluminación arruina la calidad de la mejor cámara o webcam. El kit de dos paneles LED de NEEWER proporciona una luz difusa, suave y constante sobre el rostro del creador de contenido, eliminando sombras duras y grano en la imagen.
+          </p>
+        </div>
+
+        <ProsContras 
+          pros={[
+            "Paneles con difusores que garantizan una luz suave que no deslumbrar durante horas.",
+            "Temperatura de color bicolor ajustable entre 3200K (cálido) y 5600K (luz día).",
+            "Trípodes telescópicos extensibles incluidos para ajustar la altura perfecta."
+          ]}
+          contras={[
+            "Ocupan espacio detrás o a los lados del escritorio.",
+            "Funcionan conectados por USB."
+          ]}
+        />
+      </article>
+
+      {/* 5. LÁMPARAS DE PIE DE ALTA POTENCIA */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">
+          Categoría 5: Lámparas de Pie de Bajo Consumo
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          5. YICAIZI Lámpara de Pie LED 42W 4000LM - Iluminación general potente
+        </h3>
+        
+        <AmazonBox 
+          title="YICAIZI Lámpara de Pie LED Regulable de 42W con Brazo de Lectura" 
+          imageUrl="https://m.media-amazon.com/images/I/615sNQa3ryL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0DY8FGYQT?tag=jotabro00-21"
+          badge="Bajo Consumo 42W"
+        />
+        
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Para iluminar una estancia completa o zona de despacho sin encender lámparas de techo de alto consumo, la lámpara YICAIZI combina un proyector superior de 4000 lúmenes orientable con un brazo secundario flexible para lectura.
+          </p>
+        </div>
+
+        <ProsContras 
+          pros={[
+            "Potencia de 4000 lúmenes capaz de iluminar habitaciones completas con tecnología LED de bajo consumo.",
+            "Brazo flexible secundario independiente ideal para lectura en sillón o escritorio.",
+            "Mando a distancia magnético que se adhiere al cuerpo metálico de la lámpara."
+          ]}
+          contras={[
+            "Requiere montaje de la estructura por tramos de tubo de acero.",
+            "Altura fija de 1.75 metros."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. EXTENSA GUÍA SEO Y ARTÍCULOS DE LARGO ALCANCE (LONG-TAIL KEYWORDS) */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        Guía Completa de Iluminación para Escritorio: Salud, Estética y Rendimiento
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        La iluminación es uno de los pilares más subestimados a la hora de diseñar un espacio de trabajo o zona gaming. Pasar más de 4 horas diarias frente a monitores emisores de luz azul exige un equilibrio entre la <strong>luz focalizada de trabajo</strong> y la <strong>luz ambiental indirecta (Bias Lighting)</strong>.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Sección 1 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. ¿Por qué una Screenbar (Barra de Luz para Monitor) es vital para evitar la Fatiga Ocular?
+      </h3>
+      <p>
+        El <strong>Síndrome de la Vista Cansada</strong> y la astenopia ocupacional se producen cuando existe un contraste excesivo entre la pantalla brillante y un entorno oscuro, o cuando las lámparas tradicionales provocan destellos y reflejos directos sobre la matriz del monitor.
+      </p>
+      <p>
+        Las barras de luz para monitor o <em>screenbars</em> (como los modelos de <strong>Quntis</strong>) resuelven este problema mediante una <strong>óptica asimétrica refinada</strong>. Su haz de luz proyecta un cono de iluminación en ángulo de 45° dirigido exclusivamente al teclado y la superficie de trabajo, sin que ni un solo rayo de luz toque la pantalla. 
+      </p>
+      <ul>
+        <li><strong>Reducción de parpadeo (Flicker-Free):</strong> Mantienen los diodos LED con corriente continua estable sin micro-parpadeos imperceptibles que fatigan el nervio óptico.</li>
+        <li><strong>Temperatura de color regulable (CCT):</strong> Permite ajustar desde 3000K (luz cálida relajante para la noche que disminuye la supresión de melatonina) hasta 6500K (luz blanca fría que estimula la atención en horas de trabajo).</li>
+        <li><strong>Ahorro de espacio total:</strong> Se sujetan en el marco superior del monitor mediante clips ponderados, liberando el 100% de la mesa de trabajo.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Sección 2 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Iluminación Ambiental RGB vs. RGBIC: ¿En qué se diferencian?
+      </h3>
+      <p>
+        Al buscar tiras LED o barras de luz para la parte trasera de la pantalla o los bordes del escritorio, es fundamental distinguir entre la tecnología RGB estándar y la <strong>tecnología RGBIC</strong>:
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 my-4 not-prose">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-800 text-lg mb-2">RGB Tradicional</h4>
+          <p class="text-sm text-slate-600">
+            Toda la tira o barra muestra un único color al mismo tiempo. Si seleccionas el color azul, toda la tira se iluminará en azul de forma uniforme.
+          </p>
+        </div>
+        <div class="bg-amber-500/10 p-6 rounded-2xl border border-amber-500/30">
+          <h4 class="font-bold text-amber-700 text-lg mb-2">RGBIC Avanzado (Independent Control)</h4>
+          <p class="text-sm text-slate-700">
+            Cada segmento de la tira cuenta con un microchip controlador independiente. Permite mostrar múltiples colores simultáneamente en la misma tira, creando efectos de arcoíris, agua corriendo o degradados vivos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Sección 3 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        3. Ventajas del Bajo Consumo LED y Eficiencia Energética
+      </h3>
+      <p>
+        Toda la selección de iluminación en **ZenZone** utiliza la tecnología de diodos emisores de luz (LED) de última generación. Frente a la iluminación tradicional halógena o incandescente, los sistemas LED ofrecen ventajas indiscutibles:
+      </p>
+      <ul>
+        <li><strong>Ahorro energético de hasta el 85%:</strong> Una barra LED de monitor consume apenas entre 5W y 10W produciendo una iluminación equivalente a bombillas antiguas de 60W.</li>
+        <li><strong>Baja emisión térmica:</strong> No generan calor radiante hacia la cara ni las manos, manteniendo la temperatura fresca del espacio de trabajo.</li>
+        <li><strong>Durabilidad superior a 30.000 horas:</strong> Equivale a más de 10 años de uso continuo durante 8 horas diarias sin necesidad de cambiar bombillas o repuestos.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Sección 4 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        4. Iluminación para Creadores de Contenido, Webcam y Streaming
+      </h3>
+      <p>
+        Si realizas videollamadas de trabajo en Zoom, clases online o emisiones en Twitch/YouTube, disponer de iluminación frontal difusa (como el kit de focos <strong>NEEWER</strong>) es el factor número uno que determina la calidad visual de tu imagen, muy por encima de la resolución pura del sensor de la cámara.
+      </p>
+      <p>
+        Para un acabado impecable, se recomienda la <strong>técnica de iluminación de dos puntos</strong>: colocar un foco principal (Key Light) a 45° del rostro y un foco de relleno (Fill Light) al otro lado a menor intensidad para suavizar sombras de la nariz y mentón.
+      </p>
+    </div>
+
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/iluminacion"
+    title="Optimiza el Resto de tu Setup 💡"
+    subtitle="Una iluminación perfecta merece acompañarse de mobiliario ergonómico y periféricos de primera calidad:"
+  />
+
+</Layout>

@@ -1,0 +1,199 @@
+---
+// src/pages/perifericos/auriculares.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "Los Mejores Auriculares para Trabajo y Gaming (2026)";
+const descripcion = "Comparativa de los mejores auriculares: cancelación de ruido activa (ANC), modelos inalámbricos para teletrabajo, cascos gaming con micrófono nítido y opciones económicas.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      Los Mejores <span class="text-amber-500">Auriculares</span> para tu Setup
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Tanto si necesitas concentrarte sin distracciones en el trabajo como comunicarte con claridad en partidas online. 
+      <strong>Descubre nuestra selección de los auriculares con mejor sonido, autonomía y cancelación de ruido.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Soundcore Q30 ANC",
+          imageUrl: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg",
+          feature1: "Cancelación de Ruido Híbrida (ANC)",
+          feature2: "Hasta 50h de batería y Hi-Res Audio",
+          amazonUrl: "https://www.amazon.es/dp/B08HMWZBXC?tag=jotabro00-21",
+          badge: "Nuestra Elección (Aislamiento)"
+        },
+        {
+          name: "JBL Quantum 100M2",
+          imageUrl: "https://m.media-amazon.com/images/I/61KmVBD4ZfL.jpg",
+          feature1: "Micrófono de varilla direccional con voz clara",
+          feature2: "Almohadillas viscoelásticas ligeras",
+          amazonUrl: "https://www.amazon.es/dp/B0FMY4ZJMT?tag=jotabro00-21",
+          badge: "Gaming Comfort"
+        },
+        {
+          name: "Logitech H111 Stereo",
+          imageUrl: "https://m.media-amazon.com/images/I/61TKoWoB7+L.jpg",
+          feature1: "Micrófono giratorio de 180°",
+          feature2: "Conector Jack 3.5mm universal",
+          amazonUrl: "https://www.amazon.es/dp/B00ZOZZM4U?tag=jotabro00-21",
+          badge: "Oficina & Llamadas"
+        },
+        {
+          name: "Sony MDR-ZX110",
+          imageUrl: "https://m.media-amazon.com/images/I/51udwldPBbL.jpg",
+          feature1: "Diseño plegable compacto",
+          feature2: "Diafragmas de 30mm de alta fidelidad",
+          amazonUrl: "https://www.amazon.es/dp/B00NBR70DO?tag=jotabro00-21",
+          badge: "Opción Económica"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis de los auriculares recomendados
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Soundcore Q30 - El rey de la cancelación de ruido calidad-precio" 
+          imageUrl="https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B08HMWZBXC?tag=jotabro00-21"
+          badge="Aislamiento Top"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Los Soundcore Q30 son la referencia del mercado si buscas aislarte del ruido ambiental sin gastar una fortuna. Su sistema de cancelación de ruido activa híbrida filtra el motor de aviones, el tráfico o el murmullo de oficina con 3 modos específicos seleccionables vía App.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Cancelación activa de ruido (ANC) con modos Transporte, Interiores y Exteriores.",
+            "Autonomía masiva de hasta 50 horas (40h con ANC activado).",
+            "Certificación Hi-Res Audio y ecualizador personalizable desde su aplicación."
+          ]}
+          contras={[
+            "Su tamaño no es el más compacto para guardar en bolsos pequeños.",
+            "El micrófono para llamadas en exteriores muy ruidosos puede captar algo de viento."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. JBL Quantum 100M2 - Inmersión gaming y micrófono ultra claro" 
+          imageUrl="https://m.media-amazon.com/images/I/61KmVBD4ZfL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0FMY4ZJMT?tag=jotabro00-21"
+          badge="Gaming & VoIP"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Diseñados por JBL específicamente para videojuegos y sesiones de voz prolongadas. Destacan por su ligereza extrema y sus almohadillas cubiertas de espuma de memoria que evitan la presión en las orejas tras varias horas de uso.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Sonido firmado por JBL QuantumSOUND optimizado para escuchar pasos y efectos espacialmente.",
+            "Micrófono de varilla extraíble con enfoque de voz centrado.",
+            "Conexión por cable de 3.5mm compatible con PC, consolas y portátiles."
+          ]}
+          contras={[
+            "No dispone de iluminación RGB ni funciones inalámbricas.",
+            "Aislamiento pasivo estándar."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. Logitech H111 - El clásico para llamadas de trabajo y videoconferencias" 
+          imageUrl="https://m.media-amazon.com/images/I/61TKoWoB7+L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B00ZOZZM4U?tag=jotabro00-21"
+          badge="Productividad"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Unos auriculares de diadema ligeros con micrófono giratorio pensado para reuniones de Zoom, Teams y llamadas de voz en la oficina o en casa. Su diseño ligero casi no se nota puesto sobre la cabeza.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Micrófono omnidireccional giratorio 180° que elimina ruidos de fondo.",
+            "Diadema ajustable ultraligera ideal para usar todo el día.",
+            "Precio altamente asequible y marca de total garantía."
+          ]}
+          contras={[
+            "No pensado para amantes del audio de alta fidelidad o música pesada.",
+            "Diseño supraaural que apoya sobre las orejas."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 */}
+      <article>
+        <AmazonBox 
+          title="4. Sony MDR-ZX110 - Auriculares estéreo cerrados y plegables" 
+          imageUrl="https://m.media-amazon.com/images/I/51udwldPBbL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B00NBR70DO?tag=jotabro00-21"
+          badge="Super Económico"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Los Sony MDR-ZX110 ofrecen el sonido nítido y equilibrado característico de Sony en un diseño giratorio y plegable fácil de transportar en la mochila. Una opción insuperable por debajo de los 10 euros.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Rango de frecuencia amplio de 12 Hz a 22 kHz con graves potentes.",
+            "Diseño plegable que se pliega totalmente plano para transporte.",
+            "Cables duraderos que evitan enredos."
+          ]}
+          contras={[
+            "No incluye micrófono incorporado.",
+            "Sin conexión inalámbrica Bluetooth."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA DE COMPRA */}
+  <section class="prose prose-slate max-w-none bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+    <h2>Guía de compra: ¿Cómo elegir los auriculares idóneos?</h2>
+    <p>A la hora de comprar auriculares para tu ordenador o espacio de trabajo, evalúa estas características clave:</p>
+    <ul>
+      <li><strong>Cancelación Activa de Ruido (ANC):</strong> Si trabajas en entornos ruidosos, el sistema ANC (como el de los <em>Soundcore Q30</em>) utiliza micrófonos exteriores para anular ruidos de baja frecuencia.</li>
+      <li><strong>Tipo de Micrófono:</strong> Para videollamadas frecuentes o juegos en equipo, un micrófono de varilla dedicado ofrece mayor nitidez que los micrófonos integrados en la copa.</li>
+      <li><strong>Conexión Inalámbrica vs. Cable:</strong> Los modelos bluetooth ofrecen libertad de movimiento en el escritorio, mientras que el cable de 3.5mm o USB garantiza cero latencia y batería ilimitada.</li>
+    </ul>
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/perifericos/auriculares"
+    title="Mejora tu Aislamiento Acústico y Confort 🎧"
+    subtitle="Disfruta de tu música y conferencias combinando tus cascos con altavoces de escritorio o iluminación ambiental:"
+  />
+
+</Layout>

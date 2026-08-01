@@ -1,0 +1,302 @@
+---
+// src/pages/alfombrillas.astro
+import Layout from '../layouts/Layout.astro';
+import TablaComparativa from '../components/TablaComparativa.astro';
+import AmazonBox from '../components/AmazonBox.astro';
+import ProsContras from '../components/ProsContras.astro';
+import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+
+const titulo = "Las Mejores Alfombrillas de Ratón XXL, RGB y Ergonómicas (2026)";
+const descripcion = "Guía y comparativa de las mejores alfombrillas para setup: alfombrillas de escritorio XXL (90cm), modelos con iluminación LED RGB, carga inalámbrica Qi 15W, gel y gaming.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🖱️ Superficies & Alfombrillas de Escritorio 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      Las Mejores <span class="text-amber-500">Alfombrillas</span> para tu Setup y Gaming RGB
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Una buena alfombrilla de escritorio delimita tu espacio, protege la mesa y le da esa estética espectacular con iluminación RGB a juego con tu teclado y torre. 
+      <strong>Descubre las mejores alfombrillas XXL, modelos con iluminación LED RGB de fibra óptica, carga inalámbrica y gel ergonómico.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA PRINCIPAL */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Comparativa de las alfombrillas destacadas</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "Realky RGB XXL 80x30cm",
+          imageUrl: "https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg",
+          feature1: "14 Modos de Iluminación LED RGB",
+          feature2: "Base de goma natural antideslizante 4mm",
+          amazonUrl: "https://www.amazon.es/dp/B09DXZLR1X?tag=jotabro00-21",
+          badge: "Nuestra Elección (Gaming RGB)"
+        },
+        {
+          name: "Gimars RGB + Carga Qi 15W",
+          imageUrl: "https://m.media-amazon.com/images/I/71nt3hcRpoL.jpg",
+          feature1: "Base de carga inalámbrica 15W para móvil",
+          feature2: "10 modos LED de fibra óptica",
+          amazonUrl: "https://www.amazon.es/dp/B09Q81J77H?tag=jotabro00-21",
+          badge: "RGB + Carga Inalámbrica"
+        },
+        {
+          name: "Titanwolf Speed XXL 90x40cm",
+          imageUrl: "https://m.media-amazon.com/images/I/81IP3XKIWkL.jpg",
+          feature1: "Superficie de tejido suave Speed",
+          feature2: "Sin luces, acabado profesional mate",
+          amazonUrl: "https://www.amazon.es/dp/B07H37NQNQ?tag=jotabro00-21",
+          badge: "Espacio Gigante XXL"
+        },
+        {
+          name: "Logitech Desk Mat 70x30cm",
+          imageUrl: "https://m.media-amazon.com/images/I/510xGGdgocL.jpg",
+          feature1: "Revestimiento a prueba de salpicaduras",
+          feature2: "Bordes reforzados anti-deshilachado",
+          amazonUrl: "https://www.amazon.es/dp/B07W5JK3Z2?tag=jotabro00-21",
+          badge: "Oficina & Estilo"
+        },
+        {
+          name: "Amazon Basics Gel Ergonómica",
+          imageUrl: "https://m.media-amazon.com/images/I/71mbxPIMl1S.jpg",
+          feature1: "Reposamuñecas con gel viscoelástico",
+          feature2: "Formato compacto de apoyo muñeca",
+          amazonUrl: "https://www.amazon.es/dp/B06X3W3TM4?tag=jotabro00-21",
+          badge: "Ergonómica Gel"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES EN DETALLE */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis al detalle de alfombrillas recomendadas
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 - RGB GAMING */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+          Estética Gamer & RGB
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          1. Realky RGB XXL (800 x 300 mm) - Espectáculo de color en el borde de tu mesa
+        </h3>
+        
+        <AmazonBox 
+          title="Realky Alfombrilla de Ratón RGB XXL con 14 Efectos de Iluminación LED" 
+          imageUrl="https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B09DXZLR1X?tag=jotabro00-21"
+          badge="Top Ventas RGB"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Esta alfombrilla XXL cuenta con una tira de fibra óptica cosida a lo largo de todo el perímetro que ofrece <strong>14 modos de iluminación LED</strong> (7 colores estáticos, modos respiración y efectos de onda dinámicos). Un solo botón de control permite cambiar de modo sin necesidad de instalar software en el PC.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "14 modos de luz RGB brillantes controlables con un solo botón físico.",
+            "Función de memoria integrada que recuerda el último modo elegido al encender el PC.",
+            "Superficie textil micro-texturizada de alta velocidad y base de goma natural antideslizante.",
+            "Alimentación directa por cable USB trenzado desmontable."
+          ]}
+          contras={[
+            "No se sincroniza por software con sistemas como Razer Chroma o Corsair iCUE.",
+            "El módulo del botón ocupa un pequeño espacio en la esquina superior izquierda."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 - RGB + CARGA QI */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+          Innovación & Carga Inalámbrica
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          2. Gimars RGB con Carga Inalámbrica Qi 15W - Carga tu smartphone mientras juegas
+        </h3>
+        
+        <AmazonBox 
+          title="Gimars Alfombrilla Ratón Gaming RGB con 15W Carga Inalámbrica Integrada" 
+          imageUrl="https://m.media-amazon.com/images/I/71nt3hcRpoL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B09Q81J77H?tag=jotabro00-21"
+          badge="RGB + Cargador 15W"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Combina lo mejor de dos mundos: iluminación RGB de borde con una base de carga rápida inalámbrica de 15W integrada en la parte superior. Solo necesitas apoyar tu smartphone o auriculares con carga Qi para recargarlos mientras juegas o trabajas.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Cargador rápido Qi de 15W integrado con protección de sobrecalentamiento.",
+            "10 modos de luz LED de fibra óptica brillantes.",
+            "Superficie extra suave que no entorpece los giros rápidos con el ratón."
+          ]}
+          contras={[
+            "Requiere un cargador de pared USB QC 3.0 para sacar la máxima potencia de 15W.",
+            "La zona de carga ocupa un área fija en el lateral de la alfombrilla."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 - TITANWOLF XXL */}
+      <article>
+        <AmazonBox 
+          title="3. Titanwolf Speed Gaming XXL (900 x 400 mm) - Máximo control y espacio gigante" 
+          imageUrl="https://m.media-amazon.com/images/I/81IP3XKIWkL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07H37NQNQ?tag=jotabro00-21"
+          badge="Espacio Gigante XXL"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            La alfombrilla Titanwolf XXL de 90 cm x 40 cm es la favorita de los usuarios que buscan un acabado textil plano sin luces. Ofrece un espacio gigante sobre el que colocar holgadamente tanto el teclado completo como el ratón, permitiendo movimientos de brazo amplios sin quedarse sin espacio.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Tamaño XXL de 900x400 mm que cubre la zona principal del escritorio.",
+            "Tejido micro-texturizado extremadamente suave que optimiza el seguimiento óptico y láser.",
+            "Base de caucho natural con textura antideslizante que no se mueve de la mesa.",
+            "Costura perimetral reforzada de hilo doble que evita que se deshilachen los bordes."
+          ]}
+          contras={[
+            "Sin luces LED RGB para quien busque estética iluminada.",
+            "Al ser de tela requiere lavado periódico si se derrama líquido."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 - LOGITECH DESK MAT */}
+      <article>
+        <AmazonBox 
+          title="4. Logitech Desk Mat Studio Series - Resistente a líquidos y elegante" 
+          imageUrl="https://m.media-amazon.com/images/I/510xGGdgocL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07W5JK3Z2?tag=jotabro00-21"
+          badge="Resistente a Líquidos"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            La alfombrilla de escritorio de la serie Studio de Logitech destaca por su capa exterior repelente al agua. Si se derrama café, agua o té por accidente, el líquido forma pequeñas gotas en la superficie que se pueden limpiar fácilmente con un trapo húmedo sin manchar la tela.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Recubrimiento hidrófugo a prueba de salpicaduras accidentales de café o agua.",
+            "Diseño minimalista y refinado ideal para entornos de oficina modernos.",
+            "Bordes cosidos planos que no molestan en los antebrazos."
+          ]}
+          contras={[
+            "Tamaño de 700x300 mm algo más compacto que las de 900x400 mm.",
+            "Grosor fino de 2 mm."
+          ]}
+        />
+      </article>
+
+      {/* Producto 5 - ERGONÓMICA GEL */}
+      <article>
+        <AmazonBox 
+          title="5. Amazon Basics con Reposamuñecas de Gel - Ergonómica y adaptable" 
+          imageUrl="https://m.media-amazon.com/images/I/71mbxPIMl1S.jpg"
+          amazonUrl="https://www.amazon.es/dp/B06X3W3TM4?tag=jotabro00-21"
+          badge="Ergonómica de Gel"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Si trabajas principalmente con el ratón y sufres molestias en la muñeca o en la base de la palma, esta alfombrilla ergonómica incorpora una cojín relleno de gel viscoelástico que se amolda al contorno de tu muñeca distribuyendo el peso de forma neutra.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Cojín de gel con memoria que reduce la presión puntual sobre el nervio carpiano.",
+            "Base inferior antideslizante adhesiva de poliuretano que queda fija en la mesa.",
+            "Tamaño compacto ideal para escritorios pequeños."
+          ]}
+          contras={[
+            "Diseñada únicamente para el ratón (no abarca el teclado).",
+            "La zona de desplazamiento del ratón es más reducida."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA SEO EXTENSA Y PALABRAS CLAVE LONG-TAIL */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        Guía Completa para Elegir la Alfombrilla o Protector de Escritorio Perfecto
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        La alfombrilla de ratón ha dejado de ser un simple accesorio secundario para convertirse en un elemento clave en la acústica, la ergonomía y la estética RGB de tu setup.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. Alfombrillas Gaming con Iluminación LED RGB: Estética & Modos de Luz
+      </h3>
+      <p>
+        Las alfombrillas con borde RGB utilizan un hilo de <strong>fibra óptica de alta transmisibilidad</strong> cosido alrededor de los bordes mediante hilo de nylon de alta resistencia. Aportan una estética impresionante en setups oscuros o con iluminación ambiental, permitiendo elegir entre:
+      </p>
+      <ul>
+        <li><strong>Colores Estáticos:</strong> Rojo, verde, azul, morado, cian, amarillo o blanco para ir a juego con los leds de la torre o del teclado.</li>
+        <li><strong>Modos Dinámicos:</strong> Respiración multicolor, arcoíris giratorio y ráfagas que reaccionan al ritmo de la partida.</li>
+        <li><strong>Alimentación por USB:</strong> Conectar y listo (Plug & Play) con cable de nylon trenzado que se puede desconectar para limpiar la alfombrilla.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Ventajas de las Alfombrillas Tamaño XXL (Desk Mats)
+      </h3>
+      <ul>
+        <li><strong>Absorción de Vibraciones y Ruido:</strong> Amortiguan el impacto de las teclas al teclear, reduciendo el eco y el ruido metálico sobre la mesa de madera o cristal.</li>
+        <li><strong>Consistencia en el Deslizamiento:</strong> Al ser una superficie continua de 80x30 cm o 90x40 cm, nunca te quedarás sin espacio al realizar giros o desplazamientos amplios con el ratón.</li>
+        <li><strong>Protección de la Madera:</strong> Evita el desgaste de la pintura, arañazos o marcas por el roce constante de la torre, tazas o brazos.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        3. Alfombrillas Ergonómicas con Gel vs. Desk Mats
+      </h3>
+      <p>
+        Si sufres del <strong>síndrome del túnel carpiano</strong> o dolor en la articulación de la muñeca, una alfombrilla compacta con elevado de gel de silicona (como el modelo de <em>Amazon Basics</em>) mantiene la mano en posición recta neutra. Por contra, las alfombrillas extendidas XXL están orientadas a quienes prefieren un agarre libre de brazo completo.
+      </p>
+    </div>
+
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/alfombrillas"
+    title="Equipa tu Escritorio al Completo 🖱️"
+    subtitle="Una alfombrilla limpia rinde al máximo con un buen ratón ergonómico, un teclado slim y una mesa elevable:"
+  />
+
+</Layout>

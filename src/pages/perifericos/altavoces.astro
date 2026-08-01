@@ -1,0 +1,199 @@
+---
+// src/pages/perifericos/altavoces.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "Los Mejores Altavoces y Barras de Sonido para PC (2026)";
+const descripcion = "Comparativa de los mejores altavoces para escritorio: barras de sonido compactas bajo monitor, sistemas estéreo 2.0 con Bluetooth y opciones super económicas.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      Los Mejores <span class="text-amber-500">Altavoces</span> de Escritorio
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Eleva la experiencia sonora de tu setup para escuchar música, podcasts, vídeos o juegos con nitidez sin ocupar espacio innecesario en tu mesa. 
+      <strong>Descubre las mejores soluciones de audio para ordenador.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Logitech Z150 2.0",
+          imageUrl: "https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg",
+          feature1: "Sonido estéreo nítido de 6W pico",
+          feature2: "Entrada auxiliar y toma para auriculares",
+          amazonUrl: "https://www.amazon.es/dp/B00EUUXFFS?tag=jotabro00-21",
+          badge: "Nuestra Elección (Oficina)"
+        },
+        {
+          name: "SOULION R60 Barra de Sonido",
+          imageUrl: "https://m.media-amazon.com/images/I/71fJagWPNlL.jpg",
+          feature1: "Formato barra de sonido bajo monitor",
+          feature2: "Conexión Bluetooth 5.3 + USB y LED",
+          amazonUrl: "https://www.amazon.es/dp/B0D53P5R7T?tag=jotabro00-21",
+          badge: "Ahorro de Espacio"
+        },
+        {
+          name: "SOULION C30 Bluetooth",
+          imageUrl: "https://m.media-amazon.com/images/I/712j-q7+jQL.jpg",
+          feature1: "Altavoces 2.0 con drivers en ángulo",
+          feature2: "Iluminación de colores y doble entrada",
+          amazonUrl: "https://www.amazon.es/dp/B0DY7FP9CH?tag=jotabro00-21",
+          badge: "Gaming RGB"
+        },
+        {
+          name: "Amazon Basics 2.0",
+          imageUrl: "https://m.media-amazon.com/images/I/71DVfwSDN-L.jpg",
+          feature1: "Alimentación USB plug and play",
+          feature2: "Diseño compacto en negro mate",
+          amazonUrl: "https://www.amazon.es/dp/B07DDK3W5D?tag=jotabro00-21",
+          badge: "Opción Económica"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis en detalle de altavoces recomendados
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Logitech Z150 - Fiabilidad y nitidez para el uso diario" 
+          imageUrl="https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B00EUUXFFS?tag=jotabro00-21"
+          badge="Productividad Top"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Los Logitech Z150 son la elección más equilibrada para quienes buscan un audio estéreo claro sin complicaciones. Cuentan con un control giratorio frontal para encender y regular el volumen, además de una toma de auriculares de 3.5mm de acceso directo.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Sonido estéreo nítido y libre de distorsiones en diálogos y videollamadas.",
+            "Toma frontal para conectar auriculares rápidamente sin agacharte a la torre del PC.",
+            "Diseño compacto en torres verticales que encajan a los lados del monitor."
+          ]}
+          contras={[
+            "No dispone de conectividad inalámbrica Bluetooth.",
+            "Potencia de graves justa para estancias muy grandes."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. SOULION R60 Barra de Sonido - La solución perfecta para colocar bajo el monitor" 
+          imageUrl="https://m.media-amazon.com/images/I/71fJagWPNlL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0D53P5R7T?tag=jotabro00-21"
+          badge="Ahorro de Espacio"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            La barra de sonido SOULION R60 ha sido diseñada específicamente para colocarse justo en el espacio libre debajo del monitor. Incorpora conexión doble (Bluetooth 5.3 e hilo de 3.5mm) y 12W de potencia con luces de colores decorativas.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Formato alargado y delgado que aprovecha el espacio muerto bajo la pantalla.",
+            "Conexión Bluetooth 5.3 rápida para vincular el móvil o portátil al instante.",
+            "Alimentación directa por puerto USB sin necesidad de enchufe de pared adicional."
+          ]}
+          contras={[
+            "La separación de canal izquierdo/derecho es menor que en altavoces 2.0 separados.",
+            "Las luces LED no son totalmente apagables en algunos modos."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. SOULION C30 Bluetooth 2.0 - Audio en ángulo con iluminación gaming" 
+          imageUrl="https://m.media-amazon.com/images/I/712j-q7+jQL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0DY7FP9CH?tag=jotabro00-21"
+          badge="Gaming RGB"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Con un diseño inclinado a 30 grados, estos altavoces dirigen el sonido directamente a la altura de tus oídos cuando estás sentado frente al escritorio, mejorando drásticamente la claridad de los agudos y medios.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Inclinación ergonómica que proyecta el sonido hacia la cabeza del usuario.",
+            "Modo Bluetooth + entrada Auxiliar con conmutación sencilla.",
+            "Efecto de iluminación de ambiente atractivo para setups gaming."
+          ]}
+          contras={[
+            "El cable entre ambos altavoces no es desenchufable.",
+            "Estética enfocada principalmente a setups modernos y gaming."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 */}
+      <article>
+        <AmazonBox 
+          title="4. Amazon Basics 2.0 - Sencillez e imagen cuidada al mejor precio" 
+          imageUrl="https://m.media-amazon.com/images/I/71DVfwSDN-L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07DDK3W5D?tag=jotabro00-21"
+          badge="Super Económico"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            La propuesta de Amazon Basics para audio de escritorio se basa en dos pequeños altavoces alimentados por USB que cumplen sobradamente para escuchar vídeos de YouTube, videollamadas o música de fondo.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Precio imbatible por un par de altavoces funcionales y discretos.",
+            "Alimentados por USB 5V, ideales para conectar a portátiles o monitores.",
+            "Diseño minimalista en negro mate."
+          ]}
+          contras={[
+            "Sin conexión Bluetooth.",
+            "El volumen máximo es moderado."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA DE COMPRA */}
+  <section class="prose prose-slate max-w-none bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+    <h2>Guía de compra: ¿Qué altavoces son ideales para tu mesa?</h2>
+    <p>Considera las siguientes alternativas según el diseño de tu escritorio:</p>
+    <ul>
+      <li><strong>Barras de Sonido bajo Monitor:</strong> Si tienes un escritorio estrecho o lleno de accesorios, las barras de sonido (como la <em>SOULION R60</em>) se colocan bajo la pantalla liberando los laterales de la mesa.</li>
+      <li><strong>Sistemas Estéreo 2.0:</strong> Ofrecen mejor separación espacial de canales (izquierdo/derecho) para percibir con mayor realismo los efectos de sonido y la música.</li>
+      <li><strong>Alimentación USB vs Enchufe:</strong> Los altavoces alimentados por USB (5V) no requieren un enchufe de pared libre y se apagan automáticamente junto con el ordenador.</li>
+    </ul>
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/perifericos/altavoces"
+    title="Eleva la Experiencia de Audio de tu Mesa 🔊"
+    subtitle="Complementa el sonido de tu escritorio con una alfombrilla XXL de tela y una silla ergonómica:"
+  />
+
+</Layout>

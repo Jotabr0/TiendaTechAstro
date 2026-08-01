@@ -1,0 +1,199 @@
+---
+// src/pages/perifericos/teclados.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "Los Mejores Teclados Ergonómicos, Mecánicos y Slim (2026)";
+const descripcion = "Comparativa de los mejores teclados para ordenador: inalámbricos con reposamuñecas, mecánicos gaming, modelos extra finos y opciones económicas.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      Los Mejores <span class="text-amber-500">Teclados</span> para Trabajo y Gaming
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Escribir con comodidad, rapidez y sin fatiga postural marca la diferencia en tu rendimiento diario. 
+      <strong>Analizamos los mejores teclados ergonómicos, inalámbricos y mecánicos del mercado.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Logitech Wave Keys",
+          imageUrl: "https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg",
+          feature1: "Diseño ergonómico en onda",
+          feature2: "Reposamuñecas acolchado de viscoelástica",
+          amazonUrl: "https://www.amazon.es/dp/B07W6J71BL?tag=jotabro00-21",
+          badge: "Nuestra Elección (Ergonómico)"
+        },
+        {
+          name: "Logitech Signature Slim K950",
+          imageUrl: "https://m.media-amazon.com/images/I/61P3q+-7jkL.jpg",
+          feature1: "Diseño ultradelfado silencioso",
+          feature2: "Easy-Switch para 3 dispositivos",
+          amazonUrl: "https://www.amazon.es/dp/B0CTKRK42K?tag=jotabro00-21",
+          badge: "Productividad Slim"
+        },
+        {
+          name: "Mars Gaming MCPTKL",
+          imageUrl: "https://m.media-amazon.com/images/I/71coxqfQnTL.jpg",
+          feature1: "Formato TKL sin teclado numérico",
+          feature2: "Tecnología híbrida H-Mech y RGB",
+          amazonUrl: "https://www.amazon.es/dp/B08D99PFSD?tag=jotabro00-21",
+          badge: "Gaming Calidad-Precio"
+        },
+        {
+          name: "Logitech K120 Business",
+          imageUrl: "https://m.media-amazon.com/images/I/61U-L2mrlRL.jpg",
+          feature1: "Resistente a vertidos de líquidos",
+          feature2: "Conexión USB directa Plug & Play",
+          amazonUrl: "https://www.amazon.es/dp/B00564NI9U?tag=jotabro00-21",
+          badge: "Opción Económica"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis en detalle de los teclados destacados
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Logitech Wave Keys - Ergonomía natural con reposamuñecas acolchado" 
+          imageUrl="https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07W6J71BL?tag=jotabro00-21"
+          badge="Ergonómico Top"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El Logitech Wave Keys combina un formato en onda curvado que alinea de forma natural manos y antebrazos con un reposamuñecas integrado de espuma viscoelástica de tres capas. Es perfecto para quienes escriben miles de palabras al día y quieren evitar la fatiga o tensión articular.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Distribución curvada que reduce la tensión en hombros y muñecas.",
+            "Reposamuñecas integrado ultra cómodo con acolchado viscoelástico.",
+            "Conexión inalámbrica multidispositivo mediante Bluetooth o Logi Bolt."
+          ]}
+          contras={[
+            "El reposamuñecas está fijo y no se puede separar del teclado.",
+            "Requiere un ligero periodo de adaptación al formato en onda."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Logitech Signature Slim K950 - Elegancia y pulsación silenciosa" 
+          imageUrl="https://m.media-amazon.com/images/I/61P3q+-7jkL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0CTKRK42K?tag=jotabro00-21"
+          badge="Productividad Slim"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Con un perfil estilizado similar al de un ordenador portátil avanzado, el Signature Slim K950 ofrece una escritura extremadamente silenciosa y fluida. Permite alternar al instante entre tu PC de escritorio, tu portátil de trabajo y tu tablet mediante sus teclas Easy-Switch dedicadas.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Pulsación suave y discreta muy silenciosa.",
+            "Diseño de bajo perfil elegante que ocupa poco espacio vertical.",
+            "Cambio rápido entre 3 dispositivos multisistema (Windows, Mac, ChromeOS)."
+          ]}
+          contras={[
+            "No incluye retroiluminación en las teclas.",
+            "Las teclas de perfil bajo tienen un recorrido corto."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. Mars Gaming MCPTKL - Combo compacto TKL con sensación mecánica" 
+          imageUrl="https://m.media-amazon.com/images/I/71coxqfQnTL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B08D99PFSD?tag=jotabro00-21"
+          badge="Gaming Calidad-Precio"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Pensado para setup de juegos y escritorios reducidos, este teclado TKL elimina el bloque numérico para dar más espacio de movimiento al ratón. Su tecnología híbrida H-Mech combina la rapidez de los teclados mecánicos con el silencio y durabilidad de la membrana.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Formato TKL compacto que libera espacio en la mesa.",
+            "Iluminación RGB Flow atractiva y tecnología anti-ghosting.",
+            "Excelente relación calidad-precio para presupuestos ajustados."
+          ]}
+          contras={[
+            "Conexión exclusivamente por cable USB.",
+            "Al ser TKL no incluye teclado numérico lateral."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 */}
+      <article>
+        <AmazonBox 
+          title="4. Logitech K120 Business - El clásico indestructible para oficina" 
+          imageUrl="https://m.media-amazon.com/images/I/61U-L2mrlRL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B00564NI9U?tag=jotabro00-21"
+          badge="Super Económico"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El Logitech K120 es el estándar de oro en fiabilidad y resistencia. Un teclado de tamaño completo resistente a derrames accidentales de líquidos, ideal para quien busca un dispositivo robusto, duradero y directo al grano sin complicaciones.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Diseño resistente con drenaje frente a vertidos de líquidos.",
+            "Teclas de perfil estándar duraderas probadas hasta 10 millones de pulsaciones.",
+            "Conexión USB Plug & Play sin necesidad de drivers."
+          ]}
+          contras={[
+            "Diseño básico de oficina sin florituras ni luces.",
+            "Conexión fija por cable USB."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA DE COMPRA */}
+  <section class="prose prose-slate max-w-none bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+    <h2>Guía de compra: ¿Qué teclado elegir para tu escritorio?</h2>
+    <p>A la hora de comprar un teclado debes valorar el uso principal que le vas a dar y tu comodidad muscular:</p>
+    <ul>
+      <li><strong>Teclados Ergonómicos en Onda:</strong> Si pasas más de 6 horas escribiendo al día, formatos con curva o reposamuñecas (como el <em>Logitech Wave Keys</em>) evitan la compresión de nervios y la desviación cubital de las muñecas.</li>
+      <li><strong>Formatos (100% vs. TKL 80%):</strong> Los teclados completos son ideales para contabilidad y hojas de cálculo. Los formatos TKL (sin teclado numérico) permiten colocar el ratón más cerca del cuerpo, relajando el hombro derecho.</li>
+      <li><strong>Mecánicos vs. Membrana vs. Híbridos:</strong> Los mecánicos aportan mayor precisión táctil y durabilidad, mientras que los teclados de membrana o bajo perfil (Slim) destacan por su silencio absoluto al teclear.</li>
+    </ul>
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/perifericos/teclados"
+    title="Optimiza tu Puesto de Escritura ⌨️"
+    subtitle="Tu teclado rinde el doble al combinarlo con un ratón vertical ergonómico, una alfombrilla XXL o iluminación ambiental:"
+  />
+
+</Layout>

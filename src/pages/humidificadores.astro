@@ -1,0 +1,253 @@
+---
+// src/pages/humidificadores.astro
+import Layout from '../layouts/Layout.astro';
+import TablaComparativa from '../components/TablaComparativa.astro';
+import AmazonBox from '../components/AmazonBox.astro';
+import ProsContras from '../components/ProsContras.astro';
+import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+
+const titulo = "Los Mejores Humidificadores para Setup y Oficina (2026) | RGB, Ultrasónicos y Silenciosos";
+const descripcion = "Guía y comparativa de los mejores humidificadores para escritorio: humidificadores ultrasónicos con luces LED RGB de colores, inteligentes WiFi Alexa, difusores de aromas y bajo consumo.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 text-xs font-bold uppercase tracking-wider mb-4">
+      💨 Salud & Climatización de Setup 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      Los Mejores <span class="text-amber-500">Humidificadores</span> para tu Setup y Oficina
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Mantener un nivel de humedad relativa óptimo (40%-60%) en tu espacio de trabajo previene la sequedad ocular y la piel reseca, aportando además un toque espectacular a tu escritorio con luces LED de colores a juego con tus leds. 
+      <strong>Descubre los humidificadores ultrasónicos silenciosos, inteligentes y difusores de aromaterapia con efectos RGB.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA PRINCIPAL */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Comparativa de los humidificadores recomendados</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "Cecotec Pure Aroma 300 RGB",
+          imageUrl: "https://m.media-amazon.com/images/I/61ujH1-gLaL.jpg",
+          feature1: "7 colores LED de ambiente para setup",
+          feature2: "Difusor ultrasónico de aceites esenciales 10W",
+          amazonUrl: "https://www.amazon.es/dp/B0F6D4RS1F?tag=jotabro00-21",
+          badge: "Nuestra Elección (RGB & Setup)"
+        },
+        {
+          name: "DREO 3L Silencioso",
+          imageUrl: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg",
+          feature1: "Sensor de humedad e higrostato 26dB",
+          feature2: "30h de autonomía con luz nocturna",
+          amazonUrl: "https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21",
+          badge: "Silencio & Salud"
+        },
+        {
+          name: "Levoit LV600S Smart 6L",
+          imageUrl: "https://m.media-amazon.com/images/I/51696SVoe+L.jpg",
+          feature1: "Control WiFi por App y Alexa/Google",
+          feature2: "Niebla fría y cálida con 36h de uso",
+          amazonUrl: "https://www.amazon.es/dp/B0B744C8LB?tag=jotabro00-21",
+          badge: "Inteligente & Gran Capacidad"
+        },
+        {
+          name: "ZOVHYYA 500ml 14 LED",
+          imageUrl: "https://m.media-amazon.com/images/I/81GpduVjpEL.jpg",
+          feature1: "14 modos de luces LED con mando",
+          feature2: "Incluye 8 aceites esenciales puros",
+          amazonUrl: "https://www.amazon.es/dp/B0CSYY5GXR?tag=jotabro00-21",
+          badge: "Pack Kit Aromaterapia"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES EN DETALLE */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis al detalle de cada modelo
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 - CECOTEC RGB */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+          Estética Setup & RGB
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          1. Cecotec Pure Aroma 300 RGB - Iluminación decorativa de 7 colores para tu mesa
+        </h3>
+        
+        <AmazonBox 
+          title="Cecotec Humidificador Ultrasónico con Difusor de Aromas y 7 Colores LED" 
+          imageUrl="https://m.media-amazon.com/images/I/61ujH1-gLaL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0F6D4RS1F?tag=jotabro00-21"
+          badge="Top Ventas RGB"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El Cecotec Pure Aroma 300 Yang White es uno de los dispositivos más populares entre jóvenes para complementar la estética de su escritorio. Su anillo perimetral translúcido proyecta <strong>7 colores LED ajustables</strong> en tono brillante o tenue, o en modo de transición suave que combina a la perfección con torres de PC y periféricos iluminados.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Iluminación LED de 7 colores seleccionable para ambientar el setup.",
+            "Tecnología ultrasónica silenciosa que difunde niebla fría con fragancias de aceites esenciales.",
+            "Consumo súper reducido de solo 10W.",
+            "Temporizador de funcionamiento de 1, 3 y 6 horas con apagado automático."
+          ]}
+          contras={[
+            "Depósito de 300 ml ideado para mesas de escritorio y habitaciones medianas.",
+            "Requiere conexión a toma eléctrica estándar."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 - DREO SILENCIOSO */}
+      <article>
+        <AmazonBox 
+          title="2. DREO 3L Ultrasónico - El humidificador más silencioso con sensor inteligente" 
+          imageUrl="https://m.media-amazon.com/images/I/61EBVYinRGL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21"
+          badge="Silencio & Salud"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El DREO de 3 litros destaca por un funcionamiento extremadamente silencioso de apenas <strong>26 dB</strong>, convirtiéndose en el aliado perfecto para escritorios de trabajo que requieren máxima concentración o para dormitorios durante la noche. Incorpora un sensor de humedad que autorregula la expulsión de niebla para mantener siempre el rango saludable ideal.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Nivel sonoro imperceptible de 26 dB que no distrae en llamadas ni al dormir.",
+            "Sensor higrómetro inteligente que ajusta la niebla en función de la humedad ambiente.",
+            "Bandeja para aceites esenciales de aromaterapia y boquilla orientable 360°.",
+            "Hasta 30 horas de funcionamiento ininterrumpido con una sola carga de agua."
+          ]}
+          contras={[
+            "No dispone de conectividad por aplicación móvil WiFi.",
+            "Requiere limpieza semanal del depósito para evitar acumulación de cal."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 - LEVOIT SMART */}
+      <article>
+        <AmazonBox 
+          title="3. Levoit LV600S Smart 6L - El gigante inteligente para estancias amplias" 
+          imageUrl="https://m.media-amazon.com/images/I/51696SVoe+L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0B744C8LB?tag=jotabro00-21"
+          badge="WiFi & Domótica"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El Levoit LV600S representa el estándar de gama alta en climatización. Con su enorme tanque de 6 litros y conectividad por la App VeSync, permite programar horarios, monitorear la humedad de la habitación desde el smartphone y controlar la unidad con comandos de voz mediante <strong>Amazon Alexa o Google Assistant</strong>.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Capacidad masiva de 6L para cubrir estancias de hasta 70 m² durante 36 horas.",
+            "Opciones duales de vaporización: niebla fría o niebla templada de rápida dispersión.",
+            "Control inteligente total vía App móvil y asistentes de voz inteligentes.",
+            "Llenado superior Top-Fill ultra cómodo."
+          ]}
+          contras={[
+            "Inversión superior a los modelos básicos.",
+            "Dimensiones más grandes en la mesa o suelo."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 - ZOVHYYA 14 LED */}
+      <article class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+          Pack Completo Aromaterapia & RGB
+        </span>
+        <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-4">
+          4. ZOVHYYA 500ml con 14 Luces LED y Mando - Kit completo de aceites esenciales
+        </h3>
+        
+        <AmazonBox 
+          title="ZOVHYYA Difusor de Aceites Esenciales 500ml con 14 Luces LED y Mando a Distancia" 
+          imageUrl="https://m.media-amazon.com/images/I/81GpduVjpEL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0CSYY5GXR?tag=jotabro00-21"
+          badge="Kit 14 Luces LED"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Este humidificador y difusor incluye 14 secuencias de color LED ajustables con mando a distancia magnético. Su depósito de 500 ml ofrece hasta 12 horas de vapor continuo y viene acompañado de un kit de frascos de aceites esenciales puros para aromatizar el espacio.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "14 modos de iluminación ambiental LED con brillo regulable.",
+            "Incluye frascos de aceites esenciales de plantas para aromaterapia.",
+            "Mando a distancia cómodo para cambiar colores y temporizador desde la silla."
+          ]}
+          contras={[
+            "Carcasa de plástico con acabado imitación madera.",
+            "Niebla continua de potencia media."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA SEO EXTENSA Y PALABRAS CLAVE LONG-TAIL */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        Guía Completa sobre Humidificadores de Escritorio: Salud Visual, Respiratoria y Estética RGB
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        El uso continuado de aires acondicionados en verano y sistemas de calefacción en invierno reduce drásticamente los niveles de humedad en interiores por debajo del 30%. Esto genera sequedad ambiental que afecta negativamente a quienes pasan muchas horas trabajando o jugando frente a la pantalla.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. Humidificadores con Iluminación LED RGB: El toque de ambientación perfecto
+      </h3>
+      <p>
+        Además de aportar el nivel de hidratación del aire idóneo, los humidificadores con luces LED de colores (como los de <em>Cecotec</em> o <em>ZOVHYYA</em>) funcionan como <strong>lámparas de luz ambiental suave</strong> que combinan a la perfección con la estética de escritorios gamer o modernos. Permiten fijar un color o dejar que los colores cambien de forma relajante.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Beneficios de mantener un 40%-60% de Humedad Relativa en tu Setup
+      </h3>
+      <ul>
+        <li><strong>Reducción del Síndrome del Ojo Seco:</strong> Parpadear con menor frecuencia frente al monitor sumado a un aire seco provoca irritación ocular. Un humidificador mantiene la película lagrimal hidratada.</li>
+        <li><strong>Prevención de Irritaciones de Garganta y Vías Respiratorias:</strong> Ayuda a mantener las mucosas nasal y faríngea húmedas, reduciendo la vulnerabilidad ante virus y alergias.</li>
+        <li><strong>Cuidado de la Piel:</strong> Previene la descamación y sensación de tirantez cutánea facial durante largas jornadas de teletrabajo.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/humidificadores"
+    title="Mejora el Rendimiento de tu Zona de Trabajo 💨"
+    subtitle="Un ambiente hidratado se complementa con la iluminación adecuada y el mobiliario ergonómico ideal:"
+  />
+
+</Layout>

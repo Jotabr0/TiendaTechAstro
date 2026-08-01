@@ -1,0 +1,230 @@
+---
+// src/pages/sillas-oficina.astro
+import Layout from '../layouts/Layout.astro';
+import TablaComparativa from '../components/TablaComparativa.astro';
+import AmazonBox from '../components/AmazonBox.astro';
+import ProsContras from '../components/ProsContras.astro';
+import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+
+const titulo = "Las Mejores Sillas de Oficina Ergonómicas para Teletrabajo (2026)";
+const descripcion = "Comparativa y análisis de las mejores sillas de oficina ergonómicas: soporte lumbar 2D/3D, malla transpirable anti-sudor, uso intensivo +8h y salud postural.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🪑 Guía de Ergonomía & Salud Postural 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      Las Mejores <span class="text-amber-500">Sillas de Oficina</span> Ergonómicas
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Pasar 8 horas diarias sentado frente al ordenador sin una silla ergonómica adecuada desencadena dolores de espalda, rigidez de cuello y fatiga lumbar. 
+      <strong>Analizamos las sillas con mejor soporte lumbar, malla transpirable y resistencia comprobada para teletrabajo.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA PRINCIPAL */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Comparativa de sillas ergonómicas de oficina</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "SIHOO M18",
+          imageUrl: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg",
+          feature1: "Soporte Lumbar Ajustable 2D",
+          feature2: "Resistencia hasta 150 kg (Uso +8h)",
+          amazonUrl: "https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21",
+          badge: "Nuestra Elección (Teletrabajo)"
+        },
+        {
+          name: "Durrafy Ergonómica",
+          imageUrl: "https://m.media-amazon.com/images/I/61VuGTf145L.jpg",
+          feature1: "Reposabrazos abatibles a 90°",
+          feature2: "Ahorro de espacio bajo mesa",
+          amazonUrl: "https://www.amazon.es/dp/B0BWXKW5FL?tag=jotabro00-21",
+          badge: "Espacios Reducidos"
+        },
+        {
+          name: "Amazon Basics Ejecutiva",
+          imageUrl: "https://m.media-amazon.com/images/I/61vvj8RQ5nL.jpg",
+          feature1: "Malla 100% transpirable de alta densidad",
+          feature2: "Respaldo alto con reposacabezas",
+          amazonUrl: "https://www.amazon.es/dp/B09B82GM22?tag=jotabro00-21",
+          badge: "Calidad Precio"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES EN DETALLE */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis exhaustivo de nuestros modelos recomendados
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. SIHOO M18 - La reina indiscutible de la ergonomía en teletrabajo" 
+          imageUrl="https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21"
+          badge="Top Ventas Teletrabajo"
+          rating="4.7"
+          features={[
+            "Soporte lumbar ajustable en altura y profundidad",
+            "Malla transpirable de alta resistencia anti-calor",
+            "Pistón de gas certificado SGS soporta hasta 150 kg",
+            "Reposacabezas orientable en inclinación 45°"
+          ]}
+          description="La SIHOO M18 se ha convertido en la silla de referencia para el teletrabajo. Su principal ventaja radica en su sistema de soporte lumbar independiente 2D que mantiene la curvatura natural de la columna vertebral reduciendo la presión en las vértebras L4 y L5."
+        />
+        <ProsContras 
+          pros={[
+            "Soporte lumbar ajustable tanto en profundidad como en altura.",
+            "Respaldo de malla acristalada hiper-transpirable que evita la acumulación de calor en verano.",
+            "Estructura metálica de base reforzada de máxima durabilidad.",
+            "Cojín de asiento con curvatura en W para aliviar la presión en los muslos."
+          ]}
+          contras={[
+            "El montaje inicial requiere aproximadamente 30 minutos.",
+            "Los reposabrazos ajustan en altura pero no pivotan lateralmente."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Durrafy Ergonómica - La solución inteligente para escritorios compactos" 
+          imageUrl="https://m.media-amazon.com/images/I/61VuGTf145L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0BWXKW5FL?tag=jotabro00-21"
+          badge="Espacios Reducidos"
+          rating="4.6"
+          features={[
+            "Reposabrazos abatibles a 90° para plegar bajo la mesa",
+            "Respaldo ergonómico en forma de S con soporte lumbar",
+            "Espuma de alta densidad en el asiento sin deformación",
+            "Mecanismo de balanceo relajante de 90° a 120°"
+          ]}
+          description="Lo que hace brillar a la Durrafy es su diseño pensado para optimizar el espacio. Sus reposabrazos se levantan a 90 grados permitiendo deslizar la silla por completo debajo del escritorio al finalizar la jornada laboral."
+        />
+        <ProsContras 
+          pros={[
+            "Reposabrazos abatibles 90° ideales para guardar la silla completamente debajo de la mesa.",
+            "Estética limpia y minimalista adaptable a habitaciones de estudio o salones.",
+            "Precio altamente competitivo con excelentes materiales de acabado."
+          ]}
+          contras={[
+            "Reposacabezas de rango de altura más limitado para personas de más de 1.85m.",
+            "El soporte lumbar es fijo pero acolchado."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. Amazon Basics Ejecutiva de Malla - Sencillez y transpirabilidad" 
+          imageUrl="https://m.media-amazon.com/images/I/61vvj8RQ5nL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B09B82GM22?tag=jotabro00-21"
+          badge="Calidad Precio"
+          rating="4.5"
+          features={[
+            "Malla integral de respaldo y reposacabezas",
+            "Ruedas dobles giratorias para todo tipo de suelos",
+            "Palanca de ajuste neumático de altura",
+            "Tensión de balanceo regulable por pomo"
+          ]}
+          description="Una propuesta sólida de Amazon Basics que destaca por su respaldo completo en malla transpirable y reposacabezas superior, proporcionando una temperatura fresca continua sin acumular humedad en la espalda."
+        />
+        <ProsContras 
+          pros={[
+            "Respaldo alto con soporte de cuello integral.",
+            "Malla continua fácil de limpiar que no retiene olores ni humedad.",
+            "Excelente relación calidad-precio respaldada por la garantía oficial."
+          ]}
+          contras={[
+            "No incluye ajuste de profundidad de asiento.",
+            "Estética convencional de oficina."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA SEO EXTENSA Y PALABRAS CLAVE LONG-TAIL */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        Guía de Compra de Sillas Ergonómicas: Prevenir Dolores de Espalda y Hernias Discales
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        Permanecer sentado durante más de 6 horas al día sobre una silla no ergonómica genera una presión equivalente al doble del peso corporal sobre los discos intervertebrales lumbares. Invertir en una silla ergonómica de oficina es la medida preventiva número uno en salud laboral.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. Soporte Lumbar Activo 2D vs. 3D: ¿Por qué es imprescindible?
+      </h3>
+      <p>
+        La zona baja de la espalda (columna lumbar) presenta una curvatura natural denominada lordosis. Sin un soporte lumbar firme que empuje suavemente esta zona hacia adelante, tendemos a encorvarnos adopatando la postura de 'C', lo que provoca sobrecarga muscular y pinzamiento de nervios.
+      </p>
+      <ul>
+        <li><strong>Soporte Lumbar 2D:</strong> Permite ajustar la altura y la profundidad del cojín lumbar para alinearlo exactamente con la altura de tu cintura.</li>
+        <li><strong>Soporte Lumbar 3D / Dinámico:</strong> Acompaña el movimiento lateral del tronco cuando te inclinas o te giras sobre el escritorio.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Malla Transpirable (Mesh) vs. Cuero Sintético (Polipiel)
+      </h3>
+      <p>
+        Para jornadas de trabajo de más de 4 horas en climas templados o cálidos, la <strong>malla transpirable de alta tenacidad</strong> es infinitamente superior a la polipiel. Permite el flujo constante de aire a través del respaldo evitando la acumulación de sudor y conservando la elasticidad durante años sin agrietarse ni pelarse.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        3. Regla del Ángulo de 90° para Codos y Rodillas
+      </h3>
+      <p>
+        Para ajustar tu silla ergonómica correctamente:
+      </p>
+      <ol>
+        <li>Regula la altura de la silla hasta que la planta de tus pies apoye plana en el suelo formando un ángulo de 90° en las rodillas.</li>
+        <li>Ajusta los reposabrazos a la misma altura del tablero de la mesa para que tus antebrazos descansen sin elevar ni tensionar los hombros.</li>
+        <li>Posiciona el reposacabezas para apoyar la nuca mientras miras al frente al tercio superior del monitor.</li>
+      </ol>
+    </div>
+
+    {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+    <SugerenciasSetup 
+      currentUrl="/sillas-oficina"
+      title="Completa tu Setup Ergonómico 🧘"
+      subtitle="Acompaña tu silla de oficina con una mesa elevable y la iluminación adecuada para proteger tu vista y tu espalda:"
+    />
+
+  </section>
+
+</Layout>

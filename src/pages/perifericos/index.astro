@@ -1,0 +1,172 @@
+---
+// src/pages/perifericos/index.astro
+import Layout from '../../layouts/Layout.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const subcategorias = [
+  {
+    id: 'ratones',
+    name: 'Ratones',
+    url: '/perifericos/ratones',
+    badge: 'Ergonomía & Precisión',
+    image: 'https://m.media-amazon.com/images/I/618Xy2oRcUL.jpg',
+    models: 'Logitech MX Master, Lift Vertical, CSL, Signature...',
+    description: 'Ratones ergonómicos verticales anti-fatiga, modelos inalámbricos silenciosos y sensores ópticos de alta precisión para cuidar tu muñeca.'
+  },
+  {
+    id: 'teclados',
+    name: 'Teclados',
+    url: '/perifericos/teclados',
+    badge: 'Mecánicos & Slim',
+    image: 'https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg',
+    models: 'Logitech Wave Keys, K950, Mars Gaming, K120...',
+    description: 'Teclados ergonómicos en onda con reposamuñecas viscoelástico, teclados ultra finos de perfil bajo y modelos mecánicos TKL.'
+  },
+  {
+    id: 'auriculares',
+    name: 'Auriculares',
+    url: '/perifericos/auriculares',
+    badge: 'ANC & Hi-Res Audio',
+    image: 'https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg',
+    models: 'Soundcore Q30, JBL Quantum, Logitech, Sony...',
+    description: 'Auriculares inalámbricos con cancelación de ruido híbrida (ANC), micrófonos integrados para videollamadas y sonido envolvente.'
+  },
+  {
+    id: 'monitores',
+    name: 'Monitores',
+    url: '/perifericos/monitores',
+    badge: 'Ultrawide & 120Hz',
+    image: 'https://m.media-amazon.com/images/I/51so8xGsVzL.jpg',
+    models: 'Samsung ViewFinity 34", Philips, Asus Eye Care, Acer...',
+    description: 'Pantallas panorámicas WQHD 21:9 para multitarea masiva, paneles IPS con 120 Hz de refresco y filtros de salud visual.'
+  },
+  {
+    id: 'altavoces',
+    name: 'Altavoces',
+    url: '/perifericos/altavoces',
+    badge: 'Barras & Audio 2.0',
+    image: 'https://m.media-amazon.com/images/I/71fJagWPNlL.jpg',
+    models: 'SOULION Soundbar, Logitech Z150, Amazon Basics...',
+    description: 'Barras de sonido compactas para colocar directamente bajo el monitor y sistemas estéreo 2.0 con Bluetooth 5.3.'
+  }
+];
+
+const titulo = "Periféricos & Hardware de Alto Rendimiento (2026)";
+const descripcion = "Explora los mejores periféricos para tu setup: ratones ergonómicos, teclados de perfil bajo, auriculares ANC, monitores ultrawide y altavoces de escritorio.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* Hero Header Tecnológico */}
+  <section class="relative bg-slate-950 text-white rounded-3xl p-8 md:p-14 my-8 overflow-hidden border border-slate-800 shadow-2xl">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="relative z-10 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-6">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        Ecosistema Periféricos ZenZone
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+        Periféricos de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500">Alto Rendimiento</span> & Ergonomía
+      </h1>
+      
+      <p class="text-base md:text-lg text-slate-300 leading-relaxed mb-4">
+        Los componentes con los que interactúas a diario determinan tu salud postural y fluidez de trabajo. Selecciona una categoría para acceder a nuestras comparativas especializadas.
+      </p>
+    </div>
+  </section>
+
+  {/* Banners Panorámicos Horizontales en Fondo Blanco Integrado */}
+  <section class="mb-20">
+    <div class="flex items-center justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Categorías de Hardware & Accesorios</h2>
+        <p class="text-sm text-slate-500 mt-1">Explora nuestras comparativas en formato panorámico</p>
+      </div>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+    
+    <div class="space-y-6">
+      {subcategorias.map((subcat) => (
+        <a 
+          href={subcat.url}
+          class="group bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8"
+        >
+          {/* Contenido Informativo de la Izquierda */}
+          <div class="flex-1 space-y-3 w-full">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="bg-amber-400/10 text-amber-600 border border-amber-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                {subcat.badge}
+              </span>
+              <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-md">
+                Guía 2026
+              </span>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-amber-500 transition-colors">
+              {subcat.name}
+            </h3>
+            
+            <p class="text-sm text-slate-600 leading-relaxed max-w-2xl">
+              {subcat.description}
+            </p>
+
+            <div class="pt-1 flex flex-wrap items-center gap-2 text-xs">
+              <span class="font-bold text-slate-700">Modelos destacados:</span>
+              <span class="text-slate-500">{subcat.models}</span>
+            </div>
+
+            <div class="pt-3 inline-flex items-center text-sm font-bold text-amber-500 group-hover:translate-x-2 transition-transform">
+              <span>Explorar {subcat.name}</span>
+              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Imagen integrada en fondo blanco puro (#ffffff) sin bordes ni recuadros */}
+          <div class="w-full md:w-72 lg:w-80 h-44 bg-white rounded-2xl flex items-center justify-center p-2 relative overflow-hidden flex-shrink-0">
+            <img 
+              src={subcat.image} 
+              alt={subcat.name} 
+              class="max-h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* Banner Informativo Tecnológico de Cierre */}
+  <section class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-200 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-xl mb-16">
+    <div class="grid md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-2 space-y-3">
+        <h3 class="text-2xl font-bold text-white">¿Cómo seleccionamos los productos?</h3>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          En **ZenZone** evaluamos el hardware atendiendo a factores ergonómicos, materiales de construcción, durabilidad de batería y respuesta real en pruebas de uso intensivo.
+        </p>
+      </div>
+      <div class="flex justify-start md:justify-end">
+        <a 
+          href="/perifericos/ratones" 
+          class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 px-6 rounded-2xl transition-all shadow-lg hover:shadow-amber-500/20"
+        >
+          <span>Empezar por Ratones</span>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/perifericos"
+    title="Continúa Optimizando tu Espacio de Trabajo 🧘"
+    subtitle="Los mejores periféricos rinden el doble instalados sobre mobiliario ergonómico de calidad:"
+  />
+
+</Layout>

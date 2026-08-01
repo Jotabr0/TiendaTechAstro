@@ -1,0 +1,456 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+
+// Productos Top Ventas (Fila 1)
+const topVentas = [
+  {
+    name: "SIHOO M18 Silla Ergonómica",
+    badge: "Nº 1 Más Vendido",
+    rating: "4.7",
+    image: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg",
+    feature: "Soporte Lumbar 2D Ajustable",
+    amazonUrl: "https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21",
+    categoryUrl: "/sillas-oficina"
+  },
+  {
+    name: "ErGear Escritorio Elevable 120x60",
+    badge: "Standing Desk Top",
+    rating: "4.7",
+    image: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg",
+    feature: "Motor Eléctrico + 4 Memorias",
+    amazonUrl: "https://www.amazon.es/dp/B0D9MGDDHD?tag=jotabro00-21",
+    categoryUrl: "/mesas-escritorio"
+  },
+  {
+    name: "Quntis Screenbar Luz Monitor",
+    badge: "Salud Visual Anti-Reflejos",
+    rating: "4.8",
+    image: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg",
+    feature: "Iluminación Asimétrica a 45°",
+    amazonUrl: "https://www.amazon.es/dp/B08C4V3B35?tag=jotabro00-21",
+    categoryUrl: "/iluminacion"
+  },
+  {
+    name: "Logitech Lift Ratón Vertical",
+    badge: "Anti Túnel Carpiano",
+    rating: "4.7",
+    image: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg",
+    feature: "Ángulo Ergonómico de 57°",
+    amazonUrl: "https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21",
+    categoryUrl: "/perifericos/ratones"
+  }
+];
+
+// Productos Más Recomendados para Setup (Fila 2)
+const masRecomendados = [
+  {
+    name: "Soundcore Q30 Auriculares ANC",
+    badge: "Cancelación de Ruido",
+    rating: "4.6",
+    image: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg",
+    feature: "50h Batería + Hi-Res Audio",
+    amazonUrl: "https://www.amazon.es/dp/B08HMWZBXC?tag=jotabro00-21",
+    categoryUrl: "/perifericos/auriculares"
+  },
+  {
+    name: "Titanwolf Speed XXL 90x40cm",
+    badge: "Alfombrilla Gigante",
+    rating: "4.8",
+    image: "https://m.media-amazon.com/images/I/81IP3XKIWkL.jpg",
+    feature: "Tejido Suave Speed Anti-Desgaste",
+    amazonUrl: "https://www.amazon.es/dp/B07H37NQNQ?tag=jotabro00-21",
+    categoryUrl: "/alfombrillas"
+  },
+  {
+    name: "Samsung ViewFinity 34\" Ultrawide",
+    badge: "Pantalla Panorámica",
+    rating: "4.6",
+    image: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg",
+    feature: "3440x1440 WQHD 100Hz HDR10",
+    amazonUrl: "https://www.amazon.es/dp/B0BRL97W65?tag=jotabro00-21",
+    categoryUrl: "/perifericos/monitores"
+  },
+  {
+    name: "DREO 3L Humidificador 26dB",
+    badge: "Silencioso & Salud",
+    rating: "4.5",
+    image: "https://m.media-amazon.com/images/I/615RE170RqL.jpg",
+    feature: "Sensor de Humedad e Higrostato",
+    amazonUrl: "https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21",
+    categoryUrl: "/humidificadores"
+  }
+];
+
+// Categorías Panorámicas Horizontales
+const categories = [
+  { 
+    name: 'Sillas de Oficina Ergonómicas', 
+    url: '/sillas-oficina', 
+    badge: 'Salud Lumbar', 
+    image: 'https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg',
+    models: 'SIHOO M18, Durrafy, Amazon Basics...',
+    desc: 'Sillas ergonómicas de malla transpirable con soporte lumbar 2D/3D ajustable para jornadas de teletrabajo de +8 horas sin dolores de espalda.' 
+  },
+  { 
+    name: 'Sillas Gaming Reclinables', 
+    url: '/sillas-gaming', 
+    badge: 'Streaming & Confort', 
+    image: 'https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg',
+    models: 'SONGMICS Racing, Silla Gaming Pro, WOLTU...',
+    desc: 'Sillas deportivas envolventes con reposapiés extensible, reclinación 150° y cojines cervical/lumbar para maratones de juego.' 
+  },
+  { 
+    name: 'Mesas y Escritorios Elevables', 
+    url: '/mesas-escritorio', 
+    badge: 'Standing Desks', 
+    image: 'https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg',
+    models: 'ErGear Elevable, Habitdesign BUC, Coleshome...',
+    desc: 'Escritorios elevables eléctricos con motor silencioso y memorias de altura, y escritorios esquineros en L para maximizar espacio.' 
+  },
+  { 
+    name: 'Periféricos de Alto Rendimiento', 
+    url: '/perifericos', 
+    badge: 'Hub Hardware', 
+    image: 'https://m.media-amazon.com/images/I/61EBVYinRGL.jpg',
+    models: 'Logitech MX Master, Lift Vertical, Soundcore...',
+    desc: 'Catálogo de ratones ergonómicos verticales, teclados silenciosos de perfil bajo, auriculares ANC, monitores ultrawide y altavoces.' 
+  },
+  { 
+    name: 'Iluminación para Setup', 
+    url: '/iluminacion', 
+    badge: 'Screenbars & RGBIC', 
+    image: 'https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg',
+    models: 'Quntis Screenbar, AURORIONCG, NEEWER, YICAIZI...',
+    desc: 'Barras de luz para monitor anti-reflejos, tiras LED RGBIC sincronizadas con música, paneles de pared y focos para streaming.' 
+  },
+  { 
+    name: 'Alfombrillas de Escritorio XXL', 
+    url: '/alfombrillas', 
+    badge: 'Desk Mats & RGB', 
+    image: 'https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg',
+    models: 'Titanwolf Speed XXL, Logitech Desk Mat, Realky RGB...',
+    desc: 'Superficies gigantes de 90x40 cm, alfombrillas con iluminación LED RGB perimetral, carga inalámbrica Qi 15W y modelos de gel ergonómico.' 
+  },
+  { 
+    name: 'Humidificadores & Aromaterapia', 
+    url: '/humidificadores', 
+    badge: 'Climatización Ultrasónica', 
+    image: 'https://m.media-amazon.com/images/I/615RE170RqL.jpg',
+    models: 'DREO Ultrasónico, Levoit Smart 6L, Cecotec RGB...',
+    desc: 'Humidificadores ultrasónicos silenciosos (26 dB), modelos inteligentes WiFi compatibles con Alexa y difusores de aromas con luces LED.' 
+  },
+];
+
+const titulo = "Guía para Montar tu Setup (2026) | Sillas, Mesas y Periféricos";
+const descripcion = "Descubre los mejores productos para montar tu espacio de trabajo y juego: sillas ergonómicas, escritorios elevables standing desk, ratones verticales, teclados, screenbars y climatización.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* Encabezado Conciso y Orientado a Intención de Búsqueda Directa (Sin Hero gigante) */}
+  <header class="my-6 sm:my-8 border-b border-slate-200 pb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-extrabold uppercase tracking-wider mb-3">
+      ⚡ Guía de Ergonomía & Setup 2026
+    </div>
+
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-3">
+      Los Mejores Productos y Guías para <span class="text-amber-500">Montar tu Setup</span>
+    </h1>
+
+    <p class="text-base text-slate-600 max-w-3xl leading-relaxed">
+      Comparativas rigurosas y enlaces a las mejores ofertas de Amazon en mobiliario ergonómico, salud postural y periféricos para trabajar o jugar con la máxima comodidad.
+    </p>
+  </header>
+
+  {/* FILA 1: 🔥 LO MÁS VENDIDO EN SETUP */}
+  <section class="mb-14">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-2xl font-black text-slate-900 flex items-center gap-2">
+          <span>🔥</span> Lo Más Vendido para tu Escritorio
+        </h2>
+        <p class="text-xs text-slate-500 mt-0.5">Productos top en ventas comprobadas con la mejor valoración de usuarios</p>
+      </div>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {topVentas.map((prod) => (
+        <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            {/* Imagen en marco blanco puro (#ffffff) */}
+            <div class="w-full h-44 bg-white rounded-2xl p-3 flex items-center justify-center mb-4 relative">
+              <span class="absolute top-2 left-2 z-10 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+                {prod.badge}
+              </span>
+              <img 
+                src={prod.image} 
+                alt={prod.name} 
+                class="max-h-36 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="flex items-center gap-1 text-xs text-amber-500 font-bold mb-1.5">
+              <span>★ {prod.rating}</span>
+              <span class="text-slate-400 font-normal">• Verificado Amazon</span>
+            </div>
+
+            <h3 class="font-extrabold text-slate-900 text-base leading-snug mb-1 group-hover:text-amber-500 transition-colors">
+              {prod.name}
+            </h3>
+
+            <p class="text-xs text-slate-500 font-medium mb-4">
+              {prod.feature}
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <a 
+              href={prod.amazonUrl} 
+              target="_blank" 
+              rel="nofollow noopener sponsored" 
+              class="block w-full text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black py-2.5 px-4 rounded-xl text-xs shadow-sm transition-all"
+            >
+              Ver oferta en Amazon ➔
+            </a>
+            <a 
+              href={prod.categoryUrl} 
+              class="block text-center text-[11px] font-bold text-slate-400 hover:text-amber-500 transition-colors"
+            >
+              Ver guía completa de categoría
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* FILA 2: ⭐ LO MÁS RECOMENDADO PARA TU SETUP */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-2xl font-black text-slate-900 flex items-center gap-2">
+          <span>⭐</span> Selección Recomendada ZenZone
+        </h2>
+        <p class="text-xs text-slate-500 mt-0.5">Accesorios esenciales para potenciar tu productividad y confort visual</p>
+      </div>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {masRecomendados.map((prod) => (
+        <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-full h-44 bg-white rounded-2xl p-3 flex items-center justify-center mb-4 relative">
+              <span class="absolute top-2 left-2 z-10 bg-slate-900 text-amber-400 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+                {prod.badge}
+              </span>
+              <img 
+                src={prod.image} 
+                alt={prod.name} 
+                class="max-h-36 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="flex items-center gap-1 text-xs text-amber-500 font-bold mb-1.5">
+              <span>★ {prod.rating}</span>
+              <span class="text-slate-400 font-normal">• Verificado Amazon</span>
+            </div>
+
+            <h3 class="font-extrabold text-slate-900 text-base leading-snug mb-1 group-hover:text-amber-500 transition-colors">
+              {prod.name}
+            </h3>
+
+            <p class="text-xs text-slate-500 font-medium mb-4">
+              {prod.feature}
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <a 
+              href={prod.amazonUrl} 
+              target="_blank" 
+              rel="nofollow noopener sponsored" 
+              class="block w-full text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black py-2.5 px-4 rounded-xl text-xs shadow-sm transition-all"
+            >
+              Ver oferta en Amazon ➔
+            </a>
+            <a 
+              href={prod.categoryUrl} 
+              class="block text-center text-[11px] font-bold text-slate-400 hover:text-amber-500 transition-colors"
+            >
+              Ver guía completa de categoría
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Banners Panorámicos Horizontales de Categorías (Sin emojis / Fondo blanco integrado) */}
+  <section id="categorias" class="mb-20 scroll-mt-24">
+    <div class="flex items-center justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900">Catálogo Completo por Categorías</h2>
+        <p class="text-sm text-slate-500 mt-1">Explora las guías avanzadas con datos reales de Amazon para cada tipo de producto</p>
+      </div>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+    
+    <div class="space-y-6">
+      {categories.map((cat) => (
+        <a 
+          href={cat.url}
+          class="group bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8"
+        >
+          {/* Contenido Informativo de la Izquierda */}
+          <div class="flex-1 space-y-3 w-full">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="bg-amber-400/10 text-amber-600 border border-amber-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                {cat.badge}
+              </span>
+              <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-md">
+                Guía 2026
+              </span>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-amber-500 transition-colors">
+              {cat.name}
+            </h3>
+            
+            <p class="text-sm text-slate-600 leading-relaxed max-w-2xl">
+              {cat.desc}
+            </p>
+
+            <div class="pt-1 flex flex-wrap items-center gap-2 text-xs">
+              <span class="font-bold text-slate-700">Modelos analizados:</span>
+              <span class="text-slate-500">{cat.models}</span>
+            </div>
+
+            <div class="pt-3 inline-flex items-center text-sm font-bold text-amber-500 group-hover:translate-x-2 transition-transform">
+              <span>Explorar catálogo de {cat.name}</span>
+              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Imagen integrada en fondo blanco puro (#ffffff) sin bordes ni recuadros */}
+          <div class="w-full md:w-72 lg:w-80 h-44 bg-white rounded-2xl flex items-center justify-center p-2 relative overflow-hidden flex-shrink-0">
+            <img 
+              src={cat.image} 
+              alt={cat.name} 
+              class="max-h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* EXTENSA SECCIÓN DE CONTENIDO SEO DE ALTO VALOR Y PALABRAS CLAVE LONG-TAIL */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        Guía Maestra ZenZone: Cómo Diseñar un Setup Ergonómico y Eficiente
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        El trabajo remoto, la programación, el diseño digital y el gaming exigente demandan pasar entre 6 y 10 horas al día en la misma postura. Sin la planificación adecuada, esta rutina desemboca en dolencias musculoesqueléticas como lumbalgia, cervicalgia, fatiga ocular o el doloroso síndrome del túnel carpiano.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Bloque SEO 1 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. La Triada de la Salud Postural: Silla Ergonómica + Escritorio Elevable + Monitor
+      </h3>
+      <p>
+        Para conseguir una alineación corporal neutra, el mobiliario debe adaptarse a tus medidas anatómicas particulares y no al revés:
+      </p>
+      <ul>
+        <li><strong>Sillas de Oficina con Soporte Lumbar Activo:</strong> Un respaldo de malla hiper-transpirable con apoyo ajustable en la zona lumbar (L4-L5) evita la inclinación pélvica hacia atrás y reduce la sobrecarga discal hasta en un 50%.</li>
+        <li><strong>Escritorios Elevables Eléctricos (Standing Desks):</strong> Permitir la alternancia entre trabajar sentado y trabajar de pie activa la circulación sanguínea, incrementa la energía y reduce el dolor lumbar recurrente.</li>
+        <li><strong>Colocación del Monitor:</strong> La parte superior de la pantalla debe quedar exactamente a la altura de los ojos o ligeramente por debajo, manteniendo una distancia equivalente a la longitud de tu brazo (50-70 cm).</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Bloque SEO 2 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Periféricos Ergonómicos: Prevención del Síndrome del Túnel Carpiano
+      </h3>
+      <p>
+        El uso continuado de ratones planos tradicionales obliga al radio y al cúbito del antebrazo a mantenerse cruzados en pronación forzada. La sustitución por un <strong>ratón ergonómico vertical</strong> (como el <em>Logitech Lift</em> o el <em>MX Master</em>) permite mantener la articulación en postura de apretón de manos neutro de 57°, liberando la compresión sobre el nervio mediano.
+      </p>
+      <p>
+        Del mismo modo, acompañar el ratón con un <strong>teclado ergonómico en onda</strong> con reposamuñecas acolchado o teclados de perfil bajo (Slim) previene la hiperextensión de la muñeca al redactar.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Bloque SEO 3 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        3. Iluminación Asimétrica Anti-Reflejos y Climatización Ultrasónica
+      </h3>
+      <p>
+        La iluminación ambiental desempeña un rol crítico en la concentración:
+      </p>
+      <ul>
+        <li><strong>Barras de Luz Screenbar para Monitor:</strong> Proyectan luz asimétrica a 45° que ilumina el área del teclado sin rebotar en la pantalla, eliminando los deslumbramientos nocturnos.</li>
+        <li><strong>Iluminación RGBIC para Fondo:</strong> Reduce el contraste entre la pantalla brillante y las paredes oscuras (Bias Lighting), previniendo el ardor y la sequedad ocular.</li>
+        <li><strong>Humidificadores Ultrasónicos Silenciosos:</strong> Mantienen la humedad relativa de la habitación en el rango óptimo del 40%-60%, combatiendo el aire seco producido por la calefacción o el aire acondicionado.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Bloque FAQ Schema */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900 mb-4">
+        Preguntas Frecuentes sobre Equipamiento de Setup y Oficina (FAQ)
+      </h3>
+      <div class="space-y-4 not-prose">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Es mejor una silla de oficina ergonómica o una silla gaming?</h4>
+          <p class="text-sm text-slate-600">
+            Para jornadas intensas de trabajo (+6 horas), las sillas de oficina con respaldo de malla transpirable y soporte lumbar 2D/3D ofrecen mayor ajuste postural y ventilación. Las sillas gaming son ideales si buscas reclinación amplia de hasta 150° y reposapiés para jugar con mando o ver contenido.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Qué profundidad mínima debe tener una mesa de escritorio?</h4>
+          <p class="text-sm text-slate-600">
+            Se recomienda un fondo mínimo de 60 cm (e idealmente 70-80 cm si utilizas monitores de 27 o 34 pulgadas) para poder mantener la distancia de visión recomendada y apoyar los antebrazos con comodidad.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Cómo elegir entre una alfombrilla XXL o una con gel ergonómica?</h4>
+          <p class="text-sm text-slate-600">
+            Las alfombrillas XXL (90x40 cm) cubren toda la mesa, absorben vibraciones del teclado y protegen la madera. Las alfombrillas ergonómicas de gel están indicadas si necesitas elevar la muñeca de forma fija para aliviar molestias concretas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup */}
+  <SugerenciasSetup 
+    title="Descubre Nuestras Guías de Producto Recomendadas 🧘"
+    subtitle="Explora los análisis detallados con datos reales de Amazon para cada categoría de tu setup:"
+  />
+
+</Layout>

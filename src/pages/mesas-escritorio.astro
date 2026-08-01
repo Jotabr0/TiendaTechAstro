@@ -1,0 +1,220 @@
+---
+// src/pages/mesas-escritorio.astro
+import Layout from "../layouts/Layout.astro";
+import TablaComparativa from "../components/TablaComparativa.astro";
+import AmazonBox from "../components/AmazonBox.astro";
+import ProsContras from "../components/ProsContras.astro";
+import SugerenciasSetup from "../components/SugerenciasSetup.astro";
+
+const titulo = "Las Mejores Mesas y Escritorios Elevables para tu Setup (2026)";
+const descripcion = "Comparativa y análisis de las mejores mesas de escritorio: escritorios elevables eléctricos, mesas esquineras en L, tableros de roble con almacenamiento y pasacables.";
+---
+
+<Layout title={titulo} description={descripcion}>
+    {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+    <header class="text-center my-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
+          🖥️ Arquitectura & Organización de Setup 2026
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+            Las Mejores <span class="text-emerald-500">Mesas de Escritorio</span> del Mercado
+        </h1>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            La base de cualquier buen espacio de trabajo o juego es la mesa. Tanto si buscas alternar entre trabajar de pie y sentado con un escritorio elevable eléctrico como si necesitas maximizar el espacio con un escritorio esquinero en L,
+            <strong>analizamos los mejores tableros y estructuras del mercado.</strong>
+        </p>
+    </header>
+
+    {/* 2. TABLA COMPARATIVA PRINCIPAL */}
+    <section class="mb-16">
+        <div class="flex items-center justify-between gap-4 mb-6">
+            <h2 class="text-2xl font-bold text-slate-900">Comparativa de mesas de escritorio destacadas</h2>
+            <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+        </div>
+
+        <TablaComparativa
+            products={[
+                {
+                    name: "ErGear Elevable Eléctrico",
+                    imageUrl: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg",
+                    feature1: "Motor Eléctrico con 4 memorias",
+                    feature2: "Alternancia sentado / de pie",
+                    amazonUrl: "https://www.amazon.es/dp/B0D9MGDDHD?tag=jotabro00-21",
+                    badge: "Nuestra Elección (Standing Desk)",
+                },
+                {
+                    name: "Habitdesign Office BUC",
+                    imageUrl: "https://m.media-amazon.com/images/I/713tj+gft4L.jpg",
+                    feature1: "Cajonera reversible (145x102cm)",
+                    feature2: "Gran espacio de almacenamiento",
+                    amazonUrl: "https://www.amazon.es/dp/B07DPP6RFJ?tag=jotabro00-21",
+                    badge: "Más Robusta"
+                },
+                {
+                    name: "Coleshome Esquinero L",
+                    imageUrl: "https://m.media-amazon.com/images/I/71zkBKbEWcL.jpg",
+                    feature1: "Formato en L compacto (100x70cm)",
+                    feature2: "Estantes inferiores para torre/consola",
+                    amazonUrl: "https://www.amazon.es/dp/B0FDB3Y1YT?tag=jotabro00-21",
+                    badge: "Mejor Precio"
+                }
+            ]}
+        />
+    </section>
+
+    {/* 3. ANÁLISIS INDIVIDUALES EN DETALLE */}
+    <section class="mb-20">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+            Análisis al detalle de nuestros escritorios recomendados
+        </h2>
+
+        <div class="space-y-16">
+            {/* Producto 1 */}
+            <article>
+                <AmazonBox
+                    title="1. ErGear Elevable Eléctrico - El estándar de oro para alternar de pie y sentado"
+                    imageUrl="https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg"
+                    amazonUrl="https://www.amazon.es/dp/B0D9MGDDHD?tag=jotabro00-21"
+                    badge="Top Innovación"
+                    rating="4.7"
+                    features={[
+                        "Motor eléctrico silencioso con elevación suave",
+                        "Panel de control con 4 ranuras de memoria de altura",
+                        "Tablero sólido de 120x60 cm con esquinas redondeadas",
+                        "Ganchos de sujeción para auriculares integrados"
+                    ]}
+                    description="Estar sentado 8 horas seguidas arruina cualquier espalda. El escritorio ErGear de 120 x 60 cm soluciona este problema con su motor eléctrico silencioso. Ideal para setups de programación, edición o teletrabajo intensivo donde necesitas estirar las piernas sin dejar de teclear frente a tus monitores."
+                />
+                <ProsContras
+                    pros={[
+                        "Panel de control digital con 4 memorias programables para alturas exactas.",
+                        "Motor suave y estable: los monitores y la taza de café no tiemblan al subir o bajar.",
+                        "Estructura de patas de acero de alta rigidez anticorrosión.",
+                        "Ganchos laterales para colgar auriculares o mochila."
+                    ]}
+                    contras={[
+                        "Requiere estar conectado permanentemente a una toma de corriente.",
+                        "El ensamblaje inicial lleva entre 45 minutos y 1 hora."
+                    ]}
+                />
+            </article>
+
+            {/* Producto 2 */}
+            <article>
+                <AmazonBox
+                    title="2. Habitdesign Office BUC - Almacenamiento masivo y superficie gigantesca"
+                    imageUrl="https://m.media-amazon.com/images/I/713tj+gft4L.jpg"
+                    amazonUrl="https://www.amazon.es/dp/B07DPP6RFJ?tag=jotabro00-21"
+                    badge="Almacenamiento Premium"
+                    rating="4.6"
+                    features={[
+                        "Gran tablero de 145 cm de ancho",
+                        "Módulo BUC con cajones y estantes laterales",
+                        "Cajonera reversible a izquierda o derecha",
+                        "Acabado en melamina Roble Canadian y Blanco"
+                    ]}
+                    description="Si la tecnología elevable no es tu prioridad y buscas un escritorio clásico de oficina de máxima solidez, el Habitdesign BUC es imbatible. Te ofrece un inmenso tablero de 145 cm acompañado de una cajonera reversible para organizar carpetas, periféricos y la torre del PC."
+                />
+                <ProsContras
+                    pros={[
+                        "Espacio gigantesco (145x102 cm) perfecto para setups con torre de PC, impresora y documentos.",
+                        "Módulo de cajones reversible que puedes montar a la derecha o izquierda según tu habitación.",
+                        "Madera de gran grosor que no se flexiona con el peso de monitores pesados."
+                    ]}
+                    contras={[
+                        "Mueble pesado enviado en bultos grandes.",
+                        "Altura de tablero fija no modificable."
+                    ]}
+                />
+            </article>
+
+            {/* Producto 3 */}
+            <article>
+                <AmazonBox
+                    title="3. Coleshome Esquinero en L - Aprovechamiento espacial en rincones"
+                    imageUrl="https://m.media-amazon.com/images/I/71zkBKbEWcL.jpg"
+                    amazonUrl="https://www.amazon.es/dp/B0FDB3Y1YT?tag=jotabro00-21"
+                    badge="Opción Inteligente"
+                    rating="4.5"
+                    features={[
+                        "Diseño en L compacto de 100x70 cm para esquinas",
+                        "Estantes inferiores reversibles para torre de PC",
+                        "Chasis metálico en negro mate anti-vibraciones",
+                        "Niveladores de patas ajustables para suelos irregulares"
+                    ]}
+                    description="Las habitaciones pequeñas o asimétricas son el terror de los escritorios tradicionales. El modelo de Coleshome en forma de L encaja perfectamente en cualquier rincón muerto, manteniendo la torre del ordenador y el monitor curvo organizados."
+                />
+                <ProsContras
+                    pros={[
+                        "Aprovecha al 100% el espacio muerto de las esquinas en la habitación.",
+                        "Estructura de metal rígido en negro mate muy resistente a vibraciones.",
+                        "Los estantes inferiores permiten alojar la torre del PC o consolas de videojuegos."
+                    ]}
+                    contras={[
+                        "La zona estrecha del tablero tiene menor profundidad para apoyos de brazo completos.",
+                        "Pensada para monitores de hasta 27 o 32 pulgadas."
+                    ]}
+                />
+            </article>
+        </div>
+    </section>
+
+    {/* 4. GUÍA SEO EXTENSA Y PALABRAS CLAVE LONG-TAIL */}
+    <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+        
+        <div>
+            <h2 class="text-3xl font-extrabold text-slate-900">
+                Guía Técnica: ¿Cómo elegir la Mesa de Escritorio perfecta para tu Setup?
+            </h2>
+            <p class="text-slate-600 leading-relaxed">
+                El escritorio es la base estructural sobre la que reposa toda tu inversión en tecnología (monitores, ordenador, altavoces y accesorios). Seleccionar el ancho, fondo y tipo de elevación adecuados determina la salud de tus cervicales y el orden visual de tu zona de trabajo.
+            </p>
+        </div>
+
+        <hr class="border-slate-200 my-6" />
+
+        <div>
+            <h3 class="text-2xl font-bold text-slate-900">
+                1. Escritorios Elevables Eléctricos (Standing Desks): Salud en Movimiento
+            </h3>
+            <p>
+                Los escritorios elevables mediante motor eléctrico permiten alternar entre trabajar sentado (ej. 75 cm) y trabajar de pie (ej. 105 cm) a lo largo de la jornada.
+            </p>
+            <ul>
+                <li><strong>Activación del metabolismo:</strong> Trabajar de pie 1 hora cada 3 horas sentados quita presión de las vértebras lumbares y mejora la circulación sanguínea en las piernas.</li>
+                <li><strong>Memorias de altura digitales:</strong> Permiten guardar la altura idónea exacta para cuando estás sentado y para cuando trabajas de pie, cambiando de postura con pulsar un botón.</li>
+            </ul>
+        </div>
+
+        <hr class="border-slate-200 my-6" />
+
+        <div>
+            <h3 class="text-2xl font-bold text-slate-900">
+                2. Importancia del Fondo del Tablero (Mínimo 60 cm)
+            </h3>
+            <p>
+                Un error común en escritorios de bajo coste es elegir tableros estrechos de 40 cm o 50 cm de profundidad. Si utilizas monitores de 27 pulgadas o brazos articulados VESA, se requiere un **fondo mínimo de 60 cm** para situar la pantalla a una distancia de visión saludable (entre 50 y 70 cm de los ojos).
+            </p>
+        </div>
+
+        <hr class="border-slate-200 my-6" />
+
+        <div>
+            <h3 class="text-2xl font-bold text-slate-900">
+                3. Gestión de Cables y Organización (Cable Management)
+            </h3>
+            <p>
+                Para mantener un escritorio limpio y libre de enredos visuales, busca tableros con pasacables integrados o añade una bandeja organizadora inferior para alojar regletas y cargadores fuera de la vista.
+            </p>
+        </div>
+
+    </section>
+
+    {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+    <SugerenciasSetup 
+        currentUrl="/mesas-escritorio"
+        title="Equipa tu Mesa con los Accesorios Ideales 🧘"
+        subtitle="Una buena mesa de escritorio rinde el doble al combinarla con una silla ergonómica y la iluminación adecuada:"
+    />
+</Layout>

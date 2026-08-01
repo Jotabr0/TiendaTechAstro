@@ -1,0 +1,199 @@
+---
+// src/pages/perifericos/monitores.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "Los Mejores Monitores para Productividad y Gaming (2026)";
+const descripcion = "Comparativa y análisis de los mejores monitores de ordenador: ultrawide panorámicos 34 pulgadas, pantallas IPS 120Hz con protección ocular y opciones económicas.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. CABECERA */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      Los Mejores <span class="text-amber-500">Monitores</span> para tu Escritorio
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      La pantalla es el elemento central de tu setup. Una buena resolución y tasa de refresco mejoran la nitidez, reducen la fatiga ocular y aumentan tu productividad. 
+      <strong>Descubre los monitores más recomendados para trabajar y jugar.</strong>
+    </p>
+  </header>
+
+  {/* 2. TABLA COMPARATIVA */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Samsung ViewFinity S5 34\"",
+          imageUrl: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg",
+          feature1: "Ultra WQHD (3440 x 1440) 21:9",
+          feature2: "Tasa 100Hz, HDR10 y PBP/PIP multitarea",
+          amazonUrl: "https://www.amazon.es/dp/B0BRL97W65?tag=jotabro00-21",
+          badge: "Nuestra Elección (Ultrawide)"
+        },
+        {
+          name: "PHILIPS 24E1N1100A 24\"",
+          imageUrl: "https://m.media-amazon.com/images/I/41-DZtriA1L.jpg",
+          feature1: "Panel IPS FHD 120Hz de fluidez",
+          feature2: "Altavoces estéreo integrados",
+          amazonUrl: "https://www.amazon.es/dp/B0CX9CT3ZF?tag=jotabro00-21",
+          badge: "Calidad Precio"
+        },
+        {
+          name: "ASUS VY249HGR Eye Care",
+          imageUrl: "https://m.media-amazon.com/images/I/81toW8rqP6L.jpg",
+          feature1: "Tasa 120Hz y 1ms tiempo respuesta",
+          feature2: "Filtro luz azul y antiparpadeo TUV",
+          amazonUrl: "https://www.amazon.es/dp/B0DN6NHW6F?tag=jotabro00-21",
+          badge: "Gaming & Salud Visual"
+        },
+        {
+          name: "Acer EK241YGBIF 23.8\"",
+          imageUrl: "https://m.media-amazon.com/images/I/51CunQurK5L.jpg",
+          feature1: "Panel Full HD 120Hz ultra fino",
+          feature2: "Diseño ZeroFrame de marcos finos",
+          amazonUrl: "https://www.amazon.es/dp/B0DM679R7F?tag=jotabro00-21",
+          badge: "Opción Económica"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. ANÁLISIS INDIVIDUALES */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Análisis al detalle de monitores destacados
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Producto 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Samsung ViewFinity S5 34 Ultra WQHD - Espacio de trabajo infinito" 
+          imageUrl="https://m.media-amazon.com/images/I/51so8xGsVzL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0BRL97W65?tag=jotabro00-21"
+          badge="Productividad Top"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El Samsung ViewFinity S50GC de 34 pulgadas con resolución Ultra WQHD (3440x1440 px) ofrece un espacio equivalente a casi dos monitores juntos sin fisuras en medio. Sus modos Picture-by-Picture (PBP) y Picture-in-Picture (PIP) te permiten mostrar dos fuentes de vídeo simultáneamente.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Formato panorámico 21:9 perfecto para editar vídeo, hojas de cálculo masivas y multitarea.",
+            "Tasa de refresco de 100 Hz con AMD FreeSync para transiciones ultra suaves.",
+            "Certificación TUV Eye Care con modo filtro de luz azul y antiparpadeo."
+          ]}
+          contras={[
+            "Requiere un escritorio con al menos 90 cm de espacio libre.",
+            "Carece de altavoces incorporados en el chasis."
+          ]}
+        />
+      </article>
+
+      {/* Producto 2 */}
+      <article>
+        <AmazonBox 
+          title="2. PHILIPS 24E1N1100A 24 IPS 120Hz - El equilibrio perfecto para la oficina" 
+          imageUrl="https://m.media-amazon.com/images/I/41-DZtriA1L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0CX9CT3ZF?tag=jotabro00-21"
+          badge="Calidad Precio"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Este monitor Philips eleva el estándar de oficina ofreciendo un panel IPS de 24 pulgadas con refresco de 120 Hz, lo que proporciona una suavidad de movimiento muy superior a los 60 Hz habituales. Además, incluye altavoces estéreo integrados.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Panel IPS con ángulos de visión amplios de 178° y colores vivos.",
+            "Tasa de refresco rápida de 120 Hz para un desplazamiento de pantalla fluido.",
+            "Altavoces estéreo integrados que ahorran espacio en la mesa."
+          ]}
+          contras={[
+            "Resolución Full HD (1080p), ideal para 24 pulgadas pero no para 4K.",
+            "La peana fija solo permite ajuste de inclinación."
+          ]}
+        />
+      </article>
+
+      {/* Producto 3 */}
+      <article>
+        <AmazonBox 
+          title="3. ASUS VY249HGR Eye Care - Protección ocular y velocidad gaming" 
+          imageUrl="https://m.media-amazon.com/images/I/81toW8rqP6L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0DN6NHW6F?tag=jotabro00-21"
+          badge="Gaming & Salud Visual"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            El ASUS VY249HGR ha sido diseñado pensando en la salud de tus ojos durante largas sesiones de estudio o gaming. Incorpora la tecnología Eye Care Plus con tratamiento antibacteriano en los biseles y filtros de luz azul certificados.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Tiempo de respuesta rápido de 1 ms (MPRT) y 120 Hz para evitar imágenes borrosas.",
+            "Tecnología Flicker-Free antiparpadeo y filtro de luz azul certificado por TÜV Rheinland.",
+            "Tratamiento antibacteriano permanente en marcos y botones del monitor."
+          ]}
+          contras={[
+            "No incluye puerto DisplayPort (funciona por HDMI/VGA).",
+            "Los altavoces internos tienen potencia justa."
+          ]}
+        />
+      </article>
+
+      {/* Producto 4 */}
+      <article>
+        <AmazonBox 
+          title="4. Acer EK241YGBIF 23.8 ZeroFrame - Máxima fluidez por muy poco dinero" 
+          imageUrl="https://m.media-amazon.com/images/I/51CunQurK5L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0DM679R7F?tag=jotabro00-21"
+          badge="Super Económico"
+        />
+        <div class="mt-6 prose prose-slate max-w-none">
+          <p>
+            Acer demuestra que no hace falta gastar mucho para tener un monitor moderno de 120 Hz con marcos ultrafinos ZeroFrame, perfecto para configuraciones de doble pantalla económicas.
+          </p>
+        </div>
+        <ProsContras 
+          pros={[
+            "Marcos ultra delgados ZeroFrame ideales para poner dos monitores juntos.",
+            "120 Hz de refresco a un precio extremadamente ajustado.",
+            "Brillo de 250 nits con buena uniformidad de color."
+          ]}
+          contras={[
+            "Borde inferior ligeramente más ancho.",
+            "Conexión estándar sin USB hub."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  {/* 4. GUÍA DE COMPRA */}
+  <section class="prose prose-slate max-w-none bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+    <h2>Guía de compra: ¿Cómo elegir el monitor idóneo?</h2>
+    <p>Revisa estos factores determinantes antes de decidirte por un modelo:</p>
+    <ul>
+      <li><strong>Resolución y Tamaño:</strong> Para 24 pulgadas, <strong>Full HD (1080p)</strong> es el estándar ideal. Para 27 pulgadas en adelante se recomienda <strong>QHD (1440p)</strong>, y en 34 pulgadas el formato <strong>Ultrawide 21:9 (3440x1440)</strong> es la mejor alternativa a dos pantallas.</li>
+      <li><strong>Tasa de Refresco (Hz):</strong> Dar el salto de 60Hz a 100Hz o 120Hz reduce la fatiga visual al hacer scroll en páginas web y aporta una fluidez notable en juegos.</li>
+      <li><strong>Tecnologías de Protección Visual:</strong> Busca siempre certificaciones <em>Flicker-Free</em> (sin parpadeo) y filtros de luz azul si pasas más de 5 horas diarias frente a la pantalla.</li>
+    </ul>
+  </section>
+
+  {/* Componente de Recomendaciones Cruzadas de Setup Dinámico */}
+  <SugerenciasSetup 
+    currentUrl="/perifericos/monitores"
+    title="Protege tu Vista y Acompaña tu Pantalla 🖥️"
+    subtitle="Tu monitor lucirá el doble con una barra de luz screenbar anti-reflejos y una mesa elevable:"
+  />
+
+</Layout>

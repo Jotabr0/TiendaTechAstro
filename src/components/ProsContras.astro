@@ -1,0 +1,50 @@
+---
+interface Props {
+  pros: string[];
+  contras: string[];
+}
+
+const { pros, contras } = Astro.props;
+---
+
+<div class="not-prose my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Caja de Ventajas */}
+  <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-3xl p-6 sm:p-8 shadow-sm">
+    <h4 class="text-emerald-900 font-extrabold mb-4 flex items-center gap-2.5 text-base sm:text-lg">
+      <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <span>Lo que nos gusta</span>
+    </h4>
+    <ul class="space-y-3">
+      {pros.map(pro => (
+        <li class="text-sm text-emerald-950 flex items-start gap-2.5 leading-relaxed font-medium">
+          <span class="text-emerald-600 font-black text-base leading-none mt-0.5">+</span> 
+          <span>{pro}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Caja de Desventajas */}
+  <div class="bg-rose-50/70 border border-rose-200/80 rounded-3xl p-6 sm:p-8 shadow-sm">
+    <h4 class="text-rose-900 font-extrabold mb-4 flex items-center gap-2.5 text-base sm:text-lg">
+      <div class="w-8 h-8 rounded-xl bg-rose-500 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </div>
+      <span>A tener en cuenta</span>
+    </h4>
+    <ul class="space-y-3">
+      {contras.map(contra => (
+        <li class="text-sm text-rose-950 flex items-start gap-2.5 leading-relaxed font-medium">
+          <span class="text-rose-600 font-black text-base leading-none mt-0.5">-</span> 
+          <span>{contra}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
