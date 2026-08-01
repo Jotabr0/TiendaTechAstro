@@ -18,6 +18,9 @@ const { title, description } = Astro.props;
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title} | ZenZone</title>
+
+        {/* Umami Analytics - Rastreo en tiempo real */}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="e4057548-890f-4408-b62f-3f453ec88a0f"></script>
     </head>
     <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950">
         <Header />
@@ -25,5 +28,20 @@ const { title, description } = Astro.props;
             <slot />
         </main>
         <Footer />
+
+        {/* Script interactivo para registrar clics en enlaces de Amazon en tiempo real en Umami */}
+        <script>
+            document.addEventListener('click', (event) => {
+                const link = (event.target as HTMLElement)?.closest('a[href*="amazon."]') as HTMLAnchorElement | null;
+                if (link && (window as any).umami) {
+                    const amazonUrl = link.href;
+                    const pageUrl = window.location.pathname;
+                    (window as any).umami.track('clic_afiliado_amazon', {
+                        url: amazonUrl,
+                        pagina: pageUrl
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
