@@ -1,0 +1,106 @@
+---
+// src/components/CookieBanner.astro
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const cookiesUrl = getRelativeLocaleUrl(lang, '/cookies');
+---
+
+<!-- Banner de Consentimiento de Cookies (RGPD + Google Consent Mode v2) -->
+<div 
+  id="cookie-banner" 
+  class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-50 bg-slate-950/95 backdrop-blur-md text-white p-5 rounded-3xl border border-slate-800 shadow-2xl transition-all duration-500 transform translate-y-full opacity-0 pointer-events-none"
+  role="dialog"
+  aria-live="polite"
+  aria-label="Consentimiento de cookies"
+>
+  <div class="flex items-start gap-3 mb-3">
+    <div class="w-9 h-9 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 text-lg">
+      🍪
+    </div>
+    <div>
+      <h3 class="font-extrabold text-sm text-white leading-snug">
+        {lang === 'en' ? 'Cookie & Privacy Notice' : 'Aviso de Cookies y Privacidad'}
+      </h3>
+      <p class="text-xs text-slate-300 leading-relaxed mt-1">
+        {lang === 'en' 
+          ? 'We use cookies to analyze traffic and measure affiliate links performance. You can accept all or decline non-essential cookies.' 
+          : 'Utilizamos cookies para analizar el tráfico y medir el rendimiento de nuestros enlaces. Puedes aceptar todas o rechazar las no esenciales.'}
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-800/80">
+    <a 
+      href={cookiesUrl} 
+      class="text-xs font-semibold text-slate-400 hover:text-amber-400 underline transition-colors"
+    >
+      {lang === 'en' ? 'Cookie Policy' : 'Política de Cookies'}
+    </a>
+
+    <div class="flex items-center gap-2">
+      <button 
+        id="btn-decline-cookies" 
+        class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-300 hover:text-white bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors"
+      >
+        {lang === 'en' ? 'Decline' : 'Rechazar'}
+      </button>
+
+      <button 
+        id="btn-accept-cookies" 
+        class="px-4 py-1.5 rounded-xl text-xs font-extrabold text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-sm transition-colors"
+      >
+        {lang === 'en' ? 'Accept All' : 'Aceptar todas'}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const banner = document.getElementById('cookie-banner');
+    const btnAccept = document.getElementById('btn-accept-cookies');
+    const btnDecline = document.getElementById('btn-decline-cookies');
+
+    function updateConsent(status) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': status,
+          'ad_storage': status,
+          'ad_user_data': status,
+          'ad_personalization': status
+        });
+      }
+    }
+
+    const savedConsent = localStorage.getItem('zenzone_cookie_consent');
+
+    if (savedConsent === 'granted') {
+      updateConsent('granted');
+    } else if (savedConsent === 'denied') {
+      updateConsent('denied');
+    } else if (banner) {
+      // Mostrar banner tras pequeña pausa
+      setTimeout(() => {
+        banner.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+      }, 800);
+    }
+
+    if (btnAccept && banner) {
+      btnAccept.addEventListener('click', () => {
+        localStorage.setItem('zenzone_cookie_consent', 'granted');
+        updateConsent('granted');
+        banner.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+      });
+    }
+
+    if (btnDecline && banner) {
+      btnDecline.addEventListener('click', () => {
+        localStorage.setItem('zenzone_cookie_consent', 'denied');
+        updateConsent('denied');
+        banner.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+      });
+    }
+  })();
+</script>
