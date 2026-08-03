@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://zenzone.es',
+  site: 'https://zenzone.com.es',
   vite: {
     plugins: [tailwindcss()]
   },

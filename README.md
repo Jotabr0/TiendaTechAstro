@@ -1,6 +1,6 @@
 # 🧘 Web de Afiliados ZenZone
 
-Este es el proyecto de la web de afiliados para **ZenZone** ([zenzone.es](https://zenzone.es)), desarrollado utilizando **Astro**, **Tailwind CSS v4**, **MDX** y **Sitemap**.
+Este es el proyecto de la web de afiliados para **ZenZone** ([zenzone.com.es](https://zenzone.com.es)), desarrollado utilizando **Astro**, **Tailwind CSS v4**, **MDX** y **Sitemap**.
 
 ---
 
