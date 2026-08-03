@@ -16,6 +16,16 @@ const currentLang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={currentLang} class="scroll-smooth">
     <head>
+        {/* Google Analytics (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X028Z17L58"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-X028Z17L58');
+        </script>
+
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,17 +46,26 @@ const currentLang = getLangFromUrl(Astro.url);
         </main>
         <Footer />
 
-        {/* Script interactivo para registrar clics en enlaces de Amazon en tiempo real en Umami */}
+        {/* Script interactivo para registrar clics en enlaces de Amazon en tiempo real en Umami y Google Analytics */}
         <script>
             document.addEventListener('click', (event) => {
                 const link = (event.target as HTMLElement)?.closest('a[href*="amazon."]') as HTMLAnchorElement | null;
-                if (link && (window as any).umami) {
+                if (link) {
                     const amazonUrl = link.href;
                     const pageUrl = window.location.pathname;
-                    (window as any).umami.track('clic_afiliado_amazon', {
-                        url: amazonUrl,
-                        pagina: pageUrl
-                    });
+                    if ((window as any).umami) {
+                        (window as any).umami.track('clic_afiliado_amazon', {
+                            url: amazonUrl,
+                            pagina: pageUrl
+                        });
+                    }
+                    if (typeof (window as any).gtag === 'function') {
+                        (window as any).gtag('event', 'clic_afiliado_amazon', {
+                            'event_category': 'Afiliados',
+                            'event_label': amazonUrl,
+                            'page_path': pageUrl
+                        });
+                    }
                 }
             });
         </script>
