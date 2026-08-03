@@ -1,0 +1,108 @@
+---
+// src/pages/en/perifericos/monitores.astro
+import Layout from '../../../layouts/Layout.astro';
+import TablaComparativa from '../../../components/TablaComparativa.astro';
+import AmazonBox from '../../../components/AmazonBox.astro';
+import ProsContras from '../../../components/ProsContras.astro';
+import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Productivity & Gaming Monitors (2026)";
+const descripcion = "Comparison and review of the best computer monitors: 34-inch ultrawide panoramic displays, 120Hz IPS panels with eye care protection, and budget models.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      The Best <span class="text-amber-500">Monitors</span> for Your Desk
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Your monitor is the central focus of your desktop setup. High resolution and refresh rates improve clarity, reduce eye strain, and boost productivity.
+      <strong>Discover our top recommended displays for work and gaming.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Samsung ViewFinity S5 34\"",
+          imageUrl: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg",
+          feature1: "Ultra WQHD (3440 x 1440) 21:9",
+          feature2: "100Hz refresh, HDR10 & PBP/PIP multitasking",
+          amazonUrl: "https://www.amazon.es/dp/B0BRL97W65?tag=jotabro00-21",
+          badge: "Our Choice (Ultrawide)"
+        },
+        {
+          name: "PHILIPS 24E1N1100A 24\"",
+          imageUrl: "https://m.media-amazon.com/images/I/41-DZtriA1L.jpg",
+          feature1: "Smooth 120Hz FHD IPS panel",
+          feature2: "Integrated stereo speakers",
+          amazonUrl: "https://www.amazon.es/dp/B0CX9CT3ZF?tag=jotabro00-21",
+          badge: "Best Value"
+        },
+        {
+          name: "ASUS VY249HGR Eye Care",
+          imageUrl: "https://m.media-amazon.com/images/I/81toW8rqP6L.jpg",
+          feature1: "120Hz refresh & 1ms response time",
+          feature2: "TÜV certified blue light filter & flicker-free",
+          amazonUrl: "https://www.amazon.es/dp/B0DN6NHW6F?tag=jotabro00-21",
+          badge: "Gaming & Eye Care"
+        },
+        {
+          name: "Acer EK241YGBIF 23.8\"",
+          imageUrl: "https://m.media-amazon.com/images/I/51CunQurK5L.jpg",
+          feature1: "Ultra-slim 120Hz Full HD IPS panel",
+          feature2: "ZeroFrame slim-bezel design",
+          amazonUrl: "https://www.amazon.es/dp/B0DM679R7F?tag=jotabro00-21",
+          badge: "Budget Choice"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Featured Monitors
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title='1. Samsung ViewFinity S5 34" Ultrawide - 3440x1440 WQHD Multitasking King' 
+          imageUrl="https://m.media-amazon.com/images/I/51so8xGsVzL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0BRL97W65?tag=jotabro00-21"
+          badge="Ultrawide Productivity"
+          rating="4.7"
+          features={[
+            "34-inch 21:9 Ultra WQHD resolution (3440 x 1440)",
+            "100Hz refresh rate with AMD FreeSync",
+            "HDR10 support for vivid contrast and colors",
+            "PBP (Picture-by-Picture) & PIP (Picture-in-Picture) split screen"
+          ]}
+          description="Replaces dual monitor setups with a single seamless ultrawide screen, ideal for timeline editing, spreadsheets, and multi-window coding."
+        />
+        <ProsContras 
+          pros={[
+            "Huge 21:9 workspace eliminating screen bezels.",
+            "100Hz refresh rate offers smooth scrolling.",
+            "Eye Saver Mode certified by TÜV Rheinland."
+          ]}
+          contras={[
+            "Requires a wide desk surface.",
+            "Flat panel design (some users prefer subtle curves on 34-inch displays)."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/perifericos/monitores" />
+
+</Layout>

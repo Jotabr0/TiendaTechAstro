@@ -1,0 +1,118 @@
+---
+// src/pages/en/humidificadores.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Humidifiers for Desk & Office (2026) | RGB, Ultrasonic & Silent";
+const descripcion = "Guide and comparison of the best desk humidifiers: ultrasonic humidifiers with RGB LED mood lights, smart WiFi Alexa integration, essential oil aroma diffusers, and low power consumption.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 text-xs font-bold uppercase tracking-wider mb-4">
+      💨 Setup Health & Air Care 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      The Best <span class="text-amber-500">Air Humidifiers</span> for Your Setup
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Maintaining optimal relative humidity (40%-60%) in your workspace prevents dry eyes and skin irritation, while adding a stylish aesthetic to your desktop with colorful RGB LED mood lighting.
+      <strong>Discover quiet ultrasonic humidifiers, smart Alexa models, and RGB aroma diffusers.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Recommended Humidifiers Comparison</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "Cecotec Pure Aroma 300 RGB",
+          imageUrl: "https://m.media-amazon.com/images/I/61ujH1-gLaL.jpg",
+          feature1: "7 Ambient LED mood colors for setup",
+          feature2: "10W ultrasonic essential oil diffuser",
+          amazonUrl: "https://www.amazon.es/dp/B0F6D4RS1F?tag=jotabro00-21",
+          badge: "Our Pick (RGB & Setup)"
+        },
+        {
+          name: "DREO 3L Ultra Quiet",
+          imageUrl: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg",
+          feature1: "26dB whisper quiet hygrostat sensor",
+          feature2: "30-hour runtime with night light",
+          amazonUrl: "https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21",
+          badge: "Quiet & Health"
+        },
+        {
+          name: "Levoit LV600S Smart 6L",
+          imageUrl: "https://m.media-amazon.com/images/I/51696SVoe+L.jpg",
+          feature1: "WiFi control via App & Alexa/Google",
+          feature2: "Warm & Cool mist with 36h runtime",
+          amazonUrl: "https://www.amazon.es/dp/B0B744C8LB?tag=jotabro00-21",
+          badge: "Smart & High Capacity"
+        },
+        {
+          name: "ZOVHYYA 500ml 14 LED",
+          imageUrl: "https://m.media-amazon.com/images/I/81GpduVjpEL.jpg",
+          feature1: "14 LED light modes with remote",
+          feature2: "Includes 8 pure essential oils",
+          amazonUrl: "https://www.amazon.es/dp/B0CSYY5GXR?tag=jotabro00-21",
+          badge: "Aromatherapy Kit Pack"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Recommended Models
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Cecotec Pure Aroma 300 RGB - Ambient Mood Light & Aroma Diffuser" 
+          imageUrl="https://m.media-amazon.com/images/I/61ujH1-gLaL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0F6D4RS1F?tag=jotabro00-21"
+          badge="Top Setup Pick"
+          rating="4.6"
+          features={[
+            "Ultrasonic technology functioning as air humidifier and aroma diffuser",
+            "7 customizable LED light colors for desktop ambient vibe",
+            "Continuous quiet operation",
+            "Automatic safety shutoff when water runs out"
+          ]}
+          description="A compact desk humidifier that doubles as a mood lamp and essential oil diffuser. Perfect for adding a fresh fragrance and colorful glow next to your keyboard."
+        />
+        <ProsContras 
+          pros={[
+            "7 ambient LED colors matching your PC keyboard lighting.",
+            "Ultra quiet operation perfect for focus and studying.",
+            "Compact footprint fits easily on small desk shelves."
+          ]}
+          contras={[
+            "300ml tank requires refilling every 8-10 hours.",
+            "Best suited for small rooms and immediate desk zone."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/humidificadores" />
+
+</Layout>

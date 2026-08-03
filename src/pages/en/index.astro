@@ -1,0 +1,351 @@
+---
+// src/pages/en/index.astro
+import Layout from '../../layouts/Layout.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+// Top Selling Products (Row 1)
+const topVentas = [
+  {
+    name: "SIHOO M18 Ergonomic Chair",
+    badge: "#1 Best Seller",
+    rating: "4.7",
+    image: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg",
+    feature: "2D Adjustable Lumbar Support",
+    amazonUrl: "https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21",
+    categoryUrl: "/en/sillas-oficina"
+  },
+  {
+    name: "ErGear Standing Desk 120x60",
+    badge: "Top Standing Desk",
+    rating: "4.7",
+    image: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg",
+    feature: "Electric Motor + 4 Presets",
+    amazonUrl: "https://www.amazon.es/dp/B0D9MGDDHD?tag=jotabro00-21",
+    categoryUrl: "/en/mesas-escritorio"
+  },
+  {
+    name: "Quntis Screenbar Monitor Light",
+    badge: "Anti-Glare Eye Care",
+    rating: "4.8",
+    image: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg",
+    feature: "45° Asymmetric Lighting",
+    amazonUrl: "https://www.amazon.es/dp/B08C4V3B35?tag=jotabro00-21",
+    categoryUrl: "/en/iluminacion"
+  },
+  {
+    name: "Logitech Lift Ergonomic Vertical Mouse",
+    badge: "Carpal Tunnel Relief",
+    rating: "4.7",
+    image: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg",
+    feature: "57° Ergonomic Postural Angle",
+    amazonUrl: "https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21",
+    categoryUrl: "/en/perifericos/ratones"
+  }
+];
+
+// Most Recommended Products (Row 2)
+const masRecomendados = [
+  {
+    name: "Soundcore Q30 ANC Headphones",
+    badge: "Active Noise Cancelling",
+    rating: "4.6",
+    image: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg",
+    feature: "50h Battery + Hi-Res Audio",
+    amazonUrl: "https://www.amazon.es/dp/B08HMWZBXC?tag=jotabro00-21",
+    categoryUrl: "/en/perifericos/auriculares"
+  },
+  {
+    name: "Titanwolf Speed XXL 90x40cm",
+    badge: "Giant Desk Mat",
+    rating: "4.8",
+    image: "https://m.media-amazon.com/images/I/81IP3XKIWkL.jpg",
+    feature: "Soft Anti-Fray Speed Surface",
+    amazonUrl: "https://www.amazon.es/dp/B07H37NQNQ?tag=jotabro00-21",
+    categoryUrl: "/en/alfombrillas"
+  },
+  {
+    name: "Samsung ViewFinity 34-inch Ultrawide",
+    badge: "Panoramic Display",
+    rating: "4.6",
+    image: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg",
+    feature: "3440x1440 WQHD 100Hz HDR10",
+    amazonUrl: "https://www.amazon.es/dp/B0BRL97W65?tag=jotabro00-21",
+    categoryUrl: "/en/perifericos/monitores"
+  },
+  {
+    name: "DREO 3L Humidifier 26dB",
+    badge: "Ultra Quiet & Health",
+    rating: "4.5",
+    image: "https://m.media-amazon.com/images/I/615RE170RqL.jpg",
+    feature: "Smart Humidity Sensor & Hygrostat",
+    amazonUrl: "https://www.amazon.es/dp/B0DF2Y9SH4?tag=jotabro00-21",
+    categoryUrl: "/en/humidificadores"
+  }
+];
+
+// Horizontal Panoramic Categories
+const categories = [
+  { 
+    name: 'Ergonomic Office Chairs', 
+    url: '/en/sillas-oficina', 
+    badge: 'Lumbar Health', 
+    image: 'https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg',
+    models: 'SIHOO M18, Durrafy, Amazon Basics...',
+    desc: 'Breathable mesh ergonomic chairs with 2D/3D adjustable lumbar support for 8+ hour remote workdays without back pain.' 
+  },
+  { 
+    name: 'Reclining Gaming Chairs', 
+    url: '/en/sillas-gaming', 
+    badge: 'Streaming & Comfort', 
+    image: 'https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg',
+    models: 'SONGMICS Racing, Silla Gaming Pro, WOLTU...',
+    desc: 'Contoured sports chairs with extendable footrests, 150° recline, and neck/lumbar support pillows for gaming marathons.' 
+  },
+  { 
+    name: 'Desks & Standing Desks', 
+    url: '/en/mesas-escritorio', 
+    badge: 'Standing Desks', 
+    image: 'https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg',
+    models: 'ErGear Elevable, Habitdesign BUC, Coleshome...',
+    desc: 'Electric height-adjustable standing desks with quiet motors and height presets, plus L-shaped corner desks to maximize workspace.' 
+  },
+  { 
+    name: 'High-Performance Peripherals', 
+    url: '/en/perifericos', 
+    badge: 'Hardware Hub', 
+    image: 'https://m.media-amazon.com/images/I/61EBVYinRGL.jpg',
+    models: 'Logitech MX Master, Lift Vertical, Soundcore...',
+    desc: 'Complete catalog of vertical ergonomic mice, low-profile silent keyboards, ANC headphones, ultrawide monitors, and desktop speakers.' 
+  },
+  { 
+    name: 'Desk Setup Lighting', 
+    url: '/en/iluminacion', 
+    badge: 'Screenbars & RGBIC', 
+    image: 'https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg',
+    models: 'Quntis Screenbar, AURORIONCG, NEEWER, YICAIZI...',
+    desc: 'Anti-glare monitor light bars, music-synced RGBIC LED strips, wall panel lights, and streaming key lights.' 
+  },
+  { 
+    name: 'XXL Desk Mats & Pads', 
+    url: '/en/alfombrillas', 
+    badge: 'Desk Mats & RGB', 
+    image: 'https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg',
+    models: 'Titanwolf Speed XXL, Logitech Desk Mat, Realky RGB...',
+    desc: 'Giant 90x40 cm desk surfaces, RGB edge-lit mouse pads, 15W Qi wireless charging mats, and gel wrist rest pads.' 
+  },
+  { 
+    name: 'Humidifiers & Aromatherapy', 
+    url: '/en/humidificadores', 
+    badge: 'Ultrasonic Air Care', 
+    image: 'https://m.media-amazon.com/images/I/615RE170RqL.jpg',
+    models: 'DREO Ultrasonic, Levoit Smart 6L, Cecotec RGB...',
+    desc: 'Ultra-quiet 26 dB ultrasonic humidifiers, Alexa-compatible smart WiFi humidifiers, and aroma diffusers with mood LED lighting.' 
+  },
+];
+
+const titulo = "Desk & Setup Guide (2026) | Ergonomic Chairs, Standing Desks & Peripherals";
+const descripcion = "Discover the best products for your workspace and gaming setup: ergonomic chairs, standing desks, vertical mice, keyboards, screenbars, and air humidifiers.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* Header */}
+  <header class="my-6 sm:my-8 border-b border-slate-200 pb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-extrabold uppercase tracking-wider mb-3">
+      ⚡ Ergonomics & Setup Guide 2026
+    </div>
+
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-3">
+      The Best Products & Guides to <span class="text-amber-500">Build Your Setup</span>
+    </h1>
+
+    <p class="text-base text-slate-600 max-w-3xl leading-relaxed">
+      In-depth reviews and direct deals on Amazon for ergonomic furniture, postural health, and peripherals to work or play with peak comfort.
+    </p>
+  </header>
+
+  {/* ROW 1: 🔥 TOP SELLING PRODUCTS */}
+  <section class="mb-14">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-2xl font-black text-slate-900 flex items-center gap-2">
+          <span>🔥</span> Best Sellers for Your Desk
+        </h2>
+        <p class="text-xs text-slate-500 mt-0.5">Top-selling products verified with highest user ratings</p>
+      </div>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {topVentas.map((prod) => (
+        <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-full h-44 bg-white rounded-2xl p-3 flex items-center justify-center mb-4 relative">
+              <span class="absolute top-2 left-2 z-10 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+                {prod.badge}
+              </span>
+              <img 
+                src={prod.image} 
+                alt={prod.name} 
+                class="max-h-36 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="flex items-center gap-1 text-xs text-amber-500 font-bold mb-1.5">
+              <span>★ {prod.rating}</span>
+              <span class="text-slate-400 font-normal">• Verified on Amazon</span>
+            </div>
+
+            <h3 class="font-extrabold text-slate-900 text-base leading-snug mb-1 group-hover:text-amber-500 transition-colors">
+              {prod.name}
+            </h3>
+
+            <p class="text-xs text-slate-500 font-medium mb-4">
+              {prod.feature}
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <a 
+              href={prod.amazonUrl} 
+              target="_blank" 
+              rel="nofollow noopener sponsored" 
+              class="block w-full text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black py-2.5 px-4 rounded-xl text-xs shadow-sm transition-all"
+            >
+              View offer on Amazon ➔
+            </a>
+            <a 
+              href={prod.categoryUrl} 
+              class="block text-center text-[11px] font-bold text-slate-400 hover:text-amber-500 transition-colors"
+            >
+              View category guide
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* ROW 2: ⭐ RECOMMENDED SELECTION */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-2xl font-black text-slate-900 flex items-center gap-2">
+          <span>⭐</span> ZenZone Recommended Selection
+        </h2>
+        <p class="text-xs text-slate-500 mt-0.5">Essential accessories to boost your productivity and eye comfort</p>
+      </div>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {masRecomendados.map((prod) => (
+        <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-full h-44 bg-white rounded-2xl p-3 flex items-center justify-center mb-4 relative">
+              <span class="absolute top-2 left-2 z-10 bg-slate-900 text-amber-400 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+                {prod.badge}
+              </span>
+              <img 
+                src={prod.image} 
+                alt={prod.name} 
+                class="max-h-36 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="flex items-center gap-1 text-xs text-amber-500 font-bold mb-1.5">
+              <span>★ {prod.rating}</span>
+              <span class="text-slate-400 font-normal">• Verified on Amazon</span>
+            </div>
+
+            <h3 class="font-extrabold text-slate-900 text-base leading-snug mb-1 group-hover:text-amber-500 transition-colors">
+              {prod.name}
+            </h3>
+
+            <p class="text-xs text-slate-500 font-medium mb-4">
+              {prod.feature}
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <a 
+              href={prod.amazonUrl} 
+              target="_blank" 
+              rel="nofollow noopener sponsored" 
+              class="block w-full text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black py-2.5 px-4 rounded-xl text-xs shadow-sm transition-all"
+            >
+              View offer on Amazon ➔
+            </a>
+            <a 
+              href={prod.categoryUrl} 
+              class="block text-center text-[11px] font-bold text-slate-400 hover:text-amber-500 transition-colors"
+            >
+              View category guide
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Category Banners */}
+  <section id="categorias" class="mb-20 scroll-mt-24">
+    <div class="flex items-center justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900">Complete Catalog by Category</h2>
+        <p class="text-sm text-slate-500 mt-1">Explore guide reviews with real data from Amazon for every product type</p>
+      </div>
+      <div class="hidden md:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <div class="space-y-6">
+      {categories.map((cat) => (
+        <a 
+          href={cat.url}
+          class="group bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div class="w-full md:w-48 h-40 bg-white rounded-2xl p-3 flex items-center justify-center relative flex-shrink-0">
+            <span class="absolute top-2 left-2 z-10 bg-amber-500 text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+              {cat.badge}
+            </span>
+            <img 
+              src={cat.image} 
+              alt={cat.name} 
+              class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="flex-1 space-y-2 text-left">
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-amber-500 transition-colors flex items-center gap-2">
+              <span>{cat.name}</span>
+              <span class="text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity">➔</span>
+            </h3>
+
+            <p class="text-xs font-bold text-amber-600 bg-amber-50 inline-block px-2.5 py-1 rounded-lg border border-amber-200/60">
+              Featured: {cat.models}
+            </p>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+              {cat.desc}
+            </p>
+          </div>
+
+          <div class="w-full md:w-auto flex-shrink-0">
+            <span class="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-slate-900 group-hover:bg-amber-500 text-white group-hover:text-slate-950 font-black px-6 py-3.5 rounded-2xl text-xs sm:text-sm transition-all shadow-sm">
+              <span>Explore Category</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/" />
+
+</Layout>

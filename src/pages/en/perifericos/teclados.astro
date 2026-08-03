@@ -1,0 +1,137 @@
+---
+// src/pages/en/perifericos/teclados.astro
+import Layout from '../../../layouts/Layout.astro';
+import TablaComparativa from '../../../components/TablaComparativa.astro';
+import AmazonBox from '../../../components/AmazonBox.astro';
+import ProsContras from '../../../components/ProsContras.astro';
+import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Ergonomic, Mechanical & Slim Keyboards (2026)";
+const descripcion = "Comparison of the best computer keyboards: wireless with cushioned wrist rest, gaming mechanical, low profile ultra-thin, and budget office options.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      The Best <span class="text-amber-500">Keyboards</span> for Work & Gaming
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Typing with comfort, speed, and postural ease makes all the difference in your daily productivity.
+      <strong>We review the best ergonomic, wireless, and mechanical keyboards on the market.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Logitech Wave Keys",
+          imageUrl: "https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg",
+          feature1: "Wave shaped ergonomic keyframe",
+          feature2: "Cushioned memory foam wrist rest",
+          amazonUrl: "https://www.amazon.es/dp/B07W6J71BL?tag=jotabro00-21",
+          badge: "Our Choice (Ergonomic)"
+        },
+        {
+          name: "Logitech Signature Slim K950",
+          imageUrl: "https://m.media-amazon.com/images/I/61P3q+-7jkL.jpg",
+          feature1: "Ultra-slim quiet typing design",
+          feature2: "Easy-Switch for 3 devices",
+          amazonUrl: "https://www.amazon.es/dp/B0CTKRK42K?tag=jotabro00-21",
+          badge: "Slim Productivity"
+        },
+        {
+          name: "Mars Gaming MCPTKL",
+          imageUrl: "https://m.media-amazon.com/images/I/71coxqfQnTL.jpg",
+          feature1: "TKL tenkeyless compact layout",
+          feature2: "H-Mech hybrid switches & RGB",
+          amazonUrl: "https://www.amazon.es/dp/B08D99PFSD?tag=jotabro00-21",
+          badge: "Best Budget Gaming"
+        },
+        {
+          name: "Logitech K120 Business",
+          imageUrl: "https://m.media-amazon.com/images/I/61U-L2mrlRL.jpg",
+          feature1: "Spill-resistant design",
+          feature2: "Plug & Play direct USB connection",
+          amazonUrl: "https://www.amazon.es/dp/B00564NI9U?tag=jotabro00-21",
+          badge: "Budget Office"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Top Keyboards
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Logitech Wave Keys - Natural Ergonomic Wave Layout & Memory Wrist Rest" 
+          imageUrl="https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07W6J71BL?tag=jotabro00-21"
+          badge="Ergonomic Top Pick"
+          rating="4.7"
+          features={[
+            "Wave shaped key layout supporting natural finger motion",
+            "3-layer memory foam padded wrist rest",
+            "Dual Bluetooth and Logi Bolt wireless connectivity",
+            "Multi-OS layout compatible with Mac and Windows"
+          ]}
+          description="Designed to place your hands, wrists, and forearms into a natural typing posture for strain-free typing all day long."
+        />
+        <ProsContras 
+          pros={[
+            "Padded 3-layer wrist rest reduces wrist pressure.",
+            "Familiar full layout without a steep learning curve.",
+            "Long battery life up to 36 months on AAA batteries."
+          ]}
+          contras={[
+            "Wrist rest is integrated and non-removable.",
+            "No key backlighting."
+          ]}
+        />
+      </article>
+
+      {/* Product 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Logitech Signature Slim K950 - Ultra-Thin & Quiet Multi-Device Typing" 
+          imageUrl="https://m.media-amazon.com/images/I/61P3q+-7jkL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0CTKRK42K?tag=jotabro00-21"
+          badge="Ultra-Slim Design"
+          rating="4.6"
+          features={[
+            "Ultra-slim profile resembling laptop typing feel",
+            "Quiet keystrokes for distraction-free office environments",
+            "One-touch Easy-Switch keys for switching between 3 devices",
+            "Customizable shortcut keys via Logi Options+ App"
+          ]}
+          description="A sleek low-profile keyboard engineered for modern desktop aesthetics and seamless switching between laptop, desktop, and tablet."
+        />
+        <ProsContras 
+          pros={[
+            "Minimalist thin profile looks modern on any desk.",
+            "Quiet low-profile key switches.",
+            "Instantly switch connection between PC, Mac, and iPad."
+          ]}
+          contras={[
+            "Non-backlit keys.",
+            "Shallow key travel might not suit mechanical keyboard fans."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/perifericos/teclados" />
+
+</Layout>

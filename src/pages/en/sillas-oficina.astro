@@ -1,0 +1,169 @@
+---
+// src/pages/en/sillas-oficina.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Ergonomic Office Chairs for Remote Work (2026)";
+const descripcion = "Comparison and reviews of the best ergonomic office chairs: 2D/3D lumbar support, breathable mesh, 8+ hour intensive use, and postural health.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🪑 Ergonomics & Postural Health Guide 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      The Best <span class="text-amber-500">Ergonomic Office Chairs</span>
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Spending 8 hours a day sitting at your desk without proper lumbar support causes back pain, neck stiffness, and fatigue.
+      <strong>We review the best chairs featuring adjustable lumbar support, breathable mesh, and proven durability for home office.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Ergonomic Office Chairs Comparison</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "SIHOO M18",
+          imageUrl: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg",
+          feature1: "2D Adjustable Lumbar Support",
+          feature2: "Supports up to 150 kg (8+h use)",
+          amazonUrl: "https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21",
+          badge: "Our Top Choice (Remote Work)"
+        },
+        {
+          name: "Durrafy Ergonomic",
+          imageUrl: "https://m.media-amazon.com/images/I/61VuGTf145L.jpg",
+          feature1: "90° Flip-up Armrests",
+          feature2: "Space saving under desk",
+          amazonUrl: "https://www.amazon.es/dp/B0BWXKW5FL?tag=jotabro00-21",
+          badge: "Small Spaces"
+        },
+        {
+          name: "Amazon Basics Executive",
+          imageUrl: "https://m.media-amazon.com/images/I/61vvj8RQ5nL.jpg",
+          feature1: "High-density breathable mesh",
+          feature2: "High backrest with headrest",
+          amazonUrl: "https://www.amazon.es/dp/B09B82GM22?tag=jotabro00-21",
+          badge: "Best Value"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Recommended Models
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. SIHOO M18 - The Undisputed King of Remote Work Ergonomics" 
+          imageUrl="https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21"
+          badge="Best Seller Remote Work"
+          rating="4.7"
+          features={[
+            "Height and depth adjustable lumbar support",
+            "High-resistance heat-resistant mesh",
+            "SGS certified gas lift supporting up to 150 kg",
+            "45° tilt-adjustable headrest"
+          ]}
+          description="The SIHOO M18 has become the benchmark chair for work-from-home setups. Its primary strength lies in its independent 2D lumbar system that maintains the natural curvature of your spine, reducing pressure on lower vertebrae."
+        />
+        <ProsContras 
+          pros={[
+            "Lumbar support adjustable in both depth and height.",
+            "Breathable mesh backrest preventing summer heat build-up.",
+            "Reinforced steel base for maximum durability.",
+            "W-shaped contoured seat cushion easing pressure on thighs."
+          ]}
+          contras={[
+            "Initial assembly takes approximately 30 minutes.",
+            "Armrests adjust in height but do not rotate laterally."
+          ]}
+        />
+      </article>
+
+      {/* Product 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Durrafy Ergonomic Chair - Flip-Up Armrests & Compact Design" 
+          imageUrl="https://m.media-amazon.com/images/I/61VuGTf145L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0BWXKW5FL?tag=jotabro00-21"
+          badge="Best for Small Rooms"
+          rating="4.6"
+          features={[
+            "90° folding armrests to slide completely under desks",
+            "Ergonomic S-shaped backrest for spinal alignment",
+            "Dense sponge seat with elastic fabric cover",
+            "Quiet 360° smooth-rolling caster wheels"
+          ]}
+          description="Ideal for compact rooms and home offices, the Durrafy chair features 90° flip-up armrests, allowing you to tuck the chair fully underneath your desk when finished working."
+        />
+        <ProsContras 
+          pros={[
+            "Folding armrests save significant floor space.",
+            "Excellent value for tight budgets.",
+            "Easy setup with included tools and clear guide."
+          ]}
+          contras={[
+            "No separate dedicated headrest.",
+            "Recline mechanism has fixed locking positions."
+          ]}
+        />
+      </article>
+
+      {/* Product 3 */}
+      <article>
+        <AmazonBox 
+          title="3. Amazon Basics Executive Mesh Chair - High-Back & Premium Comfort" 
+          imageUrl="https://m.media-amazon.com/images/I/61vvj8RQ5nL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B09B82GM22?tag=jotabro00-21"
+          badge="High Backrest & Value"
+          rating="4.5"
+          features={[
+            "Full high-back design with integrated headrest",
+            "Breathable mesh material providing continuous airflow",
+            "Padded padded armrests for wrist comfort",
+            "Tilt tension control with locking mechanism"
+          ]}
+          description="An executive ergonomic chair designed for tall users needing head and neck support during long workdays. Backed by Amazon Basics reliability."
+        />
+        <ProsContras 
+          pros={[
+            "Integrated headrest provides total neck relaxation.",
+            "Sturdy construction with smooth height adjustment.",
+            "Subtle professional design matching any home office."
+          ]}
+          contras={[
+            "Armrests are non-adjustable in height.",
+            "Firm seat cushion requires a few days to break in."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/sillas-oficina" />
+
+</Layout>

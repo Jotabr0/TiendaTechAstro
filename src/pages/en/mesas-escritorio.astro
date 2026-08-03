@@ -1,0 +1,166 @@
+---
+// src/pages/en/mesas-escritorio.astro
+import Layout from "../../layouts/Layout.astro";
+import TablaComparativa from "../../components/TablaComparativa.astro";
+import AmazonBox from "../../components/AmazonBox.astro";
+import ProsContras from "../../components/ProsContras.astro";
+import SugerenciasSetup from "../../components/SugerenciasSetup.astro";
+
+const titulo = "The Best Desks & Standing Desks for Your Setup (2026)";
+const descripcion = "Comparison and review of the best computer desks: electric height adjustable standing desks, L-shaped corner desks, oak tops with storage, and cable management.";
+---
+
+<Layout title={titulo} description={descripcion}>
+    {/* 1. HEADER */}
+    <header class="text-center my-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
+          🖥️ Setup Architecture & Organization 2026
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+            The Best <span class="text-emerald-500">Computer Desks</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            The foundation of any great work or gaming space is the desk. Whether you want to alternate between sitting and standing with an electric standing desk or maximize room space with an L-shaped corner desk,
+            <strong>we review the finest desk tops and heavy-duty frames available.</strong>
+        </p>
+    </header>
+
+    {/* 2. COMPARISON TABLE */}
+    <section class="mb-16">
+        <div class="flex items-center justify-between gap-4 mb-6">
+            <h2 class="text-2xl font-bold text-slate-900">Featured Computer Desks Comparison</h2>
+            <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+        </div>
+
+        <TablaComparativa
+            products={[
+                {
+                    name: "ErGear Electric Standing Desk",
+                    imageUrl: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg",
+                    feature1: "Electric Motor with 4 Memory Presets",
+                    feature2: "Sit / Stand alternating capability",
+                    amazonUrl: "https://www.amazon.es/dp/B0D9MGDDHD?tag=jotabro00-21",
+                    badge: "Our Pick (Standing Desk)",
+                },
+                {
+                    name: "Habitdesign Office BUC",
+                    imageUrl: "https://m.media-amazon.com/images/I/713tj+gft4L.jpg",
+                    feature1: "Reversible Drawers (145x102cm)",
+                    feature2: "Ample drawer storage space",
+                    amazonUrl: "https://www.amazon.es/dp/B07DPP6RFJ?tag=jotabro00-21",
+                    badge: "Most Sturdy"
+                },
+                {
+                    name: "Coleshome L-Shaped Desk",
+                    imageUrl: "https://m.media-amazon.com/images/I/71zkBKbEWcL.jpg",
+                    feature1: "Compact L-Shape (100x70cm)",
+                    feature2: "Lower shelves for PC tower/console",
+                    amazonUrl: "https://www.amazon.es/dp/B0FDB3Y1YT?tag=jotabro00-21",
+                    badge: "Best Budget"
+                }
+            ]}
+        />
+    </section>
+
+    {/* 3. INDIVIDUAL REVIEWS */}
+    <section class="mb-20">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+            In-Depth Review of Recommended Desks
+        </h2>
+
+        <div class="space-y-16">
+            {/* Product 1 */}
+            <article>
+                <AmazonBox
+                    title="1. ErGear Electric Standing Desk - Gold Standard for Sit-Stand Work"
+                    imageUrl="https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg"
+                    amazonUrl="https://www.amazon.es/dp/B0D9MGDDHD?tag=jotabro00-21"
+                    badge="Top Innovation"
+                    rating="4.7"
+                    features={[
+                        "Quiet electric motor with smooth height adjustment",
+                        "Control panel with 4 height memory presets",
+                        "Solid 120x60 cm desktop with rounded safety corners",
+                        "Integrated side headphone hooks"
+                    ]}
+                    description="Sitting for 8 straight hours takes a toll on your back. The ErGear 120x60 cm electric standing desk solves this issue with a smooth quiet motor. Perfect for programming, editing, or intensive remote work where you need to stretch your legs without stopping your workflow."
+                />
+                <ProsContras
+                    pros={[
+                        "Digital panel with 4 programmable memory slots for exact heights.",
+                        "Smooth motor movement: monitors and coffee mugs do not wobble during height transition.",
+                        "Rigid steel leg frame with anti-corrosion coating.",
+                        "Side hooks for hanging headphones or backpacks."
+                    ]}
+                    contras={[
+                        "Requires permanent connection to a wall outlet.",
+                        "Initial assembly takes 45 to 60 minutes."
+                    ]}
+                />
+            </article>
+
+            {/* Product 2 */}
+            <article>
+                <AmazonBox
+                    title="2. Habitdesign Office BUC Desk - Integrated Drawers & Storage"
+                    imageUrl="https://m.media-amazon.com/images/I/713tj+gft4L.jpg"
+                    amazonUrl="https://www.amazon.es/dp/B07DPP6RFJ?tag=jotabro00-21"
+                    badge="Maximum Storage"
+                    rating="4.6"
+                    features={[
+                        "Spacious 145x102 cm surface area",
+                        "Reversible side drawers for flexible room layouts",
+                        "High-resistance melamine finish",
+                        "Open shelves for documents and PC tower"
+                    ]}
+                    description="Designed for home offices needing ample filing storage and space for dual monitors, peripherals, and paperwork."
+                />
+                <ProsContras
+                    pros={[
+                        "Huge surface area accommodating dual monitors and accessories.",
+                        "Reversible drawer unit allows assembling left or right side.",
+                        "Robust and heavy-duty feel."
+                    ]}
+                    contras={[
+                        "Fixed height (non-adjustable standing desk).",
+                        "Delivered in heavy flat packages requiring two people to assemble."
+                    ]}
+                />
+            </article>
+
+            {/* Product 3 */}
+            <article>
+                <AmazonBox
+                    title="3. Coleshome L-Shaped Corner Desk - Compact Space Maximizer"
+                    imageUrl="https://m.media-amazon.com/images/I/71zkBKbEWcL.jpg"
+                    amazonUrl="https://www.amazon.es/dp/B0FDB3Y1YT?tag=jotabro00-21"
+                    badge="Compact L-Desk"
+                    rating="4.5"
+                    features={[
+                        "Corner L-shape design fitting small bedroom corners",
+                        "Includes bottom storage shelves for PC tower or books",
+                        "Sturdy steel frame with adjustable leveling feet",
+                        "Scratch-resistant waterproof desktop"
+                    ]}
+                    description="Maximize unused room corners with this compact L-shaped desk, offering separate zones for monitor work and writing."
+                />
+                <ProsContras
+                    pros={[
+                        "Fits perfectly into room corners maximizing available floor space.",
+                        "Lower shelving elevates PC tower off dusty floors.",
+                        "Great price-to-quality ratio."
+                    ]}
+                    contras={[
+                        "Narrower depth on side return wing.",
+                        "Basic cable management grommets."
+                    ]}
+                />
+            </article>
+
+        </div>
+    </section>
+
+    <SugerenciasSetup currentUrl="/en/mesas-escritorio" />
+
+</Layout>

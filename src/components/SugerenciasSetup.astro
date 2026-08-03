@@ -1,5 +1,6 @@
 ---
 // src/components/SugerenciasSetup.astro
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n/ui';
 
 interface Item {
   title: string;
@@ -16,101 +17,56 @@ interface Props {
   limit?: number;
 }
 
-// Catálogo exclusivo mapeado 1:1 con nuestras páginas reales e imágenes verificadas (Status 200 OK)
-const realCategorySuggestions: Item[] = [
-  {
-    title: "Sillas de Oficina",
-    url: "/sillas-oficina",
-    badge: "Salud Lumbar",
-    image: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg",
-    desc: "Sillas ergonómicas de malla transpirable con soporte lumbar 2D/3D para teletrabajo."
-  },
-  {
-    title: "Sillas Gaming",
-    url: "/sillas-gaming",
-    badge: "Streaming & Confort",
-    image: "https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg",
-    desc: "Sillas deportivas reclinables con reposapiés extensible y cojines cervical/lumbar."
-  },
-  {
-    title: "Mesas de Escritorio",
-    url: "/mesas-escritorio",
-    badge: "Standing Desks",
-    image: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg",
-    desc: "Escritorios elevables eléctricos y mesas esquineras en L para alternar de pie y sentado."
-  },
-  {
-    title: "Ratones",
-    url: "/perifericos/ratones",
-    badge: "Ergonomía & Precisión",
-    image: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg",
-    desc: "Ratones verticales ergonómicos y modelos inalámbricos para prevenir molestias."
-  },
-  {
-    title: "Teclados",
-    url: "/perifericos/teclados",
-    badge: "Escritura Postural",
-    image: "https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg",
-    desc: "Teclados ergonómicos ondulados, silenciosos y de perfil bajo para redactar sin fatiga."
-  },
-  {
-    title: "Auriculares",
-    url: "/perifericos/auriculares",
-    badge: "Cancelación de Ruido",
-    image: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg",
-    desc: "Auriculares inalámbricos con cancelación activa de ruido (ANC) para llamadas y música."
-  },
-  {
-    title: "Monitores",
-    url: "/perifericos/monitores",
-    badge: "Pantallas & Ultrawide",
-    image: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg",
-    desc: "Monitores ultrapanorámicos de 34\" y pantallas IPS con tecnología Eye Care."
-  },
-  {
-    title: "Altavoces",
-    url: "/perifericos/altavoces",
-    badge: "Sonido de Escritorio",
-    image: "https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg",
-    desc: "Altavoces de escritorio estéreo 2.0 y barras de sonido compactas bajo monitor."
-  },
-  {
-    title: "Iluminación",
-    url: "/iluminacion",
-    badge: "Screenbars & RGB",
-    image: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg",
-    desc: "Barras de monitor anti-reflejos, tiras LED RGBIC y luces ambientales de pared."
-  },
-  {
-    title: "Alfombrillas",
-    url: "/alfombrillas",
-    badge: "Desk Mats XXL",
-    image: "https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg",
-    desc: "Superficies gigantes de 90x40 cm, alfombrillas con luces LED RGB y gel postural."
-  },
-  {
-    title: "Humidificadores",
-    url: "/humidificadores",
-    badge: "Climatización Ultrasónica",
-    image: "https://m.media-amazon.com/images/I/615RE170RqL.jpg",
-    desc: "Humidificadores ultrasónicos silenciosos a 26 dB para mantener el nivel de humedad ideal."
-  }
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const suggestionsES: Item[] = [
+  { title: "Sillas de Oficina", url: "/sillas-oficina", badge: "Salud Lumbar", image: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg", desc: "Sillas ergonómicas de malla transpirable con soporte lumbar 2D/3D para teletrabajo." },
+  { title: "Sillas Gaming", url: "/sillas-gaming", badge: "Streaming & Confort", image: "https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg", desc: "Sillas deportivas reclinables con reposapiés extensible y cojines cervical/lumbar." },
+  { title: "Mesas de Escritorio", url: "/mesas-escritorio", badge: "Standing Desks", image: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg", desc: "Escritorios elevables eléctricos y mesas esquineras en L para alternar de pie y sentado." },
+  { title: "Ratones", url: "/perifericos/ratones", badge: "Ergonomía & Precisión", image: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg", desc: "Ratones verticales ergonómicos y modelos inalámbricos para prevenir molestias." },
+  { title: "Teclados", url: "/perifericos/teclados", badge: "Escritura Postural", image: "https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg", desc: "Teclados ergonómicos ondulados, silenciosos y de perfil bajo para redactar sin fatiga." },
+  { title: "Auriculares", url: "/perifericos/auriculares", badge: "Cancelación de Ruido", image: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg", desc: "Auriculares inalámbricos con cancelación activa de ruido (ANC) para llamadas y música." },
+  { title: "Monitores", url: "/perifericos/monitores", badge: "Pantallas & Ultrawide", image: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg", desc: "Monitores ultrapanorámicos de 34\" y pantallas IPS con tecnología Eye Care." },
+  { title: "Altavoces", url: "/perifericos/altavoces", badge: "Sonido de Escritorio", image: "https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg", desc: "Altavoces de escritorio estéreo 2.0 y barras de sonido compactas bajo monitor." },
+  { title: "Iluminación", url: "/iluminacion", badge: "Screenbars & RGB", image: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg", desc: "Barras de monitor anti-reflejos, tiras LED RGBIC y luces ambientales de pared." },
+  { title: "Alfombrillas", url: "/alfombrillas", badge: "Desk Mats XXL", image: "https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg", desc: "Superficies gigantes de 90x40 cm, alfombrillas con luces LED RGB y gel postural." },
+  { title: "Humidificadores", url: "/humidificadores", badge: "Climatización Ultrasónica", image: "https://m.media-amazon.com/images/I/615RE170RqL.jpg", desc: "Humidificadores ultrasónicos silenciosos a 26 dB para mantener el nivel de humedad ideal." }
 ];
+
+const suggestionsEN: Item[] = [
+  { title: "Office Chairs", url: "/sillas-oficina", badge: "Lumbar Health", image: "https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg", desc: "Ergonomic breathable mesh chairs with 2D/3D lumbar support for remote work." },
+  { title: "Gaming Chairs", url: "/sillas-gaming", badge: "Streaming & Comfort", image: "https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg", desc: "Reclining gaming chairs with footrests and neck/lumbar support cushions." },
+  { title: "Desks", url: "/mesas-escritorio", badge: "Standing Desks", image: "https://m.media-amazon.com/images/I/61lAmcbUAjL.jpg", desc: "Electric height-adjustable standing desks and L-shaped corner desks." },
+  { title: "Mice", url: "/perifericos/ratones", badge: "Ergonomics & Precision", image: "https://m.media-amazon.com/images/I/61EBVYinRGL.jpg", desc: "Ergonomic vertical mice and wireless productivity models." },
+  { title: "Keyboards", url: "/perifericos/teclados", badge: "Postural Typing", image: "https://m.media-amazon.com/images/I/71s7K0xjGRL.jpg", desc: "Ergonomic split and low-profile silent keyboards for effortless typing." },
+  { title: "Headphones", url: "/perifericos/auriculares", badge: "Noise Cancelling", image: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg", desc: "Wireless headphones with Active Noise Cancellation (ANC) for focus and calls." },
+  { title: "Monitors", url: "/perifericos/monitores", badge: "Ultrawide Displays", image: "https://m.media-amazon.com/images/I/51so8xGsVzL.jpg", desc: "34\" Ultrawide monitors and IPS displays with Eye Care flicker-free tech." },
+  { title: "Speakers", url: "/perifericos/altavoces", badge: "Desktop Audio", image: "https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg", desc: "2.0 stereo desktop speakers and compact under-monitor soundbars." },
+  { title: "Lighting", url: "/iluminacion", badge: "Screenbars & RGB", image: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg", desc: "Anti-glare monitor screenbars, RGBIC strip lights, and ambient wall panels." },
+  { title: "Mouse Pads", url: "/alfombrillas", badge: "Desk Mats XXL", image: "https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg", desc: "Giant 90x40 cm desk mats, RGB illuminated pads, and ergonomic wrist rests." },
+  { title: "Humidifiers", url: "/humidificadores", badge: "Ultrasonic Air Care", image: "https://m.media-amazon.com/images/I/615RE170RqL.jpg", desc: "Ultra-quiet 26 dB ultrasonic humidifiers for optimal room humidity." }
+];
+
+const realCategorySuggestions = lang === 'en' ? suggestionsEN : suggestionsES;
+
+const defaultTitle = lang === 'en' ? "Complete Your ZenZone Setup 🧘" : "Completa tu Setup ZenZone 🧘";
+const defaultSubtitle = lang === 'en' 
+  ? "Optimizing your work or gaming space requires combining ergonomic furniture with the right accessories. Explore other essential categories:" 
+  : "Optimizar tu espacio de trabajo o juego requiere combinar mobiliario ergonómico con los accesorios adecuados. Explora otras categorías esenciales:";
 
 const { 
   currentUrl = "", 
-  title = "Completa tu Setup ZenZone 🧘", 
-  subtitle = "Optimizar tu espacio de trabajo o juego requiere combinar mobiliario ergonómico con los accesorios adecuados. Explora otras categorías esenciales:",
-  limit = 3
+  title = defaultTitle, 
+  subtitle = defaultSubtitle, 
+  limit = 3 
 } = Astro.props;
 
-// 1. Filtrar sugerencias eliminando la categoría o subcategoría actual
 const filtered = realCategorySuggestions.filter(item => {
   if (!currentUrl) return true;
   return item.url !== currentUrl && !currentUrl.startsWith(item.url);
 });
 
-// 2. Función de hash determinista por URL de la página actual para rotar las sugerencias
 function hashCode(str: string) {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -122,7 +78,6 @@ function hashCode(str: string) {
 
 const seed = currentUrl ? hashCode(currentUrl) : Math.floor(Math.random() * 1000);
 
-// Mezcla determinista garantizando que cada página tenga 3 sugerencias únicas de nuestras categorías reales
 const shuffled = [...filtered].sort((a, b) => {
   const hashA = hashCode(a.url + seed);
   const hashB = hashCode(b.url + seed);
@@ -133,13 +88,12 @@ const displayedItems = shuffled.slice(0, limit);
 ---
 
 <section class="not-prose my-16 bg-slate-950 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
-  {/* Resplandor decorativo de fondo */}
   <div class="absolute -top-24 -right-24 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
   
   <div class="relative z-10">
     <div class="max-w-3xl mb-8">
       <span class="text-xs font-extrabold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-        Recomendaciones de Setup
+        {lang === 'en' ? 'Setup Recommendations' : 'Recomendaciones de Setup'}
       </span>
       <h3 class="text-2xl sm:text-3xl font-black mt-3 mb-2 text-white">
         {title}
@@ -150,43 +104,45 @@ const displayedItems = shuffled.slice(0, limit);
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {displayedItems.map((item) => (
-        <a 
-          href={item.url} 
-          class="group bg-slate-900/90 border border-slate-800 hover:border-amber-400/80 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between"
-        >
-          <div>
-            {/* Marco en blanco puro (#ffffff) para fusionar fondos de imagen de producto */}
-            <div class="w-full h-36 bg-white rounded-xl p-3 flex items-center justify-center mb-4 overflow-hidden">
-              <img 
-                src={item.image} 
-                alt={`Categoría ${item.title}`} 
-                class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
+      {displayedItems.map((item) => {
+        const itemLocaleUrl = getRelativeLocaleUrl(lang, item.url);
+        return (
+          <a 
+            href={itemLocaleUrl} 
+            class="group bg-slate-900/90 border border-slate-800 hover:border-amber-400/80 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div class="w-full h-36 bg-white rounded-xl p-3 flex items-center justify-center mb-4 overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={`${item.title}`} 
+                  class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              
+              <span class="inline-block bg-amber-400/10 text-amber-400 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full mb-2">
+                {item.badge}
+              </span>
+
+              <h4 class="font-extrabold text-base text-white group-hover:text-amber-400 transition-colors mb-1.5">
+                {item.title}
+              </h4>
+
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                {item.desc}
+              </p>
             </div>
-            
-            <span class="inline-block bg-amber-400/10 text-amber-400 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full mb-2">
-              {item.badge}
-            </span>
 
-            <h4 class="font-extrabold text-base text-white group-hover:text-amber-400 transition-colors mb-1.5">
-              {item.title}
-            </h4>
-
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              {item.desc}
-            </p>
-          </div>
-
-          <div class="pt-2 flex items-center justify-between text-xs font-bold text-amber-400 border-t border-slate-800/80">
-            <span>Ver categoría de {item.title}</span>
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </div>
-        </a>
-      ))}
+            <div class="pt-2 flex items-center justify-between text-xs font-bold text-amber-400 border-t border-slate-800/80">
+              <span>{lang === 'en' ? `Explore ${item.title}` : `Ver categoría de ${item.title}`}</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
+        );
+      })}
     </div>
   </div>
 </section>

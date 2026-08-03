@@ -1,0 +1,137 @@
+---
+// src/pages/en/perifericos/ratones.astro
+import Layout from '../../../layouts/Layout.astro';
+import TablaComparativa from '../../../components/TablaComparativa.astro';
+import AmazonBox from '../../../components/AmazonBox.astro';
+import ProsContras from '../../../components/ProsContras.astro';
+import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Ergonomic & Wireless PC Mice (2026)";
+const descripcion = "Comparison and review of the best computer mice for productivity & setup: ergonomic vertical mice, Logitech MX Master, quiet wireless models, and budget options.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      The Best <span class="text-amber-500">Mice</span> for Your Setup & Office
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      The right mouse prevents muscle strain, tendinitis, and carpal tunnel syndrome.
+      <strong>We review market-leading models in ergonomics, wireless connectivity, and value for money.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Logitech MX Master",
+          imageUrl: "https://m.media-amazon.com/images/I/618Xy2oRcUL.jpg",
+          feature1: "MagSpeed wheel & haptic feedback",
+          feature2: "8,000 DPI sensor works on glass",
+          amazonUrl: "https://www.amazon.es/dp/B0FHHSZ8WM?tag=jotabro00-21",
+          badge: "Our Choice (Productivity)"
+        },
+        {
+          name: "Logitech Lift Vertical",
+          imageUrl: "https://m.media-amazon.com/images/I/61IuKPhnVJL.jpg",
+          feature1: "Natural 57° postural angle",
+          feature2: "SmartWheel silent clicks",
+          amazonUrl: "https://www.amazon.es/dp/B07W4DGC27?tag=jotabro00-21",
+          badge: "Best Vertical Mouse"
+        },
+        {
+          name: "Logitech Signature M850 L",
+          imageUrl: "https://m.media-amazon.com/images/I/61BgRbEWBOL.jpg",
+          feature1: "Soft contoured palm cushion",
+          feature2: "Up to 24 months battery life",
+          amazonUrl: "https://www.amazon.es/dp/B0GVF643TR?tag=jotabro00-21",
+          badge: "Best Value"
+        },
+        {
+          name: "CSL Vertical TM137U",
+          imageUrl: "https://m.media-amazon.com/images/I/81EhGSDIlEL.jpg",
+          feature1: "Anti-fatigue ergonomic shape",
+          feature2: "Wired 1600 DPI optical sensor",
+          amazonUrl: "https://www.amazon.es/dp/B00JOD56A8?tag=jotabro00-21",
+          badge: "Budget Option"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Top Mouse Models
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Logitech MX Master - Benchmark Ergonomic Productivity Mouse" 
+          imageUrl="https://m.media-amazon.com/images/I/618Xy2oRcUL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0FHHSZ8WM?tag=jotabro00-21"
+          badge="Productivity King"
+          rating="4.8"
+          features={[
+            "MagSpeed electromagnetic scroll wheel (1,000 lines/sec)",
+            "8,000 DPI Darkfield sensor works on glass surfaces",
+            "90% quieter clicks compared to previous generation",
+            "Multi-device pairing via Logi Options+ (up to 3 PCs)"
+          ]}
+          description="The MX Master is widely recognized as the pinnacle mouse for software developers, creators, and office power users."
+        />
+        <ProsContras 
+          pros={[
+            "MagSpeed scroll wheel enables instant hyper-fast scrolling.",
+            "Contoured thumb rest with thumb gesture wheel.",
+            "Bluetooth and Logi Bolt receiver wireless pairing."
+          ]}
+          contras={[
+            "Designed right-handed only.",
+            "Higher investment cost."
+          ]}
+        />
+      </article>
+
+      {/* Product 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Logitech Lift Vertical - Natural 57° Ergonomic Wrist Relief" 
+          imageUrl="https://m.media-amazon.com/images/I/61IuKPhnVJL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B07W4DGC27?tag=jotabro00-21"
+          badge="Top Vertical Ergonomics"
+          rating="4.7"
+          features={[
+            "Human-tested 57° vertical posture angle",
+            "Whisper-quiet silent clicks with rubber grip texture",
+            "SmartWheel precision and speed scrolling",
+            "Operates up to 2 years on a single AA battery"
+          ]}
+          description="Specially designed for small to medium hands, Lift places your hand into a natural handshake position to reduce forearm tension."
+        />
+        <ProsContras 
+          pros={[
+            "57° angle instantly relieves wrist strain.",
+            "Ultra quiet clicks great for open offices.",
+            "2-year battery life with standard AA."
+          ]}
+          contras={[
+            "Requires 2-3 days to adapt to vertical grip.",
+            "No rechargeable built-in battery."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/perifericos/ratones" />
+
+</Layout>

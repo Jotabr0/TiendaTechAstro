@@ -1,0 +1,163 @@
+---
+// src/pages/en/iluminacion.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Setup & Desk Lighting (2026) | Screenbars, LED Strips & RGB";
+const descripcion = "Complete guide to setup & workspace lighting: anti-glare monitor light bars (screenbars), RGBIC LED strips, wall hexagon panels, streaming lights, and energy-efficient lamps.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 me-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      💡 Specialized Lighting Guide 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      The Best <span class="text-amber-500">Lighting Solutions</span> for Your Setup
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Proper lighting not only elevates the aesthetics of your workspace or gaming setup, but is essential for protecting your eye health and preventing eye strain.
+      <strong>We review the best monitor screenbars, RGBIC LED panels, streaming fill lights, and ambient lamps.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Lighting Systems Comparison</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "Quntis Screenbar 51cm",
+          imageUrl: "https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg",
+          feature1: "Asymmetric anti-glare light Ra>95",
+          feature2: "Wireless touch remote 3000K-6500K",
+          amazonUrl: "https://www.amazon.es/dp/B0CR1H394H?tag=jotabro00-21",
+          badge: "Our Choice (Eye Health)"
+        },
+        {
+          name: "AURORIONCG RGBIC Light Bars",
+          imageUrl: "https://m.media-amazon.com/images/I/71D3Q1GOwHL.jpg",
+          feature1: "300° lighting with music sync sensor",
+          feature2: "2-Pack light bars for PC/TV backlight",
+          amazonUrl: "https://www.amazon.es/dp/B0G23WQRC1?tag=jotabro00-21",
+          badge: "Gaming Atmosphere"
+        },
+        {
+          name: "Kangtaixin Hexagon Panels",
+          imageUrl: "https://m.media-amazon.com/images/I/61-be2rpZ1L.jpg",
+          feature1: "Modular RGB wall light panels",
+          feature2: "Music sync & Smart App control",
+          amazonUrl: "https://www.amazon.es/dp/B0BDKJ88FZ?tag=jotabro00-21",
+          badge: "Wall Decoration"
+        },
+        {
+          name: "Macchiatto Neon LED 5m",
+          imageUrl: "https://m.media-amazon.com/images/I/71eo-htl7BL.jpg",
+          feature1: "Flexible moldable silicone strip",
+          feature2: "App control, remote & music sync",
+          amazonUrl: "https://www.amazon.es/dp/B0DQCQJ5K5?tag=jotabro00-21",
+          badge: "DIY Creativity"
+        },
+        {
+          name: "NEEWER Light Panel 2-Pack",
+          imageUrl: "https://m.media-amazon.com/images/I/61Gj-qwZzvL.jpg",
+          feature1: "Bi-color continuous studio lighting",
+          feature2: "Ideal for streaming & video calls",
+          amazonUrl: "https://www.amazon.es/dp/B0D635B2WB?tag=jotabro00-21",
+          badge: "Streaming & Creators"
+        },
+        {
+          name: "YICAIZI Floor Lamp 42W",
+          imageUrl: "https://m.media-amazon.com/images/I/615sNQa3ryL.jpg",
+          feature1: "4000LM high lumen low energy LED",
+          feature2: "Magnetic remote & reading arm",
+          amazonUrl: "https://www.amazon.es/dp/B0DY8FGYQT?tag=jotabro00-21",
+          badge: "Room Ambient Light"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. DETAILED REVIEWS */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Recommended Lighting Models
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Quntis Screenbar Pro 51cm - Wireless Remote & Zero Screen Glare" 
+          imageUrl="https://m.media-amazon.com/images/I/61cbO+mNV6L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0CR1H394H?tag=jotabro00-21"
+          badge="Top Eye Protection"
+          rating="4.8"
+          features={[
+            "Asymmetric 45° optical design eliminating monitor glare",
+            "Wireless desktop touch control puck",
+            "Color temperature adjustment from 3000K (warm) to 6500K (cool)",
+            "High Color Rendering Index Ra>95 for true-to-life colors"
+          ]}
+          description="The Quntis Screenbar mounts on top of your monitor, casting light directly downward onto your desk surface without causing reflections on your screen. Crucial for nighttime work and reading."
+        />
+        <ProsContras 
+          pros={[
+            "Asymmetric beam prevents glare on glossy or matte monitor screens.",
+            "Wireless rotary control puck adjusts brightness smoothly.",
+            "Frees up desk surface space compared to traditional desk lamps."
+          ]}
+          contras={[
+            "Requires USB power connection.",
+            "Fits monitors up to 3 cm frame thickness."
+          ]}
+        />
+      </article>
+
+      {/* Product 2 */}
+      <article>
+        <AmazonBox 
+          title="2. AURORIONCG RGBIC Light Bars - 300° Music-Synced Ambient Lighting" 
+          imageUrl="https://m.media-amazon.com/images/I/71D3Q1GOwHL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0G23WQRC1?tag=jotabro00-21"
+          badge="Gaming & Music Sync"
+          rating="4.7"
+          features={[
+            "Pack of 2 vertical light bars with 300° wide illumination",
+            "Built-in mic for real-time sound and music reactive lighting",
+            "Smart App control with dynamic scene modes",
+            "Versatile placement: vertical stands or monitor back mounts"
+          ]}
+          description="Transform your gaming corner with rich RGBIC backlight ambiance that reacts in real-time to game audio and music tracks."
+        />
+        <ProsContras 
+          pros={[
+            "RGBIC technology displays multiple vibrant colors simultaneously on a single bar.",
+            "High sensitivity mic for instant sound reactiveness.",
+            "Multiple mounting options included in the box."
+          ]}
+          contras={[
+            "App connection requires Bluetooth enabled on smartphone.",
+            "Power adapter cables should be routed neatly behind desk."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/iluminacion" />
+
+</Layout>

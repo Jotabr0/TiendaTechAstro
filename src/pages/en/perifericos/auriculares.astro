@@ -1,0 +1,108 @@
+---
+// src/pages/en/perifericos/auriculares.astro
+import Layout from '../../../layouts/Layout.astro';
+import TablaComparativa from '../../../components/TablaComparativa.astro';
+import AmazonBox from '../../../components/AmazonBox.astro';
+import ProsContras from '../../../components/ProsContras.astro';
+import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Headphones & Headsets for Work & Gaming (2026)";
+const descripcion = "Comparison of the best headphones & headsets: Active Noise Cancelling (ANC), wireless home office models, clear mic gaming headsets, and budget options.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      The Best <span class="text-amber-500">Headphones & Headsets</span> for Your Setup
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Whether you need distraction-free concentration for work or crystal-clear mic voice comms for gaming.
+      <strong>Discover our top pick of headphones offering superior sound, battery life, and noise cancellation.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Soundcore Q30 ANC",
+          imageUrl: "https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg",
+          feature1: "Hybrid Active Noise Cancellation (ANC)",
+          feature2: "Up to 50h battery & Hi-Res Audio",
+          amazonUrl: "https://www.amazon.es/dp/B08HMWZBXC?tag=jotabro00-21",
+          badge: "Our Choice (Noise Cancellation)"
+        },
+        {
+          name: "JBL Quantum 100M2",
+          imageUrl: "https://m.media-amazon.com/images/I/61KmVBD4ZfL.jpg",
+          feature1: "Directional boom mic with clear voice",
+          feature2: "Lightweight memory foam ear cushions",
+          amazonUrl: "https://www.amazon.es/dp/B0FMY4ZJMT?tag=jotabro00-21",
+          badge: "Gaming Comfort"
+        },
+        {
+          name: "Logitech H111 Stereo",
+          imageUrl: "https://m.media-amazon.com/images/I/61TKoWoB7+L.jpg",
+          feature1: "180° rotating boom microphone",
+          feature2: "Universal 3.5mm Jack connection",
+          amazonUrl: "https://www.amazon.es/dp/B00ZOZZM4U?tag=jotabro00-21",
+          badge: "Office Calls"
+        },
+        {
+          name: "Sony MDR-ZX110",
+          imageUrl: "https://m.media-amazon.com/images/I/51udwldPBbL.jpg",
+          feature1: "Compact swivel folding design",
+          feature2: "30mm high fidelity drivers",
+          amazonUrl: "https://www.amazon.es/dp/B0NBR70DO?tag=jotabro00-21",
+          badge: "Budget Choice"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Recommended Models
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Soundcore Anker Life Q30 - Hybrid Active Noise Cancellation & 50h Battery" 
+          imageUrl="https://m.media-amazon.com/images/I/61TWA8UQjQL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B08HMWZBXC?tag=jotabro00-21"
+          badge="Noise Isolation King"
+          rating="4.7"
+          features={[
+            "Hybrid Active Noise Cancellation (ANC) with 3 modes (Transport, Outdoor, Indoor)",
+            "Hi-Res Audio certified with 40mm silk-diaphragm drivers",
+            "Up to 50 hours battery life (40h with ANC active)",
+            "Multipoint Bluetooth pairing for 2 simultaneous devices"
+          ]}
+          description="The Soundcore Q30 sets the standard for wireless noise cancelling headphones under $100, effectively silencing background room noise and chat chatter."
+        />
+        <ProsContras 
+          pros={[
+            "Outstanding active noise cancellation for deep focus.",
+            "50-hour battery life eliminates charging anxiety.",
+            "Ultra soft protein leather earcups."
+          ]}
+          contras={[
+            "Built-in mic is great for calls but less suitable for noisy outdoor environments.",
+            "Requires carrying case for travel storage."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/perifericos/auriculares" />
+
+</Layout>

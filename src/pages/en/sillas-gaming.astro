@@ -1,0 +1,168 @@
+---
+// src/pages/en/sillas-gaming.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best Ergonomic Gaming Chairs (2026)";
+const descripcion = "Definitive comparison of the best gaming chairs on the market: pull-out footrests, 150° recline, lumbar/neck pillows, and heavy-duty steel bases.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🎮 Gaming & Streaming Setup 2026
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      The Best <span class="text-rose-500">Gaming Chairs</span> on the Market
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Whether you stream for hours on Twitch or seek full immersion in competitive games, your chair is your most critical peripheral.
+      <strong>Discover our top pick of ergonomic, comfortable, and durable gaming chairs.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Featured Gaming Chairs Comparison</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "SONGMICS Racing",
+          imageUrl: "https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg",
+          feature1: "Pull-out foldaway footrest",
+          feature2: "135° recline with position lock",
+          amazonUrl: "https://www.amazon.es/dp/B0F6MYX8D4?tag=jotabro00-21",
+          badge: "Our Choice (Comfort)"
+        },
+        {
+          name: "Silla Gaming Pro Reclinable",
+          imageUrl: "https://m.media-amazon.com/images/I/51EoAACcLYL.jpg",
+          feature1: "Adjustable Lumbar & Neck Pillows",
+          feature2: "Padded sports bucket design",
+          amazonUrl: "https://www.amazon.es/dp/B0B34N7BLF?tag=jotabro00-21",
+          badge: "Amazon Best Seller"
+        },
+        {
+          name: "WOLTU Heavy-Duty Metal",
+          imageUrl: "https://m.media-amazon.com/images/I/61oQgTJpMML.jpg",
+          feature1: "High-density internal steel frame",
+          feature2: "Suitable for larger users",
+          amazonUrl: "https://www.amazon.es/dp/B0D9HDJBMT?tag=jotabro00-21",
+          badge: "Reinforced Frame"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      In-Depth Review of Top Gaming Models
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. SONGMICS Racing - Extreme Comfort with Hidden Footrest" 
+          imageUrl="https://m.media-amazon.com/images/I/71g6k4jFX8L.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0F6MYX8D4?tag=jotabro00-21"
+          badge="Comfort & Footrest"
+          rating="4.7"
+          features={[
+            "Integrated retractable footrest hidden under seat",
+            "High backrest reclining up to 135° with lock",
+            "Molded high-density foam padding",
+            "Durable synthetic leather easy to clean"
+          ]}
+          description="SONGMICS has created a lounge-worthy recliner disguised in a sports gaming silhouette. Featuring dense foam padding and a retractable footrest, perfect for kicking back during console gaming or watching videos."
+        />
+        <ProsContras 
+          pros={[
+            "Sturdy integrated pull-out footrest for stretching legs.",
+            "High-density foam that retains shape over months of use.",
+            "Easy-to-clean synthetic leather surface."
+          ]}
+          contras={[
+            "Synthetic leather can get warm in summer without AC.",
+            "Standard carpet casters (silicone rollerblade wheels recommended for hardwood)."
+          ]}
+        />
+      </article>
+
+      {/* Product 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Gaming Pro Reclining Chair - Bucket Seat & Postural Pillows" 
+          imageUrl="https://m.media-amazon.com/images/I/51EoAACcLYL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0B34N7BLF?tag=jotabro00-21"
+          badge="Ergonomic Lumbar & Neck"
+          rating="4.6"
+          features={[
+            "Removable headrest and lumbar cushions",
+            "Reclining mechanism up to 150°",
+            "Height-adjustable armrests",
+            "Heavy-duty star base"
+          ]}
+          description="Designed inspired by racing car bucket seats, providing side bolster support that keeps your spine aligned during intense gaming sessions."
+        />
+        <ProsContras 
+          pros={[
+            "Includes memory foam cervical and lumbar support cushions.",
+            "Reclines up to 150° for rest breaks between matches.",
+            "Vibrant aesthetic ideal for streaming setups."
+          ]}
+          contras={[
+            "Armrests adjust in height but do not swivel.",
+            "Requires a bit of space due to wide base."
+          ]}
+        />
+      </article>
+
+      {/* Product 3 */}
+      <article>
+        <AmazonBox 
+          title="3. WOLTU Ergonomic Steel Frame - Maximum Load & Strength" 
+          imageUrl="https://m.media-amazon.com/images/I/61oQgTJpMML.jpg"
+          amazonUrl="https://www.amazon.es/dp/B0D9HDJBMT?tag=jotabro00-21"
+          badge="Heavy Duty Construction"
+          rating="4.6"
+          features={[
+            "Internal high-grade steel skeleton frame",
+            "SGS Class 4 heavy-duty gas cylinder",
+            "High-resilience cold-cured foam cushion",
+            "Multi-directional 3D armrests"
+          ]}
+          description="Built for maximum durability, WOLTU features an internal steel frame capable of withstanding heavy daily use without creaking or sagging."
+        />
+        <ProsContras 
+          pros={[
+            "Steel frame provides structural rigidity and long lifespan.",
+            "3D armrests adjust in height, angle, and forward/backward.",
+            "Breathable fabric options available."
+          ]}
+          contras={[
+            "Heavier overall weight when moving across rooms.",
+            "Slightly firmer seating cushion for structural support."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/sillas-gaming" />
+
+</Layout>

@@ -1,0 +1,108 @@
+---
+// src/pages/en/perifericos/altavoces.astro
+import Layout from '../../../layouts/Layout.astro';
+import TablaComparativa from '../../../components/TablaComparativa.astro';
+import AmazonBox from '../../../components/AmazonBox.astro';
+import ProsContras from '../../../components/ProsContras.astro';
+import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best PC Speakers & Soundbars (2026)";
+const descripcion = "Comparison of the best computer speakers: compact under-monitor soundbars, 2.0 stereo systems with Bluetooth, and ultra budget options.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+      The Best <span class="text-amber-500">Desktop Speakers</span> for PC
+    </h1>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+      Elevate your audio experience for listening to music, podcasts, videos, or games without cluttering your desk.
+      <strong>Discover top desktop audio solutions.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <TablaComparativa 
+      products={[
+        {
+          name: "Logitech Z150 2.0",
+          imageUrl: "https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg",
+          feature1: "Clear 6W peak stereo acoustic sound",
+          feature2: "Auxiliary jack & headphone port",
+          amazonUrl: "https://www.amazon.es/dp/B00EUUXFFS?tag=jotabro00-21",
+          badge: "Our Choice (Office)"
+        },
+        {
+          name: "SOULION R60 Soundbar",
+          imageUrl: "https://m.media-amazon.com/images/I/71fJagWPNlL.jpg",
+          feature1: "Under-monitor soundbar form factor",
+          feature2: "Bluetooth 5.3 + USB powered with LED",
+          amazonUrl: "https://www.amazon.es/dp/B0D53P5R7T?tag=jotabro00-21",
+          badge: "Space Saver"
+        },
+        {
+          name: "SOULION C30 Bluetooth",
+          imageUrl: "https://m.media-amazon.com/images/I/712j-q7+jQL.jpg",
+          feature1: "2.0 angled drivers desktop speakers",
+          feature2: "RGB lighting & dual inputs",
+          amazonUrl: "https://www.amazon.es/dp/B0DY7FP9CH?tag=jotabro00-21",
+          badge: "Gaming RGB"
+        },
+        {
+          name: "Amazon Basics 2.0",
+          imageUrl: "https://m.media-amazon.com/images/I/71DVfwSDN-L.jpg",
+          feature1: "Plug and Play USB powered",
+          feature2: "Compact matte black design",
+          amazonUrl: "https://www.amazon.es/dp/B07DDK3W5D?tag=jotabro00-21",
+          badge: "Budget Choice"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Recommended Speakers
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Logitech Z150 2.0 - Clear Stereo Acoustic Sound for Desktops" 
+          imageUrl="https://m.media-amazon.com/images/I/61ycX8gfQxL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B00EUUXFFS?tag=jotabro00-21"
+          badge="Office Audio Pick"
+          rating="4.6"
+          features={[
+            "6 Watts peak power (3W RMS)",
+            "Integrated volume knob with power switch",
+            "Front-facing 3.5mm headphone jack",
+            "Compact dual 2.0 tower design"
+          ]}
+          description="Delivers crisp acoustic stereo sound for everyday video watching, calls, and background music listening."
+        />
+        <ProsContras 
+          pros={[
+            "Clean acoustic vocal clarity for video calls.",
+            "Convenient front headphone jack.",
+            "Reliable build backed by Logitech."
+          ]}
+          contras={[
+            "No Bluetooth wireless connection.",
+            "Modest bass response compared to subwoofer systems."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/perifericos/altavoces" />
+
+</Layout>

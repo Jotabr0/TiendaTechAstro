@@ -1,5 +1,6 @@
 ---
 // src/components/AmazonBox.astro
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -13,6 +14,9 @@ interface Props {
 }
 
 const { title, price, imageUrl, amazonUrl, badge, rating = "4.6", features, description } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="not-prose my-8 bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-amber-400/80 transition-all duration-300 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
@@ -28,7 +32,7 @@ const { title, price, imageUrl, amazonUrl, badge, rating = "4.6", features, desc
   <div class="w-full md:w-56 h-52 bg-white rounded-2xl p-4 flex items-center justify-center relative flex-shrink-0">
     <img 
       src={imageUrl} 
-      alt={`Imagen de ${title}`} 
+      alt={`${t('amazon.imagenDe')} ${title}`} 
       class="max-h-44 w-auto object-contain transition-transform duration-500 hover:scale-105"
       loading="lazy"
     />
@@ -44,10 +48,10 @@ const { title, price, imageUrl, amazonUrl, badge, rating = "4.6", features, desc
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
           </svg>
-          {rating} de 5 estrellas
+          {rating} {t('amazon.estrellas')}
         </span>
         <span class="text-slate-400 font-medium">•</span>
-        <span class="text-slate-500 font-semibold">Producto verificado en Amazon</span>
+        <span class="text-slate-500 font-semibold">{t('amazon.verificado')}</span>
       </div>
 
       {/* Título Principal */}
@@ -81,7 +85,7 @@ const { title, price, imageUrl, amazonUrl, badge, rating = "4.6", features, desc
     <div class="pt-2 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
       {price ? (
         <div>
-          <span class="text-xs text-slate-400 block font-semibold">Precio recomendado</span>
+          <span class="text-xs text-slate-400 block font-semibold">{t('amazon.precioRecomendado')}</span>
           <span class="text-2xl font-black text-slate-900">{price}</span>
         </div>
       ) : (
@@ -89,7 +93,7 @@ const { title, price, imageUrl, amazonUrl, badge, rating = "4.6", features, desc
           <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          <span>Stock y precio actualizado hoy</span>
+          <span>{t('amazon.stockActualizado')}</span>
         </div>
       )}
 
@@ -99,7 +103,7 @@ const { title, price, imageUrl, amazonUrl, badge, rating = "4.6", features, desc
         rel="nofollow noopener sponsored"
         class="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black px-7 py-3.5 rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 text-sm group"
       >
-        <span>Ver oferta en Amazon</span>
+        <span>{t('amazon.verOferta')}</span>
         <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>

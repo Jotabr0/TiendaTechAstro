@@ -1,0 +1,155 @@
+---
+// src/pages/en/alfombrillas.astro
+import Layout from '../../layouts/Layout.astro';
+import TablaComparativa from '../../components/TablaComparativa.astro';
+import AmazonBox from '../../components/AmazonBox.astro';
+import ProsContras from '../../components/ProsContras.astro';
+import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+
+const titulo = "The Best XXL, RGB & Ergonomic Mouse Pads (2026)";
+const descripcion = "Guide and comparison of the best setup desk pads: XXL desk mats (90cm), RGB LED fiber-optic models, 15W Qi wireless charging pads, gel wrist pads, and gaming mats.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  {/* 1. HEADER */}
+  <header class="text-center my-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🖱️ Desk Pads & Mouse Surfaces 2026
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+      The Best <span class="text-amber-500">Mouse Pads & XXL Desk Mats</span>
+    </h1>
+    
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      A good desk mat frames your workspace, protects your desk top, and delivers impressive aesthetic lighting to match your keyboard and PC tower.
+      <strong>Discover the best XXL desk mats, fiber-optic RGB LED pads, wireless charging mats, and ergonomic gel pads.</strong>
+    </p>
+  </header>
+
+  {/* 2. COMPARISON TABLE */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Featured Mouse Pads Comparison</h2>
+      <div class="hidden sm:block h-px bg-slate-200 flex-grow"></div>
+    </div>
+
+    <TablaComparativa 
+      products={[
+        {
+          name: "Realky RGB XXL 80x30cm",
+          imageUrl: "https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg",
+          feature1: "14 LED RGB Lighting Modes",
+          feature2: "4mm non-slip natural rubber base",
+          amazonUrl: "https://www.amazon.es/dp/B09DXZLR1X?tag=jotabro00-21",
+          badge: "Our Choice (RGB Gaming)"
+        },
+        {
+          name: "Gimars RGB + 15W Qi Charging",
+          imageUrl: "https://m.media-amazon.com/images/I/71nt3hcRpoL.jpg",
+          feature1: "15W Fast Wireless Charging Pad for Phone",
+          feature2: "10 Fiber-optic LED modes",
+          amazonUrl: "https://www.amazon.es/dp/B09Q81J77H?tag=jotabro00-21",
+          badge: "RGB + Wireless Charging"
+        },
+        {
+          name: "Titanwolf Speed XXL 90x40cm",
+          imageUrl: "https://m.media-amazon.com/images/I/81IP3XKIWkL.jpg",
+          feature1: "Speed fabric smooth surface",
+          feature2: "No lights, matte professional finish",
+          amazonUrl: "https://www.amazon.es/dp/B07H37NQNQ?tag=jotabro00-21",
+          badge: "Giant XXL Space"
+        },
+        {
+          name: "Logitech Desk Mat 70x30cm",
+          imageUrl: "https://m.media-amazon.com/images/I/510xGGdgocL.jpg",
+          feature1: "Spill-resistant coating",
+          feature2: "Stitched anti-fraying edges",
+          amazonUrl: "https://www.amazon.es/dp/B07W5JK3Z2?tag=jotabro00-21",
+          badge: "Office Style"
+        },
+        {
+          name: "Amazon Basics Ergonomic Gel",
+          imageUrl: "https://m.media-amazon.com/images/I/71mbxPIMl1S.jpg",
+          feature1: "Memory gel wrist support cushion",
+          feature2: "Compact wrist support design",
+          amazonUrl: "https://www.amazon.es/dp/B06X3W3TM4?tag=jotabro00-21",
+          badge: "Ergonomic Gel"
+        }
+      ]}
+    />
+  </section>
+
+  {/* 3. INDIVIDUAL REVIEWS */}
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b pb-4 border-slate-200">
+      Detailed Review of Top Mouse Pads
+    </h2>
+
+    <div class="space-y-16">
+      
+      {/* Product 1 */}
+      <article>
+        <AmazonBox 
+          title="1. Realky RGB XXL 80x30cm - Vibrant Edge Lighting & Micro-Textured Speed" 
+          imageUrl="https://m.media-amazon.com/images/I/61aDkVI4OPL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B09DXZLR1X?tag=jotabro00-21"
+          badge="Top RGB Seller"
+          rating="4.7"
+          features={[
+            "14 RGB lighting modes with memory function",
+            "Micro-textured cloth surface optimized for high DPI mice",
+            "4mm thick anti-slip natural rubber base",
+            "One-touch control button for light effects"
+          ]}
+          description="The Realky XXL RGB mouse pad wraps around keyboard and mouse, lighting up your desk edges with vivid RGB modes."
+        />
+        <ProsContras 
+          pros={[
+            "14 bright RGB light modes including breathing and rainbow cycles.",
+            "Thick 4mm rubber base dampens keyboard typing noise.",
+            "Water-resistant coated fabric for easy cleaning."
+          ]}
+          contras={[
+            "Micro-USB cable included needs to connect to PC or hub.",
+            "Takes a few hours to lay completely flat after unrolling."
+          ]}
+        />
+      </article>
+
+      {/* Product 2 */}
+      <article>
+        <AmazonBox 
+          title="2. Gimars RGB + 15W Qi Wireless Fast Charging Mat" 
+          imageUrl="https://m.media-amazon.com/images/I/71nt3hcRpoL.jpg"
+          amazonUrl="https://www.amazon.es/dp/B09Q81J77H?tag=jotabro00-21"
+          badge="Qi Wireless Charger"
+          rating="4.6"
+          features={[
+            "Integrated 15W Qi wireless fast charger pad for smartphones",
+            "10 RGB LED lighting modes",
+            "Over-temperature and over-charge safety protections",
+            "Waterproof non-slip surface"
+          ]}
+          description="Charge your smartphone wirelessly while playing or working. Eliminates extra phone cables from your desk."
+        />
+        <ProsContras 
+          pros={[
+            "Integrated wireless charging station saves desk space.",
+            "Automatically detects phone models and adjusts charging wattage.",
+            "Fiber-optic light strip along perimeter."
+          ]}
+          contras={[
+            "Requires QC 3.0 wall power brick for full 15W fast charging.",
+            "Phone must be placed properly on designated charging target area."
+          ]}
+        />
+      </article>
+
+    </div>
+  </section>
+
+  <SugerenciasSetup currentUrl="/en/alfombrillas" />
+
+</Layout>
