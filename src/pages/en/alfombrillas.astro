@@ -5,6 +5,8 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ArticleMeta from '../../components/ArticleMeta.astro';
 
 const titulo = "The Best XXL, RGB & Ergonomic Mouse Pads (2026)";
 const descripcion = "Guide and comparison of the best setup desk pads: XXL desk mats (90cm), RGB LED fiber-optic models, 15W Qi wireless charging pads, gel wrist pads, and gaming mats.";
@@ -12,6 +14,11 @@ const descripcion = "Guide and comparison of the best setup desk pads: XXL desk 
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Mouse Pads' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
@@ -22,10 +29,14 @@ const descripcion = "Guide and comparison of the best setup desk pads: XXL desk 
       The Best <span class="text-amber-500">Mouse Pads & XXL Desk Mats</span>
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      A good desk mat frames your workspace, protects your desk top, and delivers impressive aesthetic lighting to match your keyboard and PC tower.
-      <strong>Discover the best XXL desk mats, fiber-optic RGB LED pads, wireless charging mats, and ergonomic gel pads.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      A high-quality desk pad cushions mouse movement, dampens keyboard sound, and protects your desk surface.
+      <strong>We review top 90x40cm XXL desk pads, RGB LED models, Qi charging mats, and gel wrist pads.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

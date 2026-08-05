@@ -1,0 +1,71 @@
+---
+// src/pages/en/metodologia.astro
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const titulo = "Testing Methodology & Editorial Criteria | ZenZone";
+const descripcion = "Discover how we review and evaluate products at ZenZone: ergonomics criteria, durability, value for money, and affiliate transparency.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Methodology' }
+  ]} />
+
+  <header class="text-center my-10 max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🔬 Evaluation Process & Quality Standards
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+      Review <span class="text-amber-500">Methodology</span>
+    </h1>
+
+    <p class="text-lg text-slate-600 leading-relaxed">
+      Transparently explaining how we test every product, the metrics we use, and how we guarantee honest, unbiased recommendations.
+    </p>
+  </header>
+
+  <article class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">1. Product Selection Criteria</h2>
+      <p>
+        Before any item enters our comparison guides, it must pass our initial quality filter:
+      </p>
+      <ul>
+        <li><strong>Verified Ratings & Reputation:</strong> We prioritize products with a minimum 4.3 out of 5 stars rating on Amazon supported by hundreds of authentic buyer reviews.</li>
+        <li><strong>Ergonomics Grounded in Health Standards:</strong> We focus on gear featuring accredited ergonomic parameters (breathable mesh, 2D/3D lumbar adjustment, 57° vertical mouse angles, SGS certified pneumatic lifts).</li>
+        <li><strong>Proven Value for Money:</strong> We review historical pricing to recommend items delivering genuine long-term value.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">2. Evaluation Process</h2>
+      <p>
+        Products are weighted across 4 core dimensions:
+      </p>
+      <ol>
+        <li><strong>Ergonomics & Postural Health (40%):</strong> Muscle strain reduction, proper support for key zones (lumbar spine, neck, wrist, and eye care).</li>
+        <li><strong>Build Quality & Durability (30%):</strong> Frame materials, assembly sturdiness, and mesh/fabric resistance to daily wear.</li>
+        <li><strong>Usability & Assembly (15%):</strong> Ease of setup, daily user experience, and manual clarity.</li>
+        <li><strong>Innovation & Feature Set (15%):</strong> Standout capabilities (multi-device pairing, 45° asymmetric lighting, space-saving designs).</li>
+      </ol>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">3. Periodic Content Updates</h2>
+      <p>
+        The office equipment market evolves rapidly. We review our guides and top picks monthly to ensure price accuracy, product availability, and relevant recommendations for 2026.
+      </p>
+    </div>
+
+  </article>
+
+</Layout>

@@ -43,7 +43,15 @@ const t = useTranslations(lang);
                 </span>
               )}
               <div class="h-28 flex items-center justify-center mb-3 pt-2">
-                <img src={p.imageUrl} alt={p.name} class="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105" loading="lazy" />
+                <img 
+                  src={p.imageUrl} 
+                  alt={`${lang === 'en' ? 'Comparison image of' : 'Imagen de comparativa de'} ${p.name}`} 
+                  width="120"
+                  height="120"
+                  decoding="async"
+                  class="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105" 
+                  loading="lazy" 
+                />
               </div>
               <h3 class="font-extrabold text-slate-900 text-sm leading-tight">{p.name}</h3>
             </th>

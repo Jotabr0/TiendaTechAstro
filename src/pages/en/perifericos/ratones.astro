@@ -5,6 +5,8 @@ import TablaComparativa from '../../../components/TablaComparativa.astro';
 import AmazonBox from '../../../components/AmazonBox.astro';
 import ProsContras from '../../../components/ProsContras.astro';
 import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ArticleMeta from '../../../components/ArticleMeta.astro';
 
 const titulo = "The Best Ergonomic & Wireless PC Mice (2026)";
 const descripcion = "Comparison and review of the best computer mice for productivity & setup: ergonomic vertical mice, Logitech MX Master, quiet wireless models, and budget options.";
@@ -12,15 +14,25 @@ const descripcion = "Comparison and review of the best computer mice for product
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Peripherals', url: '/perifericos' },
+    { label: 'Mice' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
       The Best <span class="text-amber-500">Mice</span> for Your Setup & Office
     </h1>
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-      The right mouse prevents muscle strain, tendinitis, and carpal tunnel syndrome.
-      <strong>We review market-leading models in ergonomics, wireless connectivity, and value for money.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">
+      Choosing the right mouse prevents wrist strain, tendinitis, and carpal tunnel syndrome.
+      <strong>We review top market models for ergonomics, precision connectivity, and value.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

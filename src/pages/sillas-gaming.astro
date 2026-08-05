@@ -5,6 +5,8 @@ import TablaComparativa from '../components/TablaComparativa.astro';
 import AmazonBox from '../components/AmazonBox.astro';
 import ProsContras from '../components/ProsContras.astro';
 import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
 
 const titulo = "Las Mejores Sillas Gaming Ergonómicas (2026)";
 const descripcion = "Comparativa definitiva de las mejores sillas gaming del mercado: reposapiés extensible, reclinación 150°, cojines cervical/lumbar y bases de acero reforzadas.";
@@ -12,7 +14,10 @@ const descripcion = "Comparativa definitiva de las mejores sillas gaming del mer
 
 <Layout title={titulo} description={descripcion}>
   
-  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Sillas Gaming' }
+  ]} />
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider mb-4">
       🎮 Gaming & Setup Streaming 2026
@@ -22,10 +27,14 @@ const descripcion = "Comparativa definitiva de las mejores sillas gaming del mer
       Las Mejores <span class="text-rose-500">Sillas Gaming</span> del Mercado
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      Tanto si pasas horas en Twitch como si buscas la máxima inmersión en tus partidas competitivas, la silla es tu periférico más importante. 
-      <strong>Descubre nuestra selección de las sillas gaming más ergonómicas, cómodas y resistentes.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      Una buena silla gaming debe combinar una estética deportiva impactante con un soporte postural de alta densidad para soportar maratones de juego o streaming. 
+      <strong>Analizamos las mejores sillas con reclinación de 150°, reposapiés extensible y cojines ergonómicos.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA PRINCIPAL */}

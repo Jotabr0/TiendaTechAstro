@@ -1,0 +1,71 @@
+---
+// src/pages/metodologia.astro
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const titulo = "Metodología de Análisis y Criterios Editoriales | ZenZone";
+const descripcion = "Descubre cómo probamos y evaluamos los productos en ZenZone: criterios de ergonomía, durabilidad, relación calidad-precio y transparencia de afiliados.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Metodología' }
+  ]} />
+
+  <header class="text-center my-10 max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🔬 Proceso de Evaluación & Calidad
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+      Metodología de <span class="text-amber-500">Análisis</span>
+    </h1>
+
+    <p class="text-lg text-slate-600 leading-relaxed">
+      Explicamos de forma transparente cómo analizamos cada producto, qué métricas utilizamos y cómo garantizamos recomendaciones útiles e imparciales.
+    </p>
+  </header>
+
+  <article class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">1. Criterios de Selección de Productos</h2>
+      <p>
+        Antes de incluir un producto en nuestras comparativas, debe superar nuestro filtro inicial de calidad:
+      </p>
+      <ul>
+        <li><strong>Reputación y Valoraciones Verificadas:</strong> Filtramos artículos con un mínimo de valoración de 4.3 sobre 5 estrellas en Amazon con cientos de opiniones de usuarios reales.</li>
+        <li><strong>Ergonomía Basada en Estándares Saludables:</strong> Priorizamos productos diseñados con parámetros de ergonomía acreditados (malla transpirable, soporte lumbar 2D/3D, ángulos de 57° en ratones verticales, regulaciones neumáticas de altura SGS).</li>
+        <li><strong>Relación Calidad-Precio Comprobada:</strong> Analizamos el histórico de precios para recomendar artículos con un valor real justo en su categoría.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">2. Proceso de Prueba y Análisis</h2>
+      <p>
+        Evaluamos los productos en 4 dimensiones fundamentales:
+      </p>
+      <ol>
+        <li><strong>Ergonomía & Salud Postural (40%):</strong> Reducción de fatiga muscular, apoyo correcto de zonas críticas (columna lumbar, cervicales, muñecas y visión).</li>
+        <li><strong>Calidad de Construcción y Durabilidad (30%):</strong> Materiales del chasis, solidez del ensamblaje, resistencia de la malla/tejido al desgaste continuo.</li>
+        <li><strong>Usabilidad y Montaje (15%):</strong> Facilidad de ensamblado, sencillez en el uso diario y claridad en los manuales.</li>
+        <li><strong>Innovación y Funcionalidad Adicional (15%):</strong> Características diferenciadoras (conectividad multidispositivo, iluminación asimétrica 45°, modos de ahorro de espacio).</li>
+      </ol>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">3. Actualizaciones Periódicas</h2>
+      <p>
+        El mercado del equipamiento de oficina cambia constantemente. Revisamos nuestras guías y listas top mensualmente para asegurarnos de que la disponibilidad, modelos recomendados y características se mantienen vigentes en 2026.
+      </p>
+    </div>
+
+  </article>
+
+</Layout>

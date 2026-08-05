@@ -3,15 +3,46 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieBanner from "../components/CookieBanner.astro";
-import { getLangFromUrl } from "../i18n/ui";
+import { getLangFromUrl, getRelativeLocaleUrl } from "../i18n/ui";
 
 interface Props {
     title: string;
     description: string;
+    ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
+
+// SEO: Construir URLs absolutas para canonical, hreflang y OG
+const siteUrl = 'https://zenzone.com.es';
+const currentPath = Astro.url.pathname;
+const pathWithoutLang = currentPath.replace(/^\/en(\/|$)/, '/');
+const canonicalUrl = `${siteUrl}${currentPath.endsWith('/') ? currentPath : currentPath + '/'}`;
+const esUrl = `${siteUrl}${pathWithoutLang === '' ? '/' : pathWithoutLang}`;
+const enUrl = `${siteUrl}${pathWithoutLang === '/' ? '/en/' : '/en' + pathWithoutLang}`;
+const ogImageUrl = ogImage || `${siteUrl}/images/logozenzone-removebg-preview.png`;
+const fullTitle = `${title} | ZenZone`;
+
+// Schema.org: Organization + WebSite (global en todas las páginas)
+const schemaOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ZenZone",
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/logozenzone-removebg-preview.png`,
+  "description": "Guías de ergonomía, comparativas de productos y recomendaciones para montar tu setup de trabajo y gaming.",
+  "sameAs": []
+};
+
+const schemaWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ZenZone",
+  "url": siteUrl,
+  "inLanguage": [currentLang === 'es' ? 'es-ES' : 'en'],
+  "description": description
+};
 ---
 
 <!doctype html>
@@ -39,14 +70,43 @@ const currentLang = getLangFromUrl(Astro.url);
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
+        {/* SEO: Canonical + Hreflang para evitar contenido duplicado ES/EN */}
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="es" href={esUrl} />
+        <link rel="alternate" hreflang="en" href={enUrl} />
+        <link rel="alternate" hreflang="x-default" href={esUrl} />
+
+        {/* Open Graph (Facebook, LinkedIn, WhatsApp) */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:site_name" content="ZenZone" />
+        <meta property="og:locale" content={currentLang === 'es' ? 'es_ES' : 'en_US'} />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
+
         {/* Favicon del sitio con el logo de ZenZone */}
         <link rel="icon" type="image/png" href="/images/logozenzone-removebg-preview.png" />
         <link rel="apple-touch-icon" href="/images/logozenzone-removebg-preview.png" />
 
-        <title>{title} | ZenZone</title>
+        <title>{fullTitle}</title>
+
+        {/* DNS-Prefetch y Preconnect para imágenes externas de Amazon (mejora LCP) */}
+        <link rel="dns-prefetch" href="https://m.media-amazon.com" />
+        <link rel="preconnect" href="https://m.media-amazon.com" crossorigin />
 
         {/* Umami Analytics - Rastreo en tiempo real */}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="e4057548-890f-4408-b62f-3f453ec88a0f"></script>
+
+        {/* Schema.org: Organization + WebSite (global) */}
+        <script type="application/ld+json" set:html={JSON.stringify(schemaOrganization)} />
+        <script type="application/ld+json" set:html={JSON.stringify(schemaWebSite)} />
     </head>
     <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950">
         <Header />

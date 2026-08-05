@@ -1,0 +1,15 @@
+---
+// src/components/SchemaOrg.astro
+// Componente reutilizable para inyectar datos estructurados Schema.org en cualquier página.
+// Acepta un array de objetos Schema que se serializan como JSON-LD.
+
+interface Props {
+  schemas: Record<string, any>[];
+}
+
+const { schemas } = Astro.props;
+---
+
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

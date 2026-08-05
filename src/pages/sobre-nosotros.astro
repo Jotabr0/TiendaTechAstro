@@ -1,0 +1,68 @@
+---
+// src/pages/sobre-nosotros.astro
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const titulo = "Sobre Nosotros | Quiénes Somos en ZenZone";
+const descripcion = "Conoce al equipo detrás de ZenZone: nuestra visión sobre ergonomía, salud postural y optimización de espacios de trabajo y gaming.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Sobre Nosotros' }
+  ]} />
+
+  <header class="text-center my-10 max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      🧘 Equipo ZenZone & Misión Editorial
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+      Sobre <span class="text-amber-500">ZenZone</span>
+    </h1>
+
+    <p class="text-lg text-slate-600 leading-relaxed">
+      Creemos que tu espacio de trabajo no debe ser una fuente de dolor o cansancio, sino un entorno que potencie tu productividad, creatividad y salud corporal.
+    </p>
+  </header>
+
+  <article class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">Nuestra Misión</h2>
+      <p>
+        ZenZone nació como un proyecto dedicado a ayudar a profesionales del teletrabajo, programadores, creadores de contenido y entusiastas del gaming a tomar decisiones informadas al elegir su equipamiento. En un mercado saturado de productos y reseñas poco transparentes, aportamos **análisis objetivos, criterios ergonómicos comprobados y comparativas rigurosas**.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">Nuestros Pilares Editoriales</h2>
+      <ul class="space-y-3">
+        <li>
+          <strong>Salud Postural Ante Todo:</strong> No recomendamos productos solo por su estética. Evaluamos aspectos como el soporte lumbar activo, los ángulos neutros de articulaciones y la ventilación del respaldo.
+        </li>
+        <li>
+          <strong>Independencia e Imparcialidad:</strong> Nuestras recomendaciones se basan en especificaciones técnicas reales, pruebas de uso e investigación de valoraciones veridicadas.
+        </li>
+        <li>
+          <strong>Transparencia en la Afiliación:</strong> Financiamos este proyecto a través de programas de afiliados como Amazon EU. Si compras a través de nuestros enlaces, recibimos una pequeña comisión que nos permite mantener la web libre de anuncios molestos y continuar creando contenido gratuito de alta calidad. Esto no incrementa el precio final que pagas.
+        </li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">El Equipo Editorial</h2>
+      <p>
+        El contenido de ZenZone es redactado y supervisado por un equipo multidisciplinar con experiencia en tecnología, ergonomía digital y análisis de productos de oficina. Revisamos y actualizamos nuestras guías periódicamente para reflejar el mercado en 2026.
+      </p>
+    </div>
+
+  </article>
+
+</Layout>

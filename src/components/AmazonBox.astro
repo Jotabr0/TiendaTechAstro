@@ -33,6 +33,9 @@ const t = useTranslations(lang);
     <img 
       src={imageUrl} 
       alt={`${t('amazon.imagenDe')} ${title}`} 
+      width="200"
+      height="200"
+      decoding="async"
       class="max-h-44 w-auto object-contain transition-transform duration-500 hover:scale-105"
       loading="lazy"
     />

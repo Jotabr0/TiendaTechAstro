@@ -5,6 +5,8 @@ import TablaComparativa from '../../../components/TablaComparativa.astro';
 import AmazonBox from '../../../components/AmazonBox.astro';
 import ProsContras from '../../../components/ProsContras.astro';
 import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ArticleMeta from '../../../components/ArticleMeta.astro';
 
 const titulo = "The Best PC Speakers & Soundbars (2026)";
 const descripcion = "Comparison of the best computer speakers: compact under-monitor soundbars, 2.0 stereo systems with Bluetooth, and ultra budget options.";
@@ -12,15 +14,25 @@ const descripcion = "Comparison of the best computer speakers: compact under-mon
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Peripherals', url: '/perifericos' },
+    { label: 'Speakers' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
       The Best <span class="text-amber-500">Desktop Speakers</span> for PC
     </h1>
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-      Elevate your audio experience for listening to music, podcasts, videos, or games without cluttering your desk.
-      <strong>Discover top desktop audio solutions.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">
+      Great desktop audio elevates work calls and media without cluttering your space.
+      <strong>We review compact under-monitor soundbars, 2.0 stereo setups, and Bluetooth speakers.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

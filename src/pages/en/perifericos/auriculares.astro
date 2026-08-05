@@ -5,6 +5,8 @@ import TablaComparativa from '../../../components/TablaComparativa.astro';
 import AmazonBox from '../../../components/AmazonBox.astro';
 import ProsContras from '../../../components/ProsContras.astro';
 import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ArticleMeta from '../../../components/ArticleMeta.astro';
 
 const titulo = "The Best Headphones & Headsets for Work & Gaming (2026)";
 const descripcion = "Comparison of the best headphones & headsets: Active Noise Cancelling (ANC), wireless home office models, clear mic gaming headsets, and budget options.";
@@ -12,15 +14,25 @@ const descripcion = "Comparison of the best headphones & headsets: Active Noise 
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Peripherals', url: '/perifericos' },
+    { label: 'Headphones' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
       The Best <span class="text-amber-500">Headphones & Headsets</span> for Your Setup
     </h1>
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-      Whether you need distraction-free concentration for work or crystal-clear mic voice comms for gaming.
-      <strong>Discover our top pick of headphones offering superior sound, battery life, and noise cancellation.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">
+      Proper sound isolation boosts work focus and gaming immersion.
+      <strong>We review wireless headphones with ANC, noise-cancelling mics, and Hi-Res audio.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

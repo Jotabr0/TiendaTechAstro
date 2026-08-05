@@ -5,6 +5,8 @@ import TablaComparativa from '../components/TablaComparativa.astro';
 import AmazonBox from '../components/AmazonBox.astro';
 import ProsContras from '../components/ProsContras.astro';
 import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
 
 const titulo = "Las Mejores Sillas de Oficina Ergonómicas para Teletrabajo (2026)";
 const descripcion = "Comparativa y análisis de las mejores sillas de oficina ergonómicas: soporte lumbar 2D/3D, malla transpirable anti-sudor, uso intensivo +8h y salud postural.";
@@ -12,7 +14,10 @@ const descripcion = "Comparativa y análisis de las mejores sillas de oficina er
 
 <Layout title={titulo} description={descripcion}>
   
-  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Sillas de Oficina' }
+  ]} />
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
       🪑 Guía de Ergonomía & Salud Postural 2026
@@ -22,10 +27,14 @@ const descripcion = "Comparativa y análisis de las mejores sillas de oficina er
       Las Mejores <span class="text-amber-500">Sillas de Oficina</span> Ergonómicas
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
       Pasar 8 horas diarias sentado frente al ordenador sin una silla ergonómica adecuada desencadena dolores de espalda, rigidez de cuello y fatiga lumbar. 
       <strong>Analizamos las sillas con mejor soporte lumbar, malla transpirable y resistencia comprobada para teletrabajo.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA PRINCIPAL */}
@@ -79,6 +88,7 @@ const descripcion = "Comparativa y análisis de las mejores sillas de oficina er
           title="1. SIHOO M18 - La reina indiscutible de la ergonomía en teletrabajo" 
           imageUrl="https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg"
           amazonUrl="https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21"
+          reviewUrl="/sillas-oficina/silla-sihoo-m18"
           badge="Top Ventas Teletrabajo"
           rating="4.7"
           features={[

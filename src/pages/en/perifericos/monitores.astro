@@ -5,6 +5,8 @@ import TablaComparativa from '../../../components/TablaComparativa.astro';
 import AmazonBox from '../../../components/AmazonBox.astro';
 import ProsContras from '../../../components/ProsContras.astro';
 import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ArticleMeta from '../../../components/ArticleMeta.astro';
 
 const titulo = "The Best Productivity & Gaming Monitors (2026)";
 const descripcion = "Comparison and review of the best computer monitors: 34-inch ultrawide panoramic displays, 120Hz IPS panels with eye care protection, and budget models.";
@@ -12,15 +14,25 @@ const descripcion = "Comparison and review of the best computer monitors: 34-inc
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Peripherals', url: '/perifericos' },
+    { label: 'Monitors' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
       The Best <span class="text-amber-500">Monitors</span> for Your Desk
     </h1>
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-      Your monitor is the central focus of your desktop setup. High resolution and refresh rates improve clarity, reduce eye strain, and boost productivity.
-      <strong>Discover our top recommended displays for work and gaming.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">
+      A great monitor expands your multitasking space while protecting eye comfort.
+      <strong>We review 34" ultrawide displays, Eye Care IPS panels, and high refresh rate monitors.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

@@ -5,6 +5,8 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ArticleMeta from '../../components/ArticleMeta.astro';
 
 const titulo = "The Best Humidifiers for Desk & Office (2026) | RGB, Ultrasonic & Silent";
 const descripcion = "Guide and comparison of the best desk humidifiers: ultrasonic humidifiers with RGB LED mood lights, smart WiFi Alexa integration, essential oil aroma diffusers, and low power consumption.";
@@ -12,6 +14,11 @@ const descripcion = "Guide and comparison of the best desk humidifiers: ultrason
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Humidifiers' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 text-xs font-bold uppercase tracking-wider mb-4">
@@ -22,10 +29,14 @@ const descripcion = "Guide and comparison of the best desk humidifiers: ultrason
       The Best <span class="text-amber-500">Air Humidifiers</span> for Your Setup
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      Maintaining optimal relative humidity (40%-60%) in your workspace prevents dry eyes and skin irritation, while adding a stylish aesthetic to your desktop with colorful RGB LED mood lighting.
-      <strong>Discover quiet ultrasonic humidifiers, smart Alexa models, and RGB aroma diffusers.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      Maintaining optimal humidity levels (40-60%) in your workspace prevents dry eyes, throat irritation, and skin dryness during long screen sessions.
+      <strong>We review quiet ultrasonic humidifiers, RGB ambient light units, and essential oil diffusers.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

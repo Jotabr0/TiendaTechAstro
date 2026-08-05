@@ -5,6 +5,7 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const titulo = "The Best Ergonomic Gaming Chairs (2026)";
 const descripcion = "Definitive comparison of the best gaming chairs on the market: pull-out footrests, 150° recline, lumbar/neck pillows, and heavy-duty steel bases.";
@@ -12,6 +13,11 @@ const descripcion = "Definitive comparison of the best gaming chairs on the mark
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Gaming Chairs' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider mb-4">

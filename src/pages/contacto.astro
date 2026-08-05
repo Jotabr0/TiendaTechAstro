@@ -1,0 +1,62 @@
+---
+// src/pages/contacto.astro
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const titulo = "Contacto | Escríbenos en ZenZone";
+const descripcion = "Ponte en contacto con el equipo de ZenZone para sugerencias, consultas sobre guías ergonómicas o colaboraciones.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Contacto' }
+  ]} />
+
+  <header class="text-center my-10 max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      ✉️ Comunicación & Soporte
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+      Ponte en <span class="text-amber-500">Contacto</span>
+    </h1>
+
+    <p class="text-lg text-slate-600 leading-relaxed">
+      ¿Tienes alguna duda sobre qué silla o escritorio elegir? ¿Quieres proponernos una mejora en nuestras guías? Estamos a tu disposición.
+    </p>
+  </header>
+
+  <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
+    <div class="space-y-6">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center flex-shrink-0 text-xl">
+          📧
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-base">Correo Electrónico Directo</h3>
+          <p class="text-sm text-slate-600 mt-1">
+            Puedes enviarnos un mensaje a: <a href="mailto:contacto@zenzone.com.es" class="text-amber-500 font-bold hover:underline">contacto@zenzone.com.es</a>
+          </p>
+          <p class="text-xs text-slate-400 mt-1">Respondemos habitualmente en un plazo de 24-48 horas laborables.</p>
+        </div>
+      </div>
+
+      <hr class="border-slate-100" />
+
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center flex-shrink-0 text-xl">
+          ⚖️
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-base">Consultas Legales y Privacidad</h3>
+          <p class="text-sm text-slate-600 mt-1">
+            Para ejercer tus derechos RGPD o solicitar la eliminación de datos, consulta nuestro <a href="/aviso-legal" class="text-amber-500 font-bold hover:underline">Aviso Legal</a> y <a href="/cookies" class="text-amber-500 font-bold hover:underline">Política de Cookies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Layout>

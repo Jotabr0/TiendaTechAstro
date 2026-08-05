@@ -5,6 +5,8 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ArticleMeta from '../../components/ArticleMeta.astro';
 
 const titulo = "The Best Ergonomic Office Chairs for Remote Work (2026)";
 const descripcion = "Comparison and reviews of the best ergonomic office chairs: 2D/3D lumbar support, breathable mesh, 8+ hour intensive use, and postural health.";
@@ -12,6 +14,11 @@ const descripcion = "Comparison and reviews of the best ergonomic office chairs:
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Office Chairs' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
@@ -22,10 +29,14 @@ const descripcion = "Comparison and reviews of the best ergonomic office chairs:
       The Best <span class="text-amber-500">Ergonomic Office Chairs</span>
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      Spending 8 hours a day sitting at your desk without proper lumbar support causes back pain, neck stiffness, and fatigue.
-      <strong>We review the best chairs featuring adjustable lumbar support, breathable mesh, and proven durability for home office.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      Spending 8 hours a day sitting at a computer without a proper ergonomic chair triggers back pain, neck stiffness, and lumbar fatigue. 
+      <strong>We analyze the best chairs with lumbar support, breathable mesh, and proven durability for remote work.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}
@@ -79,6 +90,7 @@ const descripcion = "Comparison and reviews of the best ergonomic office chairs:
           title="1. SIHOO M18 - The Undisputed King of Remote Work Ergonomics" 
           imageUrl="https://m.media-amazon.com/images/I/61nb9ErcVpL.jpg"
           amazonUrl="https://www.amazon.es/dp/B07GNDDNMW?tag=jotabro00-21"
+          reviewUrl="/en/sillas-oficina/silla-sihoo-m18"
           badge="Best Seller Remote Work"
           rating="4.7"
           features={[

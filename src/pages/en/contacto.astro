@@ -1,0 +1,62 @@
+---
+// src/pages/en/contacto.astro
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const titulo = "Contact Us | Get in Touch with ZenZone";
+const descripcion = "Get in touch with the ZenZone team for feedback, questions about ergonomic guides, or partnerships.";
+---
+
+<Layout title={titulo} description={descripcion}>
+  
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Contact' }
+  ]} />
+
+  <header class="text-center my-10 max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
+      ✉️ Communication & Support
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+      Get in <span class="text-amber-500">Touch</span>
+    </h1>
+
+    <p class="text-lg text-slate-600 leading-relaxed">
+      Have a question about choosing an ergonomic chair or desk? Want to suggest an improvement for our guides? We are here to help.
+    </p>
+  </header>
+
+  <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
+    <div class="space-y-6">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center flex-shrink-0 text-xl">
+          📧
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-base">Direct Email</h3>
+          <p class="text-sm text-slate-600 mt-1">
+            Send us a message at: <a href="mailto:contacto@zenzone.com.es" class="text-amber-500 font-bold hover:underline">contacto@zenzone.com.es</a>
+          </p>
+          <p class="text-xs text-slate-400 mt-1">We typically respond within 24-48 business hours.</p>
+        </div>
+      </div>
+
+      <hr class="border-slate-100" />
+
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center flex-shrink-0 text-xl">
+          ⚖️
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-base">Legal & Privacy Inquiries</h3>
+          <p class="text-sm text-slate-600 mt-1">
+            To exercise your GDPR rights or request data removal, please see our <a href="/en/aviso-legal" class="text-amber-500 font-bold hover:underline">Legal Notice</a> and <a href="/en/cookies" class="text-amber-500 font-bold hover:underline">Cookie Policy</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Layout>

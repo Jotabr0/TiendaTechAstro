@@ -22,13 +22,20 @@ const t = useTranslations(lang);
       </p>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-6 text-sm text-center md:text-right">
+    <div class="flex flex-wrap gap-8 text-sm text-center md:text-right justify-center md:justify-end">
       <div class="flex flex-col gap-2">
         <span class="font-extrabold text-slate-200 uppercase tracking-wider text-xs mb-1">{t('footer.navegacion')}</span>
         <a href={getRelativeLocaleUrl(lang, '/')} class="hover:text-amber-400 transition-colors">{t('nav.inicio')}</a>
         <a href={getRelativeLocaleUrl(lang, '/perifericos')} class="hover:text-amber-400 transition-colors">{t('nav.perifericos')}</a>
         <a href={getRelativeLocaleUrl(lang, '/sillas-oficina')} class="hover:text-amber-400 transition-colors">{t('nav.sillasOficina')}</a>
         <a href={getRelativeLocaleUrl(lang, '/mesas-escritorio')} class="hover:text-amber-400 transition-colors">{t('nav.mesas')}</a>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <span class="font-extrabold text-slate-200 uppercase tracking-wider text-xs mb-1">{t('footer.empresa')}</span>
+        <a href={getRelativeLocaleUrl(lang, '/sobre-nosotros')} class="hover:text-amber-400 transition-colors">{t('footer.sobreNosotros')}</a>
+        <a href={getRelativeLocaleUrl(lang, '/metodologia')} class="hover:text-amber-400 transition-colors">{t('footer.metodologia')}</a>
+        <a href={getRelativeLocaleUrl(lang, '/contacto')} class="hover:text-amber-400 transition-colors">{t('footer.contacto')}</a>
       </div>
 
       <div class="flex flex-col gap-2">

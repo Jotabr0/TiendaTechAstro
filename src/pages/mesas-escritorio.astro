@@ -5,13 +5,18 @@ import TablaComparativa from "../components/TablaComparativa.astro";
 import AmazonBox from "../components/AmazonBox.astro";
 import ProsContras from "../components/ProsContras.astro";
 import SugerenciasSetup from "../components/SugerenciasSetup.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import ArticleMeta from "../components/ArticleMeta.astro";
 
 const titulo = "Las Mejores Mesas y Escritorios Elevables para tu Setup (2026)";
 const descripcion = "Comparativa y análisis de las mejores mesas de escritorio: escritorios elevables eléctricos, mesas esquineras en L, tableros de roble con almacenamiento y pasacables.";
 ---
 
 <Layout title={titulo} description={descripcion}>
-    {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+    <Breadcrumb items={[
+      { label: 'Inicio', url: '/' },
+      { label: 'Mesas de Escritorio' }
+    ]} />
     <header class="text-center my-12">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
           🖥️ Arquitectura & Organización de Setup 2026
@@ -20,10 +25,14 @@ const descripcion = "Comparativa y análisis de las mejores mesas de escritorio:
         <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
             Las Mejores <span class="text-emerald-500">Mesas de Escritorio</span> del Mercado
         </h1>
-        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            La base de cualquier buen espacio de trabajo o juego es la mesa. Tanto si buscas alternar entre trabajar de pie y sentado con un escritorio elevable eléctrico como si necesitas maximizar el espacio con un escritorio esquinero en L,
-            <strong>analizamos los mejores tableros y estructuras del mercado.</strong>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+            Alternar entre trabajar sentado y de pie con una mesa elevable reduce el sedentarismo y previene dolores de espalda. 
+            <strong>Analizamos las mejores opciones de escritorios elevables eléctricos, mesas esquineras y estructuras resistentes.</strong>
         </p>
+
+        <div class="flex justify-center">
+          <ArticleMeta />
+        </div>
     </header>
 
     {/* 2. TABLA COMPARATIVA PRINCIPAL */}

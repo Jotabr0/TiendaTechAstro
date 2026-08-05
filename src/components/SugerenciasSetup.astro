@@ -115,7 +115,10 @@ const displayedItems = shuffled.slice(0, limit);
               <div class="w-full h-36 bg-white rounded-xl p-3 flex items-center justify-center mb-4 overflow-hidden">
                 <img 
                   src={item.image} 
-                  alt={`${item.title}`} 
+                  alt={`${lang === 'en' ? 'Recommendation for' : 'Guía recomendada de'} ${item.title}`} 
+                  width="160"
+                  height="160"
+                  decoding="async"
                   class="max-h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />

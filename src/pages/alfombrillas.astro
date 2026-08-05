@@ -5,6 +5,8 @@ import TablaComparativa from '../components/TablaComparativa.astro';
 import AmazonBox from '../components/AmazonBox.astro';
 import ProsContras from '../components/ProsContras.astro';
 import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
 
 const titulo = "Las Mejores Alfombrillas de Ratón XXL, RGB y Ergonómicas (2026)";
 const descripcion = "Guía y comparativa de las mejores alfombrillas para setup: alfombrillas de escritorio XXL (90cm), modelos con iluminación LED RGB, carga inalámbrica Qi 15W, gel y gaming.";
@@ -12,7 +14,10 @@ const descripcion = "Guía y comparativa de las mejores alfombrillas para setup:
 
 <Layout title={titulo} description={descripcion}>
   
-  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Alfombrillas' }
+  ]} />
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
       🖱️ Superficies & Alfombrillas de Escritorio 2026
@@ -22,10 +27,14 @@ const descripcion = "Guía y comparativa de las mejores alfombrillas para setup:
       Las Mejores <span class="text-amber-500">Alfombrillas</span> para tu Setup y Gaming RGB
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      Una buena alfombrilla de escritorio delimita tu espacio, protege la mesa y le da esa estética espectacular con iluminación RGB a juego con tu teclado y torre. 
-      <strong>Descubre las mejores alfombrillas XXL, modelos con iluminación LED RGB de fibra óptica, carga inalámbrica y gel ergonómico.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      Una alfombrilla de calidad amortigua el deslizamiento del ratón, amortigua el sonido del teclado y protege la superficie de tu escritorio. 
+      <strong>Analizamos las mejores alfombrillas XXL de 90x40cm, con iluminación RGB, carga Qi y reposamuñecas ergonómicos de gel.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA PRINCIPAL */}

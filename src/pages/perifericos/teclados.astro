@@ -5,6 +5,8 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ArticleMeta from '../../components/ArticleMeta.astro';
 
 const titulo = "Los Mejores Teclados Ergonómicos, Mecánicos y Slim (2026)";
 const descripcion = "Comparativa de los mejores teclados para ordenador: inalámbricos con reposamuñecas, mecánicos gaming, modelos extra finos y opciones económicas.";
@@ -12,15 +14,25 @@ const descripcion = "Comparativa de los mejores teclados para ordenador: inalám
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Periféricos', url: '/perifericos' },
+    { label: 'Teclados' }
+  ]} />
+
   {/* 1. CABECERA */}
   <header class="text-center my-12">
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
       Los Mejores <span class="text-amber-500">Teclados</span> para Trabajo y Gaming
     </h1>
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-      Escribir con comodidad, rapidez y sin fatiga postural marca la diferencia en tu rendimiento diario. 
-      <strong>Analizamos los mejores teclados ergonómicos, inalámbricos y mecánicos del mercado.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">
+      Escribir con una postura correcta previene la fatiga articular en dedos y muñecas.
+      <strong>Analizamos teclados ergonómicos en onda, mecánicos silenciosos y perfil bajo.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA */}

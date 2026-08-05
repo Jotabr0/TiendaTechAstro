@@ -5,6 +5,8 @@ import TablaComparativa from '../components/TablaComparativa.astro';
 import AmazonBox from '../components/AmazonBox.astro';
 import ProsContras from '../components/ProsContras.astro';
 import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
 
 const titulo = "La Mejor Iluminación para Setup y Escritorio (2026) | Barras LED, Screenbars y RGB";
 const descripcion = "Guía completa de iluminación para setup y trabajo: barras de luz para monitor (screenbar) anti-reflejos, tiras LED RGBIC, paneles hexagonales de pared, focos para streaming y bajo consumo.";
@@ -12,7 +14,10 @@ const descripcion = "Guía completa de iluminación para setup y trabajo: barras
 
 <Layout title={titulo} description={descripcion}>
   
-  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Iluminación' }
+  ]} />
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 me-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
       💡 Guía Especializada de Iluminación 2026
@@ -22,10 +27,14 @@ const descripcion = "Guía completa de iluminación para setup y trabajo: barras
       La Mejor <span class="text-amber-500">Iluminación</span> para tu Setup y Escritorio
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
       Una buena iluminación no solo transforma la estética de tu espacio de trabajo o juego, sino que es vital para proteger tu salud visual y evitar la vista cansada. 
       <strong>Analizamos las mejores barras para monitor (screenbars), paneles LED RGBIC, focos para streaming y soluciones de bajo consumo.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA PRINCIPAL MULTICATEGORÍA */}

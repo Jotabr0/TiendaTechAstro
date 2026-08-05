@@ -5,6 +5,8 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ArticleMeta from '../../components/ArticleMeta.astro';
 
 const titulo = "Los Mejores Altavoces y Barras de Sonido para PC (2026)";
 const descripcion = "Comparativa de los mejores altavoces para escritorio: barras de sonido compactas bajo monitor, sistemas estéreo 2.0 con Bluetooth y opciones super económicas.";
@@ -12,15 +14,25 @@ const descripcion = "Comparativa de los mejores altavoces para escritorio: barra
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Periféricos', url: '/perifericos' },
+    { label: 'Altavoces' }
+  ]} />
+
   {/* 1. CABECERA */}
   <header class="text-center my-12">
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
       Los Mejores <span class="text-amber-500">Altavoces</span> de Escritorio
     </h1>
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-      Eleva la experiencia sonora de tu setup para escuchar música, podcasts, vídeos o juegos con nitidez sin ocupar espacio innecesario en tu mesa. 
-      <strong>Descubre las mejores soluciones de audio para ordenador.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">
+      Un buen sonido de escritorio mejora tus llamadas de trabajo y entretenimiento sin ocupar espacio valioso.
+      <strong>Analizamos barras de sonido compactas bajo monitor, sistemas estéreo 2.0 y modelos Bluetooth.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA */}

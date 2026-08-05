@@ -5,13 +5,17 @@ import TablaComparativa from "../../components/TablaComparativa.astro";
 import AmazonBox from "../../components/AmazonBox.astro";
 import ProsContras from "../../components/ProsContras.astro";
 import SugerenciasSetup from "../../components/SugerenciasSetup.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const titulo = "The Best Desks & Standing Desks for Your Setup (2026)";
 const descripcion = "Comparison and review of the best computer desks: electric height adjustable standing desks, L-shaped corner desks, oak tops with storage, and cable management.";
 ---
 
 <Layout title={titulo} description={descripcion}>
-    {/* 1. HEADER */}
+    <Breadcrumb items={[
+      { label: 'Home', url: '/' },
+      { label: 'Desks' }
+    ]} />
     <header class="text-center my-12">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
           🖥️ Setup Architecture & Organization 2026

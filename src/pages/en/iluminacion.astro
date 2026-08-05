@@ -5,6 +5,8 @@ import TablaComparativa from '../../components/TablaComparativa.astro';
 import AmazonBox from '../../components/AmazonBox.astro';
 import ProsContras from '../../components/ProsContras.astro';
 import SugerenciasSetup from '../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ArticleMeta from '../../components/ArticleMeta.astro';
 
 const titulo = "The Best Setup & Desk Lighting (2026) | Screenbars, LED Strips & RGB";
 const descripcion = "Complete guide to setup & workspace lighting: anti-glare monitor light bars (screenbars), RGBIC LED strips, wall hexagon panels, streaming lights, and energy-efficient lamps.";
@@ -12,6 +14,11 @@ const descripcion = "Complete guide to setup & workspace lighting: anti-glare mo
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Lighting' }
+  ]} />
+
   {/* 1. HEADER */}
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 me-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
@@ -22,10 +29,14 @@ const descripcion = "Complete guide to setup & workspace lighting: anti-glare mo
       The Best <span class="text-amber-500">Lighting Solutions</span> for Your Setup
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      Proper lighting not only elevates the aesthetics of your workspace or gaming setup, but is essential for protecting your eye health and preventing eye strain.
-      <strong>We review the best monitor screenbars, RGBIC LED panels, streaming fill lights, and ambient lamps.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      Proper lighting not only enhances your desk aesthetics but is essential for protecting your eye health and reducing strain.
+      <strong>We review top monitor screenbars, RGBIC wall panels, streaming lights, and eco-friendly lamps.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. COMPARISON TABLE */}

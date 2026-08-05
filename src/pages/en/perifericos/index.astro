@@ -2,6 +2,8 @@
 // src/pages/en/perifericos/index.astro
 import Layout from '../../../layouts/Layout.astro';
 import SugerenciasSetup from '../../../components/SugerenciasSetup.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ArticleMeta from '../../../components/ArticleMeta.astro';
 
 const subcategorias = [
   {
@@ -57,6 +59,11 @@ const descripcion = "Explore the best peripherals for your setup: ergonomic mice
 
 <Layout title={titulo} description={descripcion}>
   
+  <Breadcrumb items={[
+    { label: 'Home', url: '/' },
+    { label: 'Peripherals' }
+  ]} />
+  
   {/* Hero Header */}
   <section class="relative bg-slate-950 text-white rounded-3xl p-8 md:p-14 my-8 overflow-hidden border border-slate-800 shadow-2xl">
     <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -73,8 +80,12 @@ const descripcion = "Explore the best peripherals for your setup: ergonomic mice
       </h1>
       
       <p class="text-base md:text-lg text-slate-300 leading-relaxed mb-4">
-        The hardware components you interact with daily determine your postural health and work efficiency. Select a category below to access our specialized reviews.
+        The hardware components you interact with daily shape your productivity and postural health. Select a category below to browse our comparisons.
       </p>
+
+      <div class="flex justify-start">
+        <ArticleMeta />
+      </div>
     </div>
   </section>
 

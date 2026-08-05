@@ -5,6 +5,8 @@ import TablaComparativa from '../components/TablaComparativa.astro';
 import AmazonBox from '../components/AmazonBox.astro';
 import ProsContras from '../components/ProsContras.astro';
 import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
 
 const titulo = "Los Mejores Humidificadores para Setup y Oficina (2026) | RGB, Ultrasónicos y Silenciosos";
 const descripcion = "Guía y comparativa de los mejores humidificadores para escritorio: humidificadores ultrasónicos con luces LED RGB de colores, inteligentes WiFi Alexa, difusores de aromas y bajo consumo.";
@@ -12,7 +14,10 @@ const descripcion = "Guía y comparativa de los mejores humidificadores para esc
 
 <Layout title={titulo} description={descripcion}>
   
-  {/* 1. CABECERA SEO Y PRESENTACIÓN */}
+  <Breadcrumb items={[
+    { label: 'Inicio', url: '/' },
+    { label: 'Humidificadores' }
+  ]} />
   <header class="text-center my-12">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 text-xs font-bold uppercase tracking-wider mb-4">
       💨 Salud & Climatización de Setup 2026
@@ -22,10 +27,14 @@ const descripcion = "Guía y comparativa de los mejores humidificadores para esc
       Los Mejores <span class="text-amber-500">Humidificadores</span> para tu Setup y Oficina
     </h1>
     
-    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      Mantener un nivel de humedad relativa óptimo (40%-60%) en tu espacio de trabajo previene la sequedad ocular y la piel reseca, aportando además un toque espectacular a tu escritorio con luces LED de colores a juego con tus leds. 
-      <strong>Descubre los humidificadores ultrasónicos silenciosos, inteligentes y difusores de aromaterapia con efectos RGB.</strong>
+    <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
+      Mantener un nivel óptimo de humedad (40-60%) en tu habitación o despacho previene la sequedad ocular, irritación de garganta y problemas respiratorios al trabajar frente a la pantalla. 
+      <strong>Analizamos los mejores humidificadores ultrasónicos silenciosos, modelos con luz ambiental RGB y difusores de aromas.</strong>
     </p>
+
+    <div class="flex justify-center">
+      <ArticleMeta />
+    </div>
   </header>
 
   {/* 2. TABLA COMPARATIVA PRINCIPAL */}

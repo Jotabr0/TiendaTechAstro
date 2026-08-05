@@ -2,6 +2,7 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import SugerenciasSetup from '../components/SugerenciasSetup.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
 
 // Productos Top Ventas (Fila 1)
 const topVentas = [
@@ -144,7 +145,39 @@ const categories = [
 ];
 
 const titulo = "Guía para Montar tu Setup (2026) | Sillas, Mesas y Periféricos";
-const descripcion = "Descubre los mejores productos para montar tu espacio de trabajo y juego: sillas ergonómicas, escritorios elevables standing desk, ratones verticales, teclados, screenbars y climatización.";
+const descripcion = "Comparativas y guías de sillas ergonómicas, escritorios elevables, ratones, teclados, screenbars y más para montar tu setup ideal.";
+
+// Schema.org: FAQPage para las 3 preguntas frecuentes de la Home
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Es mejor una silla de oficina ergonómica o una silla gaming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para jornadas intensas de trabajo (+6 horas), las sillas de oficina con respaldo de malla transpirable y soporte lumbar 2D/3D ofrecen mayor ajuste postural y ventilación. Las sillas gaming son ideales si buscas reclinación amplia de hasta 150° y reposapiés para jugar con mando o ver contenido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué profundidad mínima debe tener una mesa de escritorio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se recomienda un fondo mínimo de 60 cm (e idealmente 70-80 cm si utilizas monitores de 27 o 34 pulgadas) para poder mantener la distancia de visión recomendada y apoyar los antebrazos con comodidad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo elegir entre una alfombrilla XXL o una con gel ergonómica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las alfombrillas XXL (90x40 cm) cubren toda la mesa, absorben vibraciones del teclado y protegen la madera. Las alfombrillas ergonómicas de gel están indicadas si necesitas elevar la muñeca de forma fija para aliviar molestias concretas."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={titulo} description={descripcion}>
@@ -187,7 +220,10 @@ const descripcion = "Descubre los mejores productos para montar tu espacio de tr
               </span>
               <img 
                 src={prod.image} 
-                alt={prod.name} 
+                alt={`Imagen del producto destacado ${prod.name}`} 
+                width="160"
+                height="160"
+                decoding="async"
                 class="max-h-36 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
               />
@@ -250,7 +286,10 @@ const descripcion = "Descubre los mejores productos para montar tu espacio de tr
               </span>
               <img 
                 src={prod.image} 
-                alt={prod.name} 
+                alt={`Imagen del producto recomendado ${prod.name}`} 
+                width="160"
+                height="160"
+                decoding="async"
                 class="max-h-36 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
               />
@@ -343,7 +382,10 @@ const descripcion = "Descubre los mejores productos para montar tu espacio de tr
           <div class="w-full md:w-72 lg:w-80 h-44 bg-white rounded-2xl flex items-center justify-center p-2 relative overflow-hidden flex-shrink-0">
             <img 
               src={cat.image} 
-              alt={cat.name} 
+              alt={`Imagen ilustrativa de la categoría ${cat.name}`} 
+              width="240"
+              height="180"
+              decoding="async"
               class="max-h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
@@ -452,5 +494,8 @@ const descripcion = "Descubre los mejores productos para montar tu espacio de tr
     title="Descubre Nuestras Guías de Producto Recomendadas 🧘"
     subtitle="Explora los análisis detallados con datos reales de Amazon para cada categoría de tu setup:"
   />
+
+  {/* Schema.org FAQPage para Rich Snippets en Google */}
+  <SchemaOrg schemas={[schemaFAQ]} />
 
 </Layout>
