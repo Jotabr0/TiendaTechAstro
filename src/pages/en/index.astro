@@ -143,8 +143,82 @@ const categories = [
   },
 ];
 
+import SchemaOrg from '../../components/SchemaOrg.astro';
+
 const titulo = "Desk & Setup Guide (2026) | Ergonomic Chairs, Standing Desks & Peripherals";
 const descripcion = "Discover the best products for your workspace and gaming setup: ergonomic chairs, standing desks, vertical mice, keyboards, screenbars, and air humidifiers.";
+
+// Schema.org: FAQPage for 8 Home FAQs
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is an ergonomic office chair better than a gaming chair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For long work sessions (6+ hours), ergonomic office chairs with breathable mesh backrests and 2D/3D lumbar support offer better postural adjustment and cooling. Gaming chairs excel if you want deep 150° recline and footrests for controller gaming or watching content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the recommended minimum desk depth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A minimum depth of 60 cm (ideally 70-80 cm if using 27-inch or 34-inch ultrawide monitors) is recommended to maintain proper eye distance and rest forearms comfortably."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to choose between an XXL desk mat and a gel ergonomic mouse pad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XXL desk pads (90x40 cm) cover the entire desk, dampen keyboard sound, and protect wood finishes. Gel ergonomic mouse pads are best if you need fixed wrist elevation to relieve specific strain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many hours a day should you stand at a standing desk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow the 50/10 or 45/15 rule: alternate 45-50 minutes sitting with 10-15 minutes standing per hour. Accumulated standing should not exceed 3-4 hours per day to prevent lower joint fatigue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a vertical mouse prevent carpal tunnel syndrome?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A vertical mouse places your hand at a neutral 57° handshake angle, preventing forearm bones (radius and ulna) from crossing into forced pronation, thus relieving pressure on the median nerve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Screenbar light and a regular desk lamp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Screenbar mounts onto the top of your monitor frame and casts asymmetrical 45° light focused on your desk area without screen glare or direct eye glare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are monitor arms necessary for proper cervical posture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, gas-spring monitor arms allow precise height, tilt, and distance adjustments so the top edge of your monitor rests exactly at your eye horizon line without neck bending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does an air humidifier affect eye comfort and focus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maintaining relative humidity between 40% and 60% prevents screen-induced eye tear evaporation and dry throat caused by heating and air conditioning units."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={titulo} description={descripcion}>
@@ -346,6 +420,165 @@ const descripcion = "Discover the best products for your workspace and gaming se
     </div>
   </section>
 
+  {/* EXTENSIVE HIGH-VALUE SEO GUIDE SECTION */}
+  <section class="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8 mb-16">
+    
+    <div>
+      <h2 class="text-3xl font-extrabold text-slate-900">
+        ZenZone Master Guide: Designing an Ergonomic & High-Efficiency Setup
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        Remote work, software engineering, digital design, and competitive gaming require spending 6 to 10 hours daily in front of screens. Without proper ergonomics, this routine leads to musculoskeletal conditions such as lower back pain, cervical stiffness, eye strain, and carpal tunnel syndrome.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* SEO Block 1 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        1. The Postural Health Triad: Ergonomic Chair + Standing Desk + Monitor Height
+      </h3>
+      <p>
+        Achieving a neutral anatomical alignment requires equipment tailored to your measurements:
+      </p>
+      <ul>
+        <li><strong>Ergonomic Office Chairs with Active Lumbar Support:</strong> High-breathability mesh backrests with 2D/3D adjustable lumbar pads prevent backward pelvic tilting and reduce spinal disc pressure by up to 50%.</li>
+        <li><strong>Electric Standing Desks:</strong> Alternating between sitting and standing activates circulation, boosts daily energy, and alleviates chronic lower back discomfort.</li>
+        <li><strong>Monitor Placement:</strong> The top line of your screen should rest at or slightly below eye horizon, maintaining a distance of 50-70 cm (arm's length).</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* SEO Block 2 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        2. Ergonomic Peripherals: Preventing Carpal Tunnel Strain
+      </h3>
+      <p>
+        Traditional flat mice force the forearm bones (radius and ulna) into awkward pronation. Switching to a <strong>vertical ergonomic mouse</strong> (such as the <em>Logitech Lift</em> or <em>MX Master</em>) maintains a neutral 57° handshake angle, relieving compression on the median nerve.
+      </p>
+      <p>
+        Similarly, pairing your mouse with a <strong>wave ergonomic keyboard</strong> or low-profile slim keyboard with a cushioned wrist rest reduces wrist hyperextension during long typing sessions.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* SEO Block 3 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        3. Asymmetric Screenbar Lighting & Ultrasonic Air Conditioning
+      </h3>
+      <p>
+        Ambient environmental control plays a critical role in focus and eye preservation:
+      </p>
+      <ul>
+        <li><strong>Screenbar Monitor Light Bars:</strong> Cast asymmetrical 45° optical light over your desk without reflecting off the screen, preventing nocturnal glare.</li>
+        <li><strong>Background RGBIC Bias Lighting:</strong> Smooths out the contrast between bright displays and dark room walls, reducing eye dryness.</li>
+        <li><strong>Silent Ultrasonic Humidifiers:</strong> Keep room humidity in the ideal 40%-60% zone, countering dry air from heating and air conditioning.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* SEO Block 4 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        4. Cable Management & Minimalist Workspace Organization
+      </h3>
+      <p>
+        Tangled cords increase visual fatigue and clutter your workspace:
+      </p>
+      <ul>
+        <li><strong>Gas-Spring Monitor Arms:</strong> Reclaim desk real estate while allowing smooth height, tilt, and depth adjustments.</li>
+        <li><strong>Under-Desk Cable Trays & Power Strips:</strong> Hide power cables under the desk tray to keep your workstation clean and easy to dust.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* SEO Block 5 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        5. Active Break Dynamics & The 50/10 Rule
+      </h3>
+      <p>
+        Prolonged immobility is harmful regardless of chair quality. We recommend the **50/10 Rule**: work 50 minutes with focus, then take 10 minutes to stand, stretch, and elevate your standing desk.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* FAQ Block */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900 mb-6">
+        Frequently Asked Questions about Desk Setups & Office Equipment (FAQ)
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">Is an ergonomic office chair better than a gaming chair?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            For long work sessions (6+ hours), ergonomic office chairs with breathable mesh backrests and 2D/3D lumbar support offer better postural adjustment and cooling. Gaming chairs excel if you want deep 150° recline and footrests for controller gaming or watching content.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">What is the recommended minimum desk depth?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A minimum depth of 60 cm (ideally 70-80 cm if using 27-inch or 34-inch ultrawide monitors) is recommended to maintain proper eye distance and rest forearms comfortably.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">How to choose between an XXL desk mat and a gel mouse pad?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            XXL desk pads (90x40 cm) cover the entire desk, dampen keyboard sound, and protect wood finishes. Gel ergonomic mouse pads are best if you need fixed wrist elevation to relieve specific strain.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">How many hours a day to stand at a standing desk?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Follow the 50/10 or 45/15 rule: alternate 45-50 minutes sitting with 10-15 minutes standing per hour. Accumulated standing should not exceed 3-4 hours per day to prevent lower joint fatigue.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">Why does a vertical mouse prevent carpal tunnel strain?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A vertical mouse places your hand at a neutral 57° handshake angle, preventing forearm bones (radius and ulna) from crossing into forced pronation, thus relieving pressure on the median nerve.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">Screenbar light bar vs. regular desk lamp</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A Screenbar mounts onto the top of your monitor frame and casts asymmetrical 45° light focused on your desk area without screen glare or direct eye glare.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">Are monitor arms necessary for cervical posture?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Yes, gas-spring monitor arms allow precise height, tilt, and distance adjustments so the top edge of your monitor rests exactly at your eye horizon line without neck bending.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">How does an air humidifier affect eye comfort and focus?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Maintaining relative humidity between 40% and 60% prevents screen-induced eye tear evaporation and dry throat caused by heating and air conditioning units.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <SugerenciasSetup currentUrl="/en/" />
+
+  <SchemaOrg schemas={[schemaFAQ]} />
 
 </Layout>

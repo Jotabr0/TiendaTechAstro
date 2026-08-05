@@ -147,7 +147,7 @@ const categories = [
 const titulo = "Guía para Montar tu Setup (2026) | Sillas, Mesas y Periféricos";
 const descripcion = "Comparativas y guías de sillas ergonómicas, escritorios elevables, ratones, teclados, screenbars y más para montar tu setup ideal.";
 
-// Schema.org: FAQPage para las 3 preguntas frecuentes de la Home
+// Schema.org: FAQPage para las 8 preguntas frecuentes de la Home
 const schemaFAQ = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -174,6 +174,46 @@ const schemaFAQ = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Las alfombrillas XXL (90x40 cm) cubren toda la mesa, absorben vibraciones del teclado y protegen la madera. Las alfombrillas ergonómicas de gel están indicadas si necesitas elevar la muñeca de forma fija para aliviar molestias concretas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas horas al día es recomendable trabajar de pie en un escritorio elevable (Standing Desk)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se recomienda aplicar la regla 50/10 o 45/15: alternar 45-50 minutos sentado con 10-15 minutos de pie por cada hora de trabajo. No se aconseja estar de pie más de 3-4 horas acumuladas al día para evitar sobrecargar los tobillos y las articulaciones inferiores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué un ratón vertical previene la tendinitis y el síndrome del túnel carpiano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un ratón vertical coloca la mano en un ángulo neutro de 57° (posición de apretón de manos), evitando que los huesos del antebrazo (cúbito y radio) se crucen en pronación forzada. Esto alivia la compresión directa sobre el nervio mediano y la flexión repetitiva de la muñeca."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre una barra de luz Screenbar y un flexo de estudio tradicional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una barra de luz Screenbar se monta directamente sobre el marco superior del monitor y proyecta luz asimétrica a 45° enfocada exclusivamente hacia el área de trabajo y teclado, evitando reflejos directos en la pantalla o deslumbramientos a los ojos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Son necesarios los brazos de monitor para mantener una buena postura cervical?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, los brazos neumáticos o de gas permiten ajustar la altura, inclinación y distancia del monitor de forma precisa e independiente. Esto garantiza que la parte superior de la pantalla quede justo a la altura del horizonte visual sin tener que inclinar el cuello."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo afecta la humedad del aire (humidificador) a la concentración y la fatiga ocular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un ambiente con humedad por debajo del 30% acelera la evaporación de la película lagrimal de los ojos frente a las pantallas y reseca las vías respiratorias. Un humidificador ultrasónico mantiene la humedad en el rango ideal del 40-60%, previniendo el ardor ocular y la fatiga mental."
       }
     }
   ]
@@ -458,30 +498,93 @@ const schemaFAQ = {
 
     <hr class="border-slate-200 my-6" />
 
+    {/* Bloque SEO 4 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        4. Organización del Espacio y Gestión de Cables (Cable Management)
+      </h3>
+      <p>
+        Un espacio abarrotado de cables sueltos incrementa la fatiga cognitiva y dificulta la limpieza del espacio de trabajo:
+      </p>
+      <ul>
+        <li><strong>Brazos de Monitor con Pistón a Gas:</strong> Liberan el espacio inferior del escritorio, permitiendo elevar la pantalla a la altura exacta del horizonte visual sin ocupar peana.</li>
+        <li><strong>Canales Pasacables y Regletas Ocultas:</strong> Agrupar los cables de alimentación e interconexión debajo de la bandeja de la mesa elimina la desorganización visual y previene enganchones accidentales.</li>
+      </ul>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
+    {/* Bloque SEO 5 */}
+    <div>
+      <h3 class="text-2xl font-bold text-slate-900">
+        5. Dinámica de Pausas Activas y Regla 50/10
+      </h3>
+      <p>
+        Incluso con la mejor silla ergonómica del mercado, la inmovilidad prolongada es perjudicial para la salud metabólica. Recomendamos aplicar la **Regla 50/10**: trabajar 50 minutos concentrado y dedicar 10 minutos a levantarse, estirar extremidades y ajustar la mesa elevable para continuar unos minutos de pie.
+      </p>
+    </div>
+
+    <hr class="border-slate-200 my-6" />
+
     {/* Bloque FAQ Schema */}
     <div>
-      <h3 class="text-2xl font-bold text-slate-900 mb-4">
+      <h3 class="text-2xl font-bold text-slate-900 mb-6">
         Preguntas Frecuentes sobre Equipamiento de Setup y Oficina (FAQ)
       </h3>
-      <div class="space-y-4 not-prose">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
           <h4 class="font-bold text-slate-900 text-base mb-2">¿Es mejor una silla de oficina ergonómica o una silla gaming?</h4>
-          <p class="text-sm text-slate-600">
+          <p class="text-sm text-slate-600 leading-relaxed">
             Para jornadas intensas de trabajo (+6 horas), las sillas de oficina con respaldo de malla transpirable y soporte lumbar 2D/3D ofrecen mayor ajuste postural y ventilación. Las sillas gaming son ideales si buscas reclinación amplia de hasta 150° y reposapiés para jugar con mando o ver contenido.
           </p>
         </div>
 
         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
           <h4 class="font-bold text-slate-900 text-base mb-2">¿Qué profundidad mínima debe tener una mesa de escritorio?</h4>
-          <p class="text-sm text-slate-600">
+          <p class="text-sm text-slate-600 leading-relaxed">
             Se recomienda un fondo mínimo de 60 cm (e idealmente 70-80 cm si utilizas monitores de 27 o 34 pulgadas) para poder mantener la distancia de visión recomendada y apoyar los antebrazos con comodidad.
           </p>
         </div>
 
         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
           <h4 class="font-bold text-slate-900 text-base mb-2">¿Cómo elegir entre una alfombrilla XXL o una con gel ergonómica?</h4>
-          <p class="text-sm text-slate-600">
+          <p class="text-sm text-slate-600 leading-relaxed">
             Las alfombrillas XXL (90x40 cm) cubren toda la mesa, absorben vibraciones del teclado y protegen la madera. Las alfombrillas ergonómicas de gel están indicadas si necesitas elevar la muñeca de forma fija para aliviar molestias concretas.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Cuántas horas trabajar de pie en un escritorio elevable?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Aplica la regla 50/10: alterna 50 minutos sentado con 10-15 minutos de pie por hora. No se aconseja estar de pie más de 3-4 horas acumuladas al día para evitar sobrecargar los tobillos y articulaciones.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Por qué un ratón vertical previene el túnel carpiano?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Coloca la mano en un ángulo neutro de 57° (postura de apretón de manos), evitando que los huesos del antebrazo se crucen en pronación forzada. Esto alivia la compresión sobre el nervio mediano.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">Diferencia entre barra Screenbar y flexo tradicional</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            La barra Screenbar se monta sobre el marco del monitor y proyecta luz asimétrica a 45° enfocado a la mesa, sin generar reflejos molestos en la pantalla ni deslumbramiento directo a la vista.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Son necesarios los brazos de monitor?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Permiten ajustar altura, inclinación y distancia del monitor de forma fluida. Garantizan que el borde superior quede justo a la altura del horizonte visual sin inclinar el cuello.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-base mb-2">¿Cómo afecta un humidificador a la vista y concentración?</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Mantener la humedad entre el 40% y el 60% evita la evaporación prematura de la lágrima ocular frente a pantallas y combate la sequedad de garganta causada por aires acondicionados y calefacción.
           </p>
         </div>
       </div>
