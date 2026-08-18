@@ -139,5 +139,17 @@ const schemaWebSite = {
                 }
             });
         </script>
+
+        {/* Tracker directo en servidor de visitas únicas y pageviews (inmune a AdBlockers) */}
+        <script is:inline>
+            if (!/bot|crawler|spider|ahrefs|semrush|googlebot/i.test(navigator.userAgent)) {
+                var trackerUrl = '/api/pv?path=' + encodeURIComponent(window.location.pathname) + '&lang=' + (document.documentElement.lang || 'es');
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(trackerUrl);
+                } else {
+                    fetch(trackerUrl, { method: 'POST', keepalive: true }).catch(function(){});
+                }
+            }
+        </script>
     </body>
 </html>

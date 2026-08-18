@@ -1,2 +1,3 @@
 /go /.netlify/functions/go 200
 /admin/clics /.netlify/functions/stats 200
+/api/pv /.netlify/functions/pv 200

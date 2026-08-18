@@ -31,9 +31,11 @@ export default async (req, context) => {
       // Recuperar clics existentes o iniciar array
       const existingData = await store.get('clicks_data', { type: 'json' }) || [];
 
+      const now = new Date();
       const newClick = {
         id: 'clk_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
-        timestamp: new Date().toISOString(),
+        timestamp: now.toISOString(),
+        dateKey: now.toISOString().split('T')[0],
         name: productName,
         url: targetUrl,
         page: pagePath,
