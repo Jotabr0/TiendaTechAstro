@@ -157,7 +157,7 @@ function renderDashboard({ secretKey, totalClicks, clicks, sortedProducts, sorte
 </head>
 <body class="bg-slate-950 text-slate-200 min-h-screen pb-16 font-sans">
 
-  {/* Header */}
+  <!-- Header -->
   <header class="bg-slate-900 border-b border-slate-800 py-6 mb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-3">
@@ -196,7 +196,7 @@ function renderDashboard({ secretKey, totalClicks, clicks, sortedProducts, sorte
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
 
-    {/* Tarjetas KPI */}
+    <!-- Tarjetas KPI -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
         <span class="text-xs font-extrabold uppercase tracking-wider text-amber-400">Total Clics Reales</span>
@@ -226,10 +226,10 @@ function renderDashboard({ secretKey, totalClicks, clicks, sortedProducts, sorte
       </div>
     </div>
 
-    {/* Ranking de Productos y Páginas */}
+    <!-- Ranking de Productos y Páginas -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
-      {/* Productos más clicados */}
+      <!-- Productos más clicados -->
       <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
         <h3 class="text-lg font-black text-white mb-4 flex items-center justify-between">
           <span>🏆 Productos Más Clicados</span>
@@ -258,7 +258,7 @@ function renderDashboard({ secretKey, totalClicks, clicks, sortedProducts, sorte
         `}
       </div>
 
-      {/* Páginas de origen con más conversión */}
+      <!-- Páginas de origen con más conversión -->
       <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
         <h3 class="text-lg font-black text-white mb-4 flex items-center justify-between">
           <span>📍 Páginas de Origen más Convertidoras</span>
@@ -289,7 +289,7 @@ function renderDashboard({ secretKey, totalClicks, clicks, sortedProducts, sorte
 
     </div>
 
-    {/* Tabla de Historial en Tiempo Real */}
+    <!-- Tabla de Historial en Tiempo Real -->
     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl overflow-hidden">
       <h3 class="text-lg font-black text-white mb-4">
         📋 Historial de Clics Recientes
