@@ -80,18 +80,21 @@ const t = useTranslations(lang);
 
         {/* Fila 4: Botones de Llamada a la Acción (CTA) */}
         <tr>
-          {products.map((p) => (
-            <td class="p-4 bg-slate-50/80">
-              <a 
-                href={p.amazonUrl} 
-                target="_blank" 
-                rel="nofollow noopener sponsored" 
-                class="block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-black py-3 px-3 rounded-xl text-xs sm:text-sm transition-all shadow-sm"
-              >
-                {t('tabla.verEnAmazon')}
-              </a>
-            </td>
-          ))}
+          {products.map((p) => {
+            const goUrl = `/go?name=${encodeURIComponent(p.name)}&url=${encodeURIComponent(p.amazonUrl)}&page=${encodeURIComponent(Astro.url.pathname)}&lang=${lang}`;
+            return (
+              <td class="p-4 bg-slate-50/80">
+                <a 
+                  href={goUrl} 
+                  target="_blank" 
+                  rel="nofollow noopener sponsored" 
+                  class="block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-black py-3 px-3 rounded-xl text-xs sm:text-sm transition-all shadow-sm"
+                >
+                  {t('tabla.verEnAmazon')}
+                </a>
+              </td>
+            );
+          })}
         </tr>
       </tbody>
     </table>

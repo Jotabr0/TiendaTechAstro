@@ -1,0 +1,2 @@
+/go /.netlify/functions/go 200
+/admin/clics /.netlify/functions/stats 200
